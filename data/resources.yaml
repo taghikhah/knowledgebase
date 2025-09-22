@@ -15,9 +15,9 @@ resources:
     license: MIT
     github_stars: 2100
     language: TypeScript
-    added: 2024-09-22
-    last_checked: 2024-09-22
-    last_updated: 2024-09
+    added: "2024-09-22"
+    last_checked: "2024-09-22"
+    last_updated: "2024-09"
     summary: >
       Testing and evaluation framework for LLM prompts with comprehensive CI/CD integration,
       supporting multiple providers and evaluation metrics.
@@ -46,8 +46,8 @@ resources:
     tags: [case-studies, production, mlops, architecture, patterns]
     source_owner: zenml-io
     license: N/A
-    added: 2024-09-22
-    last_checked: 2024-09-22
+    added: "2024-09-22"
+    last_checked: "2024-09-22"
     summary: >
       Comprehensive analysis of 287+ real-world LLMOps implementations, covering successful
       patterns, common pitfalls, and technology stack choices across various industries.
@@ -71,8 +71,8 @@ resources:
     tags: [rag, multimodal, retrieval, images, documents]
     source_owner: llamaindex
     license: N/A
-    added: 2024-09-22
-    last_checked: 2024-09-22
+    added: "2024-09-22"
+    last_checked: "2024-09-22"
     summary: >
       Comprehensive guide to implementing Retrieval-Augmented Generation systems that work
       with both text and image modalities using LlamaIndex and LlamaCloud.
@@ -98,9 +98,9 @@ resources:
     license: MIT
     github_stars: 3200
     language: Python
-    added: 2024-09-22
-    last_checked: 2024-09-22
-    last_updated: 2024-09
+    added: "2024-09-22"
+    last_checked: "2024-09-22"
+    last_updated: "2024-09"
     summary: >
       High-performance machine learning framework specifically optimized for Apple Silicon,
       designed for research and experimentation with efficient memory usage.
@@ -125,9 +125,9 @@ resources:
     license: MIT
     github_stars: 890
     language: Python
-    added: 2024-09-22
-    last_checked: 2024-09-22
-    last_updated: 2024-08
+    added: "2024-09-22"
+    last_checked: "2024-09-22"
+    last_updated: "2024-08"
     summary: >
       Collection of end-to-end machine learning use cases with practical implementations,
       covering common business scenarios and technical patterns.
@@ -152,9 +152,9 @@ resources:
     license: MIT
     github_stars: 23000
     language: Python
-    added: 2024-09-22
-    last_checked: 2024-09-22
-    last_updated: 2024-08
+    added: "2024-09-22"
+    last_checked: "2024-09-22"
+    last_updated: "2024-08"
     summary: >
       Create cloud system architecture diagrams programmatically using Python code,
       with support for major cloud providers and services.
@@ -179,15 +179,15 @@ resources:
     domain: [DevOps-SRE, Systems-Tools]
     type: Repo
     maturity: Battle-tested
-    effort: Varies
+    effort: Medium
     tags: [catalog, infrastructure, self-hosting, services, privacy]
     source_owner: awesome-selfhosted
     license: CC0
     github_stars: 196000
     language: Various
-    added: 2024-09-22
-    last_checked: 2024-09-22
-    last_updated: 2024-09
+    added: "2024-09-22"
+    last_checked: "2024-09-22"
+    last_updated: "2024-09"
     summary: >
       Comprehensive catalog of self-hostable network services and web applications,
       covering alternatives to popular SaaS products with deployment instructions.
@@ -195,7 +195,7 @@ resources:
       Discovery engine for privacy-respecting alternatives, cost reduction through self-hosting,
       learning platform for infrastructure management and service deployment.
     good_for: [discovery, infrastructure, learning]
-    setup_time_minutes: Varies
+    setup_time_minutes: 60
     prerequisites: [Linux basics, containerization knowledge]
     use_cases:
       [
@@ -218,9 +218,9 @@ resources:
     license: Apache-2.0
     github_stars: 124
     language: Python
-    added: 2024-09-22
-    last_checked: 2024-09-22
-    last_updated: 2024-07
+    added: "2024-09-22"
+    last_checked: "2024-09-22"
+    last_updated: "2024-07"
     summary: >
       Small Language Model specifically designed for SQL generation and database querying tasks,
       optimized for natural language to SQL conversion.
@@ -251,9 +251,9 @@ resources:
     license: MIT
     github_stars: 450
     language: Multiple
-    added: 2024-09-22
-    last_checked: 2024-09-22
-    last_updated: 2024-08
+    added: "2024-09-22"
+    last_checked: "2024-09-22"
+    last_updated: "2024-08"
     summary: >
       Beginner-friendly tutorial and examples for Microsoft's Model Context Protocol (MCP),
       showing how to build tool-using agents and IDE integrations.
@@ -267,11 +267,46 @@ resources:
       [agent development, tool integration, IDE plugins, agentic workflows]
     related: [promptfoo, zenml-llmops-cases]
 
+  - id: locust-load-testing
+    title: Locust
+    url: https://github.com/locustio/locust
+    domain: [DevOps-SRE, Systems-Tools]
+    type: Repo
+    maturity: Battle-tested
+    effort: Medium
+    tags: [load-testing, performance, python, testing, distributed, monitoring]
+    source_owner: locustio
+    license: MIT
+    github_stars: 26800
+    language: Python
+    added: "2024-09-22"
+    last_checked: "2024-09-22"
+    last_updated: "2024-09"
+    summary: >
+      Open-source load testing tool that lets you define test scenarios in plain Python code,
+      supporting distributed testing across multiple machines with real-time monitoring.
+    why_useful: >
+      Enables realistic performance testing with familiar Python syntax, scales to simulate
+      hundreds of thousands of users, and integrates seamlessly into CI/CD pipelines for automated performance validation.
+    good_for: [testing, production, POCs]
+    setup_time_minutes: 45
+    prerequisites: [Python, basic testing concepts, HTTP knowledge]
+    use_cases:
+      [
+        load testing,
+        performance validation,
+        stress testing,
+        API testing,
+        CI/CD integration,
+        capacity planning
+      ]
+    related: [diagrams-mingrammer]
+
 # Metadata for the collection
 metadata:
-  total_resources: 9
+  total_resources: 10
   domains:
     [LLMOps-RAG, ML-Engineering, DevOps-SRE, Data-Engineering, Systems-Tools]
-  last_updated: 2024-09-22
+  last_updated: "2024-09-22"
   version: "1.0.0"
   maintainer: "Your GitHub Username"
