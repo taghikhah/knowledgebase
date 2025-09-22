@@ -198,7 +198,7 @@ def generate_quick_navigation(
         "Systems-Tools": ("🛠️ **Systems**", "systems--tools", "Development utilities"),
     }
 
-    nav_section = '\n## 🎯 Quick Navigation\n\n<div align="center">\n\n'
+    nav_section = '\n## Quick Navigation\n\n<div align="center">\n\n'
 
     # Create table header
     headers = []
@@ -232,14 +232,12 @@ def generate_quick_navigation(
 
     nav_section += "\n</div>\n\n"
 
-    # Add emoji legend
-    nav_section += "### 📖 Legend\n\n"
-    nav_section += "**Maturity:** 🛡️ Battle-tested • 🔧 Emerging • 🧪 Experimental  \n"
-    nav_section += (
-        "**Effort:** 🎯 Low (< 2hrs) • ⚙️ Medium (weekend) • 🚀 High (weeks)\n\n"
-    )
-
-    nav_section += "**🏷️ Filter by:** [⚡ Quick Wins](#quick-wins) • [🛡️ Production Ready](#production-ready) • [🔧 Emerging](#emerging)\n"
+    # Simplified quick access with just the badges
+    nav_section += '<div align="center">\n\n'
+    nav_section += "[![Quick Wins](https://img.shields.io/badge/⚡_Quick_Wins-Under_2hrs-brightgreen)](#quick-wins) &nbsp;&nbsp;"
+    nav_section += "[![Production Ready](https://img.shields.io/badge/🛡️_Production_Ready-Battle_tested-blue)](#production-ready) &nbsp;&nbsp;"
+    nav_section += "[![Emerging Tools](https://img.shields.io/badge/🔧_Emerging-Worth_watching-orange)](#emerging-tools)\n\n"
+    nav_section += "</div>\n"
 
     return nav_section
 
@@ -264,7 +262,7 @@ def generate_quick_wins_section(resources: List[Dict[str, Any]]) -> str:
         )
     )
 
-    section = "\n## ⚡ Quick Wins\n\n"
+    section = "\n## Quick Wins\n\n"
     section += "*High-impact resources you can implement in under 2 hours - perfect for immediate productivity gains.*\n\n"
     section += "| Resource | Setup Time | Impact | Use Case |\n"
     section += "|----------|:----------:|:------:|----------|\n"
@@ -306,7 +304,7 @@ def generate_tag_cloud(stats: Dict[str, Any]) -> str:
     """Generate tag cloud section."""
     top_tags = stats["tag_counts"].most_common(12)
 
-    section = "\n## 🏷️ Tag Cloud\n\n"
+    section = "\n## Tag Cloud\n\n"
     tag_list = " ".join([f"`{tag}`" for tag, _ in top_tags])
     section += tag_list + "\n"
 
@@ -320,7 +318,7 @@ def update_readme_template(
     grouped = group_resources_by_domain(resources)
 
     # Header with improved badges
-    readme_content = f"""# Engineering Arsenal 🛠️
+    readme_content = f"""# Engineering Arsenal (Knowledgebase)
 
 A curated, enterprise-grade collection of links, repos, and notes that actually helped me build real systems (ML/AI, LLMOps, DevOps, Data Eng, SRE, Security). Each entry includes structured metadata, honest assessments, and why it's useful in practice.
 
@@ -333,6 +331,21 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 {generate_quick_navigation(grouped)}
 
 ---
+
+## Contents
+
+Here you will find battle-tested tools and resources organized by engineering domain. Each entry includes practical metadata, honest maturity assessments, and concrete use cases to help you select the right solution for your specific needs.
+
+<div align="center">
+
+| **Maturity Levels** | **Time Investment** |
+|:------------------|:------------------|
+| 🛡️ **Battle-tested** → Production ready, widely adopted in enterprise | 🎯 **Low** → Quick setup and immediate value (<2 hours) |
+| 🔧 **Emerging** → Gaining traction, active development, worth adopting | ⚙️ **Medium** → Weekend project with moderate learning curve |
+| 🧪 **Experimental** → Early stage but promising, good for research | 🚀 **High** → Major undertaking requiring weeks of investment |
+
+</div>
+
 """
 
     # Generate domain sections
@@ -345,7 +358,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
     # Contributing section
     readme_content += """
-## 🤝 Contributing
+## Contributing
 
 Found a resource that significantly improved your engineering workflow? 
 
@@ -368,7 +381,7 @@ Found a resource that significantly improved your engineering workflow?
     readme_content += f"""
 ---
 
-## 🎖️ Recognition
+## Recognition
 
 This arsenal reflects real engineering experience. Every resource has been battle-tested in production or significantly advanced learning.
 
@@ -376,7 +389,7 @@ This arsenal reflects real engineering experience. Every resource has been battl
 
 ---
 
-## 📄 License
+## License
 
 Content and curation by [@taghikhah](https://github.com/taghikhah). Resource descriptions under CC BY 4.0. Code examples under MIT.
 
