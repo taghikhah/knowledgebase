@@ -1,4 +1,4 @@
-# Engineering Arsenal (My Computer Engineering Knowledgebase)
+# My Engineering Knowledgebase
 
 
 A curated, enterprise-grade collection of links, repos, and notes that actually helped me build real systems (ML/AI, LLMOps, DevOps, Data Eng, SRE, Security). Each entry includes structured metadata, honest assessments, and why it's useful in practice.

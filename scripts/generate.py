@@ -449,7 +449,7 @@ def generate_enhanced_readme(
     """Generate the complete README content with enhanced formatting."""
     grouped = group_resources_by_domain(resources)
 
-    readme = f"""# Engineering Arsenal (My Computer Engineering Knowledgebase)
+    readme = f"""# My Engineering Knowledgebase
 
 
 A curated, enterprise-grade collection of links, repos, and notes that actually helped me build real systems (ML/AI, LLMOps, DevOps, Data Eng, SRE, Security). Each entry includes structured metadata, honest assessments, and why it's useful in practice.
