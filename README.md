@@ -5,7 +5,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 <div align="center">
 
-![Resources](https://img.shields.io/badge/Resources-10-blue?style=for-the-badge) ![Domains](https://img.shields.io/badge/Domains-5-green?style=for-the-badge) ![Last Updated](https://img.shields.io/badge/Updated-September%202025-red?style=for-the-badge)
+![Resources](https://img.shields.io/badge/Resources-13-blue?style=for-the-badge) ![Domains](https://img.shields.io/badge/Domains-6-green?style=for-the-badge) ![Last Updated](https://img.shields.io/badge/Updated-September%202025-red?style=for-the-badge)
 
 **[🎯 Quick Navigation](#-quick-navigation) • [⚡ Quick Wins](#-quick-wins) • [🔥 Trending](#-trending) • [🤝 Contributing](#-contributing)**
 
@@ -20,7 +20,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 <td align="center" width="150">
 
 ### 🤖 **AI/ML**
-**4 resources**
+**5 resources**
 [Explore →](#llmopsml)
 
 *LLMOps, RAG, Training*
@@ -55,6 +55,15 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 *Pipelines, Processing*
 
 </td>
+<td align="center">
+
+### 🔒 **Security**
+**2 resources**
+[Explore →](#security)
+
+*Scanning, Compliance*
+
+</td>
 </tr>
 </table>
 
@@ -62,6 +71,113 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 
 ## 🤖 AI/ML Engineering
+
+### 🎯 LLMOps & RAG Systems
+
+<table>
+<tr>
+<td width="60%">
+
+**[LLM Patterns: A Comprehensive Guide](https://eugeneyan.com/writing/llm-patterns/)**  
+N/A License
+
+Comprehensive exploration of practical patterns for building LLM systems, covering evaluation, RAG, fine-tuning, caching, guardrails, defensive UX, and user feedback.
+
+
+**💡 Why it's useful:** Synthesizes complex academic research into pragmatic, implementable patterns that bridge theoretical knowledge with practical engineering challenges in production LLM systems.
+
+
+</td>
+<td width="20%" align="center">
+
+**🟢 Battle-tested**  
+⚖️ **Medium Effort**  
+🕐 45 min setup
+
+</td>
+<td width="20%">
+
+**Perfect for:**
+- System Architecture
+- Pattern Implementation
+- Production Design
+- Team Education
+
+**Tags:** `patterns` `architecture` `evaluation` `rag`
+
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="60%">
+
+**[promptfoo](https://github.com/promptfoo/promptfoo)**  
+⭐ 2,100 • TypeScript • MIT License
+
+Testing and evaluation framework for LLM prompts with comprehensive CI/CD integration, supporting multiple providers and evaluation metrics.
+
+
+**💡 Why it's useful:** Prevents prompt regression in production, enables systematic comparison of providers/models, and provides automated quality gates for LLM applications.
+
+
+</td>
+<td width="20%" align="center">
+
+**🟡 Emerging**  
+⚡ **Low Effort**  
+🕐 30 min setup
+
+</td>
+<td width="20%">
+
+**Perfect for:**
+- Prompt Engineering
+- Quality Assurance
+- Provider Comparison
+- Automated Testing
+
+**Tags:** `evaluation` `prompts` `testing` `ci-cd`
+
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="60%">
+
+**[Multimodal RAG in LlamaCloud](https://www.llamaindex.ai/blog/multimodal-rag-in-llamacloud)**  
+N/A License
+
+Comprehensive guide to implementing Retrieval-Augmented Generation systems that work with both text and image modalities using LlamaIndex and LlamaCloud.
+
+
+**💡 Why it's useful:** Shows practical pathways to add visual understanding to enterprise RAG systems, handles complex document types with embedded diagrams and charts.
+
+
+</td>
+<td width="20%" align="center">
+
+**🟡 Emerging**  
+⚖️ **Medium Effort**  
+🕐 120 min setup
+
+</td>
+<td width="20%">
+
+**Perfect for:**
+- Document Processing
+- Visual Qa
+- Enterprise Search
+- Multimodal Chatbots
+
+**Tags:** `rag` `multimodal` `retrieval` `images`
+
+</td>
+</tr>
+</table>
 
 ### 📦 General Tools
 
@@ -130,78 +246,6 @@ Beginner-friendly tutorial and examples for Microsoft's Model Context Protocol (
 - Agentic Workflows
 
 **Tags:** `agents` `protocol` `microsoft` `integration`
-
-</td>
-</tr>
-</table>
-
-### 🎯 LLMOps & RAG Systems
-
-<table>
-<tr>
-<td width="60%">
-
-**[promptfoo](https://github.com/promptfoo/promptfoo)**  
-⭐ 2,100 • TypeScript • MIT License
-
-Testing and evaluation framework for LLM prompts with comprehensive CI/CD integration, supporting multiple providers and evaluation metrics.
-
-
-**💡 Why it's useful:** Prevents prompt regression in production, enables systematic comparison of providers/models, and provides automated quality gates for LLM applications.
-
-
-</td>
-<td width="20%" align="center">
-
-**🟡 Emerging**  
-⚡ **Low Effort**  
-🕐 30 min setup
-
-</td>
-<td width="20%">
-
-**Perfect for:**
-- Prompt Engineering
-- Quality Assurance
-- Provider Comparison
-- Automated Testing
-
-**Tags:** `evaluation` `prompts` `testing` `ci-cd`
-
-</td>
-</tr>
-</table>
-
-<table>
-<tr>
-<td width="60%">
-
-**[Multimodal RAG in LlamaCloud](https://www.llamaindex.ai/blog/multimodal-rag-in-llamacloud)**  
-N/A License
-
-Comprehensive guide to implementing Retrieval-Augmented Generation systems that work with both text and image modalities using LlamaIndex and LlamaCloud.
-
-
-**💡 Why it's useful:** Shows practical pathways to add visual understanding to enterprise RAG systems, handles complex document types with embedded diagrams and charts.
-
-
-</td>
-<td width="20%" align="center">
-
-**🟡 Emerging**  
-⚖️ **Medium Effort**  
-🕐 120 min setup
-
-</td>
-<td width="20%">
-
-**Perfect for:**
-- Document Processing
-- Visual Qa
-- Enterprise Search
-- Multimodal Chatbots
-
-**Tags:** `rag` `multimodal` `retrieval` `images`
 
 </td>
 </tr>
@@ -476,6 +520,83 @@ Small Language Model specifically designed for SQL generation and database query
 
 ---
 
+
+## 🔒 Security
+
+### 🔒 Security & Compliance
+
+<table>
+<tr>
+<td width="60%">
+
+**[Trivy](https://github.com/aquasecurity/trivy)**  
+⭐ 29,000 • Go • Apache-2.0 License
+
+Comprehensive security scanner for containers, filesystems, Git repositories, and Kubernetes that detects vulnerabilities, misconfigurations, secrets, and SBOM.
+
+
+**💡 Why it's useful:** Provides unified multi-target security scanning with minimal configuration, covers entire software supply chain, and integrates seamlessly into existing DevOps workflows.
+
+
+</td>
+<td width="20%" align="center">
+
+**🟢 Battle-tested**  
+⚡ **Low Effort**  
+🕐 15 min setup
+
+</td>
+<td width="20%">
+
+**Perfect for:**
+- Vulnerability Scanning
+- Container Security
+- Supply Chain Security
+- Compliance Checking
+
+**Tags:** `vulnerability-scanning` `containers` `security` `SBOM`
+
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="60%">
+
+**[kubesec](https://github.com/controlplaneio/kubesec)**  
+⭐ 1,200 • Go • Apache-2.0 License
+
+Security risk analysis tool for Kubernetes resources that scans YAML configurations for potential vulnerabilities and provides scoring with actionable recommendations.
+
+
+**💡 Why it's useful:** Enables proactive security assessment of Kubernetes deployments, enforces least-privilege principles, and integrates into CI/CD pipelines for automated security validation.
+
+
+</td>
+<td width="20%" align="center">
+
+**🟢 Battle-tested**  
+⚡ **Low Effort**  
+🕐 30 min setup
+
+</td>
+<td width="20%">
+
+**Perfect for:**
+- Security Scanning
+- Admission Control
+- Ci/Cd Integration
+- Compliance Validation
+
+**Tags:** `kubernetes` `security` `scanning` `configuration`
+
+</td>
+</tr>
+</table>
+
+---
+
 ## 🔥 Trending This Month
 *Recently added resources gaining traction*
 
@@ -484,8 +605,8 @@ Small Language Model specifically designed for SQL generation and database query
 | 🚀 **New Addition** | ⭐ **Stars** | 🏷️ **Why It's Hot** |
 |---------------------|-------------|-------------------|
 | **[Awesome Self-hosted](https://github.com/awesome-selfhosted/awesome-selfhosted)** | 196,000 ↗️ | Discovery engine for privacy-respecting alternatives, cost r... |
+| **[Trivy](https://github.com/aquasecurity/trivy)** | 29,000 ↗️ | Provides unified multi-target security scanning with minimal... |
 | **[Locust](https://github.com/locustio/locust)** | 26,800 ↗️ | Enables realistic performance testing with familiar Python s... |
-| **[Diagrams](https://github.com/mingrammer/diagrams)** | 23,000 ↗️ | Enables version-controlled, reproducible architecture docume... |
 
 </div>
 
@@ -500,22 +621,22 @@ Small Language Model specifically designed for SQL generation and database query
 <th width="40%">✨ Quick Value</th>
 </tr>
 <tr>
+<td><strong><a href="https://github.com/aquasecurity/trivy">Trivy</a></strong><br/>Comprehensive security scanner for conta...</td>
+<td>15 min</td>
+<td>🔥 High</td>
+<td>Provides unified multi-target security scanning with minimal...</td>
+</tr>
+<tr>
 <td><strong><a href="https://github.com/mingrammer/diagrams">Diagrams</a></strong><br/>Create cloud system architecture diagram...</td>
 <td>15 min</td>
 <td>🔥 High</td>
 <td>Enables version-controlled, reproducible architecture docume...</td>
 </tr>
 <tr>
-<td><strong><a href="https://github.com/mallahyari/ml-practical-usecases">ML Practical Use Cases</a></strong><br/>Collection of end-to-end machine learnin...</td>
+<td><strong><a href="https://github.com/controlplaneio/kubesec">kubesec</a></strong><br/>Security risk analysis tool for Kubernet...</td>
 <td>30 min</td>
 <td>🔥 High</td>
-<td>Provides ready-to-adapt templates for real projects, bridges...</td>
-</tr>
-<tr>
-<td><strong><a href="https://www.zenml.io/blog/llmops-in-production-287-more-case-studies-of-what-actually-works">ZenML: LLMOps in Production - 287+ Case Studies</a></strong><br/>Comprehensive analysis of 287+ real-worl...</td>
-<td>45 min</td>
-<td>🔥 High</td>
-<td>Provides reality check for architecture decisions, helps ben...</td>
+<td>Enables proactive security assessment of Kubernetes deployme...</td>
 </tr>
 </table>
 

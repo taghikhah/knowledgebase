@@ -302,11 +302,111 @@ resources:
       ]
     related: [diagrams-mingrammer]
 
+  - id: llm-patterns-eugeneyan
+    title: "LLM Patterns: A Comprehensive Guide"
+    url: https://eugeneyan.com/writing/llm-patterns/
+    domain: [LLMOps-RAG]
+    type: Article
+    maturity: Battle-tested
+    effort: Medium
+    tags: [patterns, architecture, evaluation, rag, fine-tuning, guardrails]
+    source_owner: eugeneyan
+    license: N/A
+    added: "2024-09-22"
+    last_checked: "2024-09-22"
+    summary: >
+      Comprehensive exploration of practical patterns for building LLM systems, covering
+      evaluation, RAG, fine-tuning, caching, guardrails, defensive UX, and user feedback.
+    why_useful: >
+      Synthesizes complex academic research into pragmatic, implementable patterns that bridge
+      theoretical knowledge with practical engineering challenges in production LLM systems.
+    good_for: [architecture, production, learning]
+    setup_time_minutes: 45
+    prerequisites: [LLM experience, system design knowledge]
+    use_cases:
+      [
+        system architecture,
+        pattern implementation,
+        production design,
+        team education,
+        evaluation frameworks
+      ]
+    related: [zenml-llmops-cases, promptfoo, llamaindex-multimodal]
+
+  - id: kubesec-controlplane
+    title: kubesec
+    url: https://github.com/controlplaneio/kubesec
+    domain: [Security, DevOps-SRE]
+    type: Repo
+    maturity: Battle-tested
+    effort: Low
+    tags: [kubernetes, security, scanning, configuration, admission-controller]
+    source_owner: controlplaneio
+    license: Apache-2.0
+    github_stars: 1200
+    language: Go
+    added: "2024-09-22"
+    last_checked: "2024-09-22"
+    last_updated: "2024-09"
+    summary: >
+      Security risk analysis tool for Kubernetes resources that scans YAML configurations
+      for potential vulnerabilities and provides scoring with actionable recommendations.
+    why_useful: >
+      Enables proactive security assessment of Kubernetes deployments, enforces least-privilege
+      principles, and integrates into CI/CD pipelines for automated security validation.
+    good_for: [production, testing, POCs]
+    setup_time_minutes: 30
+    prerequisites: [Kubernetes knowledge, YAML familiarity]
+    use_cases:
+      [
+        security scanning,
+        admission control,
+        CI/CD integration,
+        compliance validation,
+        configuration review
+      ]
+    related: [trivy-aquasecurity]
+
+  - id: trivy-aquasecurity
+    title: Trivy
+    url: https://github.com/aquasecurity/trivy
+    domain: [Security, DevOps-SRE]
+    type: Repo
+    maturity: Battle-tested
+    effort: Low
+    tags: [vulnerability-scanning, containers, security, SBOM, secrets]
+    source_owner: aquasecurity
+    license: Apache-2.0
+    github_stars: 29000
+    language: Go
+    added: "2024-09-22"
+    last_checked: "2024-09-22"
+    last_updated: "2024-09"
+    summary: >
+      Comprehensive security scanner for containers, filesystems, Git repositories, and
+      Kubernetes that detects vulnerabilities, misconfigurations, secrets, and SBOM.
+    why_useful: >
+      Provides unified multi-target security scanning with minimal configuration, covers
+      entire software supply chain, and integrates seamlessly into existing DevOps workflows.
+    good_for: [production, testing, POCs]
+    setup_time_minutes: 15
+    prerequisites: [basic security concepts, container knowledge]
+    use_cases:
+      [
+        vulnerability scanning,
+        container security,
+        supply chain security,
+        compliance checking,
+        secret detection,
+        SBOM generation
+      ]
+    related: [kubesec-controlplane]
+
 # Metadata for the collection
 metadata:
-  total_resources: 10
+  total_resources: 13
   domains:
-    [LLMOps-RAG, ML-Engineering, DevOps-SRE, Data-Engineering, Systems-Tools]
+    [LLMOps-RAG, ML-Engineering, DevOps-SRE, Data-Engineering, Security, Systems-Tools]
   last_updated: "2024-09-22"
   version: "1.0.0"
   maintainer: "Your GitHub Username"
