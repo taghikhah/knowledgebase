@@ -28,7 +28,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 ## 🤖 AI/ML Engineering
 
 <details open>
-<summary><strong>🎯 LLMOps & RAG Systems</strong> (3 resources)</summary>
+<summary><h3>🎯 LLMOps & RAG Systems</h3> (3 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -38,7 +38,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 </details>
 <details open>
-<summary><strong>🛠️ Tools & Utilities</strong> (2 resources)</summary>
+<summary><h3>🛠️ Tools & Utilities</h3> (2 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -52,7 +52,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 ## 🧠 ML Engineering
 
 <details open>
-<summary><strong>🛠️ Tools & Utilities</strong> (1 resources)</summary>
+<summary><h3>🛠️ Tools & Utilities</h3> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -60,7 +60,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 </details>
 <details open>
-<summary><strong>🧠 ML Frameworks & Training</strong> (1 resources)</summary>
+<summary><h3>🧠 ML Frameworks & Training</h3> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -73,7 +73,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 ## 🔧 DevOps & SRE
 
 <details open>
-<summary><strong>🏗️ Infrastructure & DevOps</strong> (2 resources)</summary>
+<summary><h3>🏗️ Infrastructure & DevOps</h3> (2 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -82,7 +82,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 </details>
 <details open>
-<summary><strong>📈 Testing & Performance</strong> (1 resources)</summary>
+<summary><h3>📈 Testing & Performance</h3> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -95,7 +95,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 ## 📊 Data Engineering
 
 <details open>
-<summary><strong>🗄️ SQL & Database Tools</strong> (1 resources)</summary>
+<summary><h3>🗄️ SQL & Database Tools</h3> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -108,7 +108,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 ## 🔒 Security
 
 <details open>
-<summary><strong>🔒 Security & Compliance</strong> (2 resources)</summary>
+<summary><h3>🔒 Security & Compliance</h3> (2 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -183,4 +183,4 @@ Content and curation by [@taghikhah](https://github.com/taghikhah). Resource des
 
 ⭐ **Star this repo** if you find it valuable • **[Share feedback](../../discussions)**
 
-<!-- Auto-generated from data/resources.yaml on 2025-09-22 13:51:27 -->
+<!-- Auto-generated from data/resources.yaml on 2025-09-22 13:58:20 -->
