@@ -37,9 +37,16 @@ def format_resource_row(resource: Dict[str, Any]) -> str:
     # Enhanced title with bold formatting and metadata
     github_info = ""
     if resource.get("github_stars"):
-        github_info = f"<br/>⭐ {resource['github_stars']:,}"
-        if resource.get("language"):
-            github_info += f" • {resource['language']}"
+        stars = resource["github_stars"]
+        if stars >= 1000:
+            formatted_stars = (
+                f"{stars/1000:.0f}K" if stars % 1000 == 0 else f"{stars/1000:.1f}K"
+            )
+        else:
+            formatted_stars = f"~1K"
+        github_info = f"<br/>⭐ {formatted_stars}"
+        # if resource.get("language"):
+        #     github_info += f" • {resource['language']}"
 
     title_cell = f"**[{resource['title']}]({resource['url']})**{github_info}"
 
@@ -198,7 +205,7 @@ def generate_quick_navigation(
         "Systems-Tools": ("🛠️ **Systems**", "systems--tools", "Development utilities"),
     }
 
-    nav_section = '\n## Quick Navigation\n\n<div align="center">\n\n'
+    nav_section = '\n### Quick Navigation\n\n<div align="center">\n\n'
 
     # Create table header
     headers = []
@@ -330,21 +337,23 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 {generate_quick_navigation(grouped)}
 
+## Domains
+
+Here you will find tools and resources organized by engineering domain, each with a brief description to help you navigate. 
+
+> Please consider following table legends below for maturity and effort indicators.
+
+**Maturity Levels:**
+- 🛡️ **Battle-tested** → Production ready, widely adopted in enterprise environments
+- 🔧 **Emerging** → Gaining significant traction, active development, worth adopting
+- 🧪 **Experimental** → Early stage but promising, good for research and experimentation
+
+**Time Investment:**
+- 🎯 **Low** → Quick setup and immediate value (under 2 hours)
+- ⚙️ **Medium** → Weekend project with moderate learning curve
+- 🚀 **High** → Major undertaking requiring weeks of investment
+
 ---
-
-## Contents
-
-Here you will find battle-tested tools and resources organized by engineering domain. Each entry includes practical metadata, honest maturity assessments, and concrete use cases to help you select the right solution for your specific needs.
-
-<div align="center">
-
-| **Maturity Levels** | **Time Investment** |
-|:------------------|:------------------|
-| 🛡️ **Battle-tested** → Production ready, widely adopted in enterprise | 🎯 **Low** → Quick setup and immediate value (<2 hours) |
-| 🔧 **Emerging** → Gaining traction, active development, worth adopting | ⚙️ **Medium** → Weekend project with moderate learning curve |
-| 🧪 **Experimental** → Early stage but promising, good for research | 🚀 **High** → Major undertaking requiring weeks of investment |
-
-</div>
 
 """
 
