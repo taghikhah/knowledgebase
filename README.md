@@ -27,7 +27,8 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 ## 🤖 AI/ML Engineering
 
-### 🎯 LLMOps & RAG Systems (3 resources)
+<details open>
+<summary><strong>🎯 LLMOps & RAG Systems</strong> (3 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -35,67 +36,82 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 | **[promptfoo](https://github.com/promptfoo/promptfoo)**<br/>⭐ 2,100 • TypeScript | 🟡 Emerging | ⚡ Low | prompt engineering, quality assurance, provider comparison | Testing and evaluation framework for LLM prompts with comprehensive CI/CD integration, supporting multiple providers ... |
 | **[Multimodal RAG in LlamaCloud](https://www.llamaindex.ai/blog/multimodal-rag-in-llamacloud)** | 🟡 Emerging | ⚖️ Medium | document processing, visual QA, enterprise search | Comprehensive guide to implementing Retrieval-Augmented Generation systems that work with both text and image modalit... |
 
-### 🛠️ Tools & Utilities (2 resources)
+</details>
+<details open>
+<summary><strong>🛠️ Tools & Utilities</strong> (2 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[ZenML: LLMOps in Production - 287+ Case Studies](https://www.zenml.io/blog/llmops-in-production-287-more-case-studies-of-what-actually-works)** | 🟢 Battle-tested | ⚡ Low | architecture planning, technology selection, team strategy | Comprehensive analysis of 287+ real-world LLMOps implementations, covering successful patterns, common pitfalls, and ... |
 | **[MCP for Beginners](https://github.com/microsoft/mcp-for-beginners/)**<br/>⭐ 450 • Multiple | 🟡 Emerging | ⚖️ Medium | agent development, tool integration, IDE plugins | Beginner-friendly tutorial and examples for Microsoft's Model Context Protocol (MCP), showing how to build tool-using... |
 
+</details>
 ---
 
 ## 🧠 ML Engineering
 
-### 🛠️ Tools & Utilities (1 resources)
+<details open>
+<summary><strong>🛠️ Tools & Utilities</strong> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[ML Practical Use Cases](https://github.com/mallahyari/ml-practical-usecases)**<br/>⭐ 890 • Python | 🟢 Battle-tested | ⚡ Low | learning, project templates, proof of concepts | Collection of end-to-end machine learning use cases with practical implementations, covering common business scenario... |
 
-### 🧠 ML Frameworks & Training (1 resources)
+</details>
+<details open>
+<summary><strong>🧠 ML Frameworks & Training</strong> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[MLX - Apple Machine Learning Framework](https://github.com/ml-explore/mlx)**<br/>⭐ 3,200 • Python | 🟡 Emerging | ⚖️ Medium | model training, research, prototyping | High-performance machine learning framework specifically optimized for Apple Silicon, designed for research and exper... |
 
+</details>
 ---
 
 ## 🔧 DevOps & SRE
 
-### 🏗️ Infrastructure & DevOps (2 resources)
+<details open>
+<summary><strong>🏗️ Infrastructure & DevOps</strong> (2 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[Awesome Self-hosted](https://github.com/awesome-selfhosted/awesome-selfhosted)**<br/>⭐ 196,000 • Various | 🟢 Battle-tested | ⚖️ Medium | lab setups, privacy solutions, cost optimization | Comprehensive catalog of self-hostable network services and web applications, covering alternatives to popular SaaS p... |
 | **[Diagrams](https://github.com/mingrammer/diagrams)**<br/>⭐ 23,000 • Python | 🟢 Battle-tested | ⚡ Low | architecture documentation, system design, technical presentations | Create cloud system architecture diagrams programmatically using Python code, with support for major cloud providers ... |
 
-### 📈 Testing & Performance (1 resources)
+</details>
+<details open>
+<summary><strong>📈 Testing & Performance</strong> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[Locust](https://github.com/locustio/locust)**<br/>⭐ 26,800 • Python | 🟢 Battle-tested | ⚖️ Medium | load testing, performance validation, stress testing | Open-source load testing tool that lets you define test scenarios in plain Python code, supporting distributed testin... |
 
+</details>
 ---
 
 ## 📊 Data Engineering
 
-### 🗄️ SQL & Database Tools (1 resources)
+<details open>
+<summary><strong>🗄️ SQL & Database Tools</strong> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[SLM SQL](https://github.com/CycloneBoy/slm_sql)**<br/>⭐ 124 • Python | 🔴 Experimental | ⚖️ Medium | natural language querying, SQL learning tools, database interfaces | Small Language Model specifically designed for SQL generation and database querying tasks, optimized for natural lang... |
 
+</details>
 ---
 
 ## 🔒 Security
 
-### 🔒 Security & Compliance (2 resources)
+<details open>
+<summary><strong>🔒 Security & Compliance</strong> (2 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[Trivy](https://github.com/aquasecurity/trivy)**<br/>⭐ 29,000 • Go | 🟢 Battle-tested | ⚡ Low | vulnerability scanning, container security, supply chain security | Comprehensive security scanner for containers, filesystems, Git repositories, and Kubernetes that detects vulnerabili... |
 | **[kubesec](https://github.com/controlplaneio/kubesec)**<br/>⭐ 1,200 • Go | 🟢 Battle-tested | ⚡ Low | security scanning, admission control, CI/CD integration | Security risk analysis tool for Kubernetes resources that scans YAML configurations for potential vulnerabilities and... |
 
+</details>
 ---
 
 ## 🔥 Trending This Month
@@ -138,7 +154,6 @@ Found a resource that significantly improved your engineering workflow?
 
 • **Total Resources:** 13
 • **Domains Covered:** 6
-• **Average GitHub Stars:** 28,276.4k
 • **Last Updated:** September 2025
 • **Contributors:** 1
 
@@ -163,4 +178,4 @@ Content and curation by [@taghikhah](https://github.com/taghikhah). Resource des
 
 ⭐ **Star this repo** if you find it valuable • **[Share feedback](../../discussions)**
 
-<!-- Auto-generated from data/resources.yaml on 2025-09-22 13:28:22 -->
+<!-- Auto-generated from data/resources.yaml on 2025-09-22 13:43:14 -->
