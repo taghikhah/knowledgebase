@@ -46,6 +46,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 | **[MCP for Beginners](https://github.com/microsoft/mcp-for-beginners/)**<br/>⭐ 450 • Multiple | 🟡 Emerging | ⚖️ Medium | agent development, tool integration, IDE plugins | Beginner-friendly tutorial and examples for Microsoft's Model Context Protocol (MCP), showing how to build tool-using... |
 
 </details>
+
 ---
 
 ## 🧠 ML Engineering
@@ -66,6 +67,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 | **[MLX - Apple Machine Learning Framework](https://github.com/ml-explore/mlx)**<br/>⭐ 3,200 • Python | 🟡 Emerging | ⚖️ Medium | model training, research, prototyping | High-performance machine learning framework specifically optimized for Apple Silicon, designed for research and exper... |
 
 </details>
+
 ---
 
 ## 🔧 DevOps & SRE
@@ -87,6 +89,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 | **[Locust](https://github.com/locustio/locust)**<br/>⭐ 26,800 • Python | 🟢 Battle-tested | ⚖️ Medium | load testing, performance validation, stress testing | Open-source load testing tool that lets you define test scenarios in plain Python code, supporting distributed testin... |
 
 </details>
+
 ---
 
 ## 📊 Data Engineering
@@ -99,6 +102,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 | **[SLM SQL](https://github.com/CycloneBoy/slm_sql)**<br/>⭐ 124 • Python | 🔴 Experimental | ⚖️ Medium | natural language querying, SQL learning tools, database interfaces | Small Language Model specifically designed for SQL generation and database querying tasks, optimized for natural lang... |
 
 </details>
+
 ---
 
 ## 🔒 Security
@@ -112,6 +116,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 | **[kubesec](https://github.com/controlplaneio/kubesec)**<br/>⭐ 1,200 • Go | 🟢 Battle-tested | ⚡ Low | security scanning, admission control, CI/CD integration | Security risk analysis tool for Kubernetes resources that scans YAML configurations for potential vulnerabilities and... |
 
 </details>
+
 ---
 
 ## 🔥 Trending This Month
@@ -178,4 +183,4 @@ Content and curation by [@taghikhah](https://github.com/taghikhah). Resource des
 
 ⭐ **Star this repo** if you find it valuable • **[Share feedback](../../discussions)**
 
-<!-- Auto-generated from data/resources.yaml on 2025-09-22 13:43:14 -->
+<!-- Auto-generated from data/resources.yaml on 2025-09-22 13:51:27 -->
