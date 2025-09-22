@@ -17,18 +17,21 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 |:------------:|:------------:|:------------:|:------------:|:------------:|
 | [Jump to AI/ML](#aiml-engineering) | [Jump to ML Engineering](#ml-engineering) | [Jump to DevOps/SRE](#devops--sre) | [Jump to Data Eng](#data-engineering) | [Jump to Security](#security) |
 | **5 resources** | **2 resources** | **3 resources** | **1 resources** | **2 resources** |
+| *LLM operations & RAG* | *ML frameworks & training* | *Infrastructure & reliability* | *Data pipelines & processing* | *Security & compliance* |
 
 </div>
 
-**🏷️ Filter by:** [⚡ Quick Wins](#quick-wins) • [🟢 Production Ready](#production-ready) • [🟡 Emerging](#emerging) • [🔥 Trending](#trending)
+**🏷️ Filter by:** [⚡ Quick Wins](#quick-wins) • [🟢 Production Ready](#production-ready) • [🟡 Emerging](#emerging)
 
 
 ---
 
-## 🤖 AI/ML Engineering
+### 🤖 AI/ML Engineering
+
+*Tools and frameworks for operating Large Language Models in production, including prompt testing, RAG systems, and evaluation frameworks.*
 
 <details open>
-<summary><h3>🎯 LLMOps & RAG Systems</h3> (3 resources)</summary>
+<summary><strong>🎯 LLMOps & RAG Systems</strong> (3 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -38,7 +41,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 </details>
 <details open>
-<summary><h3>🛠️ Tools & Utilities</h3> (2 resources)</summary>
+<summary><strong>🛠️ Tools & Utilities</strong> (2 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -49,10 +52,12 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 ---
 
-## 🧠 ML Engineering
+### 🧠 ML Engineering
+
+*Machine learning frameworks, training tools, and platforms for building and deploying ML systems at scale.*
 
 <details open>
-<summary><h3>🛠️ Tools & Utilities</h3> (1 resources)</summary>
+<summary><strong>🛠️ Tools & Utilities</strong> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -60,7 +65,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 </details>
 <details open>
-<summary><h3>🧠 ML Frameworks & Training</h3> (1 resources)</summary>
+<summary><strong>🧠 ML Frameworks & Training</strong> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -70,10 +75,12 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 ---
 
-## 🔧 DevOps & SRE
+### 🔧 DevOps & SRE
+
+*Infrastructure automation, monitoring, testing, and reliability engineering tools for production systems.*
 
 <details open>
-<summary><h3>🏗️ Infrastructure & DevOps</h3> (2 resources)</summary>
+<summary><strong>🏗️ Infrastructure & DevOps</strong> (2 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -82,7 +89,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 </details>
 <details open>
-<summary><h3>📈 Testing & Performance</h3> (1 resources)</summary>
+<summary><strong>📈 Testing & Performance</strong> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -92,10 +99,12 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 ---
 
-## 📊 Data Engineering
+### 📊 Data Engineering
+
+*Tools for data pipelines, processing, storage, and analytics infrastructure.*
 
 <details open>
-<summary><h3>🗄️ SQL & Database Tools</h3> (1 resources)</summary>
+<summary><strong>🗄️ SQL & Database Tools</strong> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -105,10 +114,12 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 ---
 
-## 🔒 Security
+### 🔒 Security
+
+*Security scanning, authentication, compliance, and vulnerability management tools.*
 
 <details open>
-<summary><h3>🔒 Security & Compliance</h3> (2 resources)</summary>
+<summary><strong>🔒 Security & Compliance</strong> (2 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -119,18 +130,9 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 ---
 
-## 🔥 Trending This Month
-
-Recent additions that are gaining traction:
-
-• **[Awesome Self-hosted](https://github.com/awesome-selfhosted/awesome-selfhosted)** - Comprehensive catalog of self-hostable network services and web applications, covering alternatives to popular SaaS products with deployment instructions.
-• **[Trivy](https://github.com/aquasecurity/trivy)** - Comprehensive security scanner for containers, filesystems, Git repositories, and Kubernetes that detects vulnerabilities, misconfigurations, secrets, and SBOM.
-• **[Locust](https://github.com/locustio/locust)** - Open-source load testing tool that lets you define test scenarios in plain Python code, supporting distributed testing across multiple machines with real-time monitoring.
-
-
 ## ⚡ Quick Wins
 
-Resources you can implement in under 2 hours:
+*High-impact resources you can implement in under 2 hours - perfect for immediate productivity gains.*
 
 | Resource | Setup Time | Impact | Use Case |
 |----------|:----------:|:------:|----------|
@@ -155,17 +157,9 @@ Found a resource that significantly improved your engineering workflow?
 
 ---
 
-## 📊 Repository Stats
-
-• **Total Resources:** 13
-• **Domains Covered:** 6
-• **Last Updated:** September 2025
-• **Contributors:** 1
-
-
 ## 🏷️ Tag Cloud
 
-`architecture` `patterns` `evaluation` `testing` `rag` `performance` `infrastructure` `security` `prompts` `ci-cd` `regression` `case-studies` `production` `mlops` `multimodal`
+`architecture` `patterns` `evaluation` `testing` `rag` `performance` `infrastructure` `security` `prompts` `ci-cd` `regression` `case-studies`
 
 ---
 
@@ -183,4 +177,4 @@ Content and curation by [@taghikhah](https://github.com/taghikhah). Resource des
 
 ⭐ **Star this repo** if you find it valuable • **[Share feedback](../../discussions)**
 
-<!-- Auto-generated from data/resources.yaml on 2025-09-22 13:58:20 -->
+<!-- Auto-generated from data/resources.yaml on 2025-09-22 14:09:11 -->
