@@ -446,12 +446,13 @@ def calculate_enhanced_stats(resources: List[Dict[str, Any]]) -> Dict[str, Any]:
 def generate_enhanced_readme(
     resources: List[Dict[str, Any]], stats: Dict[str, Any]
 ) -> str:
-    """Generate the complete enhanced README with better UX."""
+    """Generate the complete README content with enhanced formatting."""
     grouped = group_resources_by_domain(resources)
 
-    readme = f"""# Engineering Arsenal 🛠️
+    readme = f"""# Engineering Arsenal (My Computer Engineering Knowledgebase)
 
-> A battle-tested collection of tools, resources, and knowledge that actually moved the needle in real engineering projects. Each entry includes practical metadata, honest assessments, and concrete use cases.
+
+A curated, enterprise-grade collection of links, repos, and notes that actually helped me build real systems (ML/AI, LLMOps, DevOps, Data Eng, SRE, Security). Each entry includes structured metadata, honest assessments, and why it's useful in practice.
 
 <div align="center">
 
