@@ -11,9 +11,9 @@ from collections import defaultdict, Counter
 from typing import Dict, List, Any
 
 # Consistent emoji mappings
-MATURITY_EMOJI = {"Battle-tested": "🟢", "Emerging": "🟡", "Experimental": "🔴"}
+MATURITY_EMOJI = {"Battle-tested": "🛡️", "Emerging": "🔧", "Experimental": "🧪"}
 
-EFFORT_EMOJI = {"Low": "⚡", "Medium": "⚖️", "High": "🔥"}
+EFFORT_EMOJI = {"Low": "🎯", "Medium": "⚙️", "High": "🚀"}
 
 
 def load_resources() -> Dict[str, Any]:
@@ -43,11 +43,9 @@ def format_resource_row(resource: Dict[str, Any]) -> str:
 
     title_cell = f"**[{resource['title']}]({resource['url']})**{github_info}"
 
-    # Consistent emoji usage
-    maturity_cell = (
-        f"{MATURITY_EMOJI.get(resource['maturity'], '❓')} {resource['maturity']}"
-    )
-    effort_cell = f"{EFFORT_EMOJI.get(resource['effort'], '❓')} {resource['effort']}"
+    # Consistent emoji usage (emoji only, no text)
+    maturity_cell = MATURITY_EMOJI.get(resource["maturity"], "❓")
+    effort_cell = EFFORT_EMOJI.get(resource["effort"], "❓")
 
     # Clean use cases (limit to first 2-3 for readability)
     use_cases = ", ".join(resource.get("use_cases", [])[:3])
@@ -233,7 +231,15 @@ def generate_quick_navigation(
     nav_section += "| " + " | ".join(descriptions) + " |\n"
 
     nav_section += "\n</div>\n\n"
-    nav_section += "**🏷️ Filter by:** [⚡ Quick Wins](#quick-wins) • [🟢 Production Ready](#production-ready) • [🟡 Emerging](#emerging)\n"
+
+    # Add emoji legend
+    nav_section += "### 📖 Legend\n\n"
+    nav_section += "**Maturity:** 🛡️ Battle-tested • 🔧 Emerging • 🧪 Experimental  \n"
+    nav_section += (
+        "**Effort:** 🎯 Low (< 2hrs) • ⚙️ Medium (weekend) • 🚀 High (weeks)\n\n"
+    )
+
+    nav_section += "**🏷️ Filter by:** [⚡ Quick Wins](#quick-wins) • [🛡️ Production Ready](#production-ready) • [🔧 Emerging](#emerging)\n"
 
     return nav_section
 
