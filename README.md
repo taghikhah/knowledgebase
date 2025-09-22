@@ -1,727 +1,166 @@
-# My Engineering Knowledgebase
-
+# Engineering Arsenal 🛠️
 
 A curated, enterprise-grade collection of links, repos, and notes that actually helped me build real systems (ML/AI, LLMOps, DevOps, Data Eng, SRE, Security). Each entry includes structured metadata, honest assessments, and why it's useful in practice.
 
 <div align="center">
 
-![Resources](https://img.shields.io/badge/Resources-13-blue?style=for-the-badge) ![Domains](https://img.shields.io/badge/Domains-6-green?style=for-the-badge) ![Last Updated](https://img.shields.io/badge/Updated-September%202025-red?style=for-the-badge)
-
-**[🎯 Quick Navigation](#-quick-navigation) • [⚡ Quick Wins](#-quick-wins) • [🔥 Trending](#-trending) • [🤝 Contributing](#-contributing)**
+![Resources](https://img.shields.io/badge/Resources-13-blue) ![Domains](https://img.shields.io/badge/Domains-6-green) ![Contributors](https://img.shields.io/badge/Contributors-1-orange) ![Last Updated](https://img.shields.io/badge/Updated-September%202025-red)
 
 </div>
 
----
 
 ## 🎯 Quick Navigation
 
-<table align="center">
-<tr>
-<td align="center" width="150">
+<div align="center">
 
-### 🤖 **AI/ML**
-**5 resources**
-[Explore →](#llmopsml)
+| 🤖 **AI/ML** | 🧠 **ML Engineering** | 🔧 **DevOps/SRE** | 📊 **Data Eng** | 🔒 **Security** |
+|:------------:|:------------:|:------------:|:------------:|:------------:|
+| [Jump to AI/ML](#aiml-engineering) | [Jump to ML Engineering](#ml-engineering) | [Jump to DevOps/SRE](#devops--sre) | [Jump to Data Eng](#data-engineering) | [Jump to Security](#security) |
+| **5 resources** | **2 resources** | **3 resources** | **1 resources** | **2 resources** |
 
-*LLMOps, RAG, Training*
+</div>
 
-</td>
-<td align="center" width="150">
+**🏷️ Filter by:** [⚡ Quick Wins](#quick-wins) • [🟢 Production Ready](#production-ready) • [🟡 Emerging](#emerging) • [🔥 Trending](#trending)
 
-### 🎓 **Learning**
-**2 resources**
-[Explore →](#mlengineering)
-
-*Guides, Case Studies*
-
-</td>
-<td align="center" width="150">
-
-### 🔧 **DevOps**
-**3 resources**
-[Explore →](#devopssre)
-
-*Infrastructure, Monitoring*
-
-</td>
-</tr>
-<tr>
-<td align="center">
-
-### 📊 **Data**
-**1 resources**
-[Explore →](#dataengineering)
-
-*Pipelines, Processing*
-
-</td>
-<td align="center">
-
-### 🔒 **Security**
-**2 resources**
-[Explore →](#security)
-
-*Scanning, Compliance*
-
-</td>
-</tr>
-</table>
 
 ---
-
 
 ## 🤖 AI/ML Engineering
 
-### 🎯 LLMOps & RAG Systems
-
-<table>
-<tr>
-<td width="60%">
-
-**[LLM Patterns: A Comprehensive Guide](https://eugeneyan.com/writing/llm-patterns/)**  
-N/A License
-
-Comprehensive exploration of practical patterns for building LLM systems, covering evaluation, RAG, fine-tuning, caching, guardrails, defensive UX, and user feedback.
-
-
-**💡 Why it's useful:** Synthesizes complex academic research into pragmatic, implementable patterns that bridge theoretical knowledge with practical engineering challenges in production LLM systems.
-
-
-</td>
-<td width="20%" align="center">
-
-**🟢 Battle-tested**  
-⚖️ **Medium Effort**  
-🕐 45 min setup
-
-</td>
-<td width="20%">
-
-**Perfect for:**
-- System Architecture
-- Pattern Implementation
-- Production Design
-- Team Education
-
-**Tags:** `patterns` `architecture` `evaluation` `rag`
-
-</td>
-</tr>
-</table>
-
-<table>
-<tr>
-<td width="60%">
-
-**[promptfoo](https://github.com/promptfoo/promptfoo)**  
-⭐ 2,100 • TypeScript • MIT License
-
-Testing and evaluation framework for LLM prompts with comprehensive CI/CD integration, supporting multiple providers and evaluation metrics.
-
-
-**💡 Why it's useful:** Prevents prompt regression in production, enables systematic comparison of providers/models, and provides automated quality gates for LLM applications.
-
-
-</td>
-<td width="20%" align="center">
-
-**🟡 Emerging**  
-⚡ **Low Effort**  
-🕐 30 min setup
-
-</td>
-<td width="20%">
-
-**Perfect for:**
-- Prompt Engineering
-- Quality Assurance
-- Provider Comparison
-- Automated Testing
-
-**Tags:** `evaluation` `prompts` `testing` `ci-cd`
-
-</td>
-</tr>
-</table>
-
-<table>
-<tr>
-<td width="60%">
-
-**[Multimodal RAG in LlamaCloud](https://www.llamaindex.ai/blog/multimodal-rag-in-llamacloud)**  
-N/A License
-
-Comprehensive guide to implementing Retrieval-Augmented Generation systems that work with both text and image modalities using LlamaIndex and LlamaCloud.
-
-
-**💡 Why it's useful:** Shows practical pathways to add visual understanding to enterprise RAG systems, handles complex document types with embedded diagrams and charts.
-
-
-</td>
-<td width="20%" align="center">
-
-**🟡 Emerging**  
-⚖️ **Medium Effort**  
-🕐 120 min setup
-
-</td>
-<td width="20%">
-
-**Perfect for:**
-- Document Processing
-- Visual Qa
-- Enterprise Search
-- Multimodal Chatbots
-
-**Tags:** `rag` `multimodal` `retrieval` `images`
-
-</td>
-</tr>
-</table>
-
-### 📦 General Tools
-
-<table>
-<tr>
-<td width="60%">
-
-**[ZenML: LLMOps in Production - 287+ Case Studies](https://www.zenml.io/blog/llmops-in-production-287-more-case-studies-of-what-actually-works)**  
-N/A License
-
-Comprehensive analysis of 287+ real-world LLMOps implementations, covering successful patterns, common pitfalls, and technology stack choices across various industries.
-
-
-**💡 Why it's useful:** Provides reality check for architecture decisions, helps benchmark approaches against proven patterns, and saves months of trial-and-error in production deployments.
-
-
-</td>
-<td width="20%" align="center">
-
-**🟢 Battle-tested**  
-⚡ **Low Effort**  
-🕐 45 min setup
-
-</td>
-<td width="20%">
-
-**Perfect for:**
-- Architecture Planning
-- Technology Selection
-- Team Strategy
-- Benchmarking
-
-**Tags:** `case-studies` `production` `mlops` `architecture`
-
-</td>
-</tr>
-</table>
-
-<table>
-<tr>
-<td width="60%">
-
-**[MCP for Beginners](https://github.com/microsoft/mcp-for-beginners/)**  
-⭐ 450 • Multiple • MIT License
-
-Beginner-friendly tutorial and examples for Microsoft's Model Context Protocol (MCP), showing how to build tool-using agents and IDE integrations.
-
-
-**💡 Why it's useful:** Clarifies how to expose tools and services to LLMs with stable interfaces, provides foundation for building agentic workflows and editor integrations.
-
-
-</td>
-<td width="20%" align="center">
-
-**🟡 Emerging**  
-⚖️ **Medium Effort**  
-🕐 120 min setup
-
-</td>
-<td width="20%">
-
-**Perfect for:**
-- Agent Development
-- Tool Integration
-- Ide Plugins
-- Agentic Workflows
-
-**Tags:** `agents` `protocol` `microsoft` `integration`
-
-</td>
-</tr>
-</table>
-
-<details>
-<summary>💡 <strong>Domain Insights</strong> - Click for expert tips</summary>
-
-**🎯 Getting Started with LLMOps RAG:**
-1. Start with basic prompt testing (use promptfoo)
-2. Read the ZenML case studies for architecture patterns
-3. Implement evaluation before scaling
-4. Focus on cost optimization early
-
-**⚠️ Common Pitfalls:**
-- Over-engineering evaluation frameworks too early
-- Ignoring cost implications of model choices
-- Insufficient context management strategies
-
-</details>
+### 🎯 LLMOps & RAG Systems (3 resources)
+
+| Resource | Maturity | Effort | Use Case | Quick Summary |
+|----------|:--------:|:------:|----------|---------------|
+| **[LLM Patterns: A Comprehensive Guide](https://eugeneyan.com/writing/llm-patterns/)** | 🟢 Battle-tested | ⚖️ Medium | system architecture, pattern implementation, production design | Comprehensive exploration of practical patterns for building LLM systems, covering evaluation, RAG, fine-tuning, cach... |
+| **[promptfoo](https://github.com/promptfoo/promptfoo)**<br/>⭐ 2,100 • TypeScript | 🟡 Emerging | ⚡ Low | prompt engineering, quality assurance, provider comparison | Testing and evaluation framework for LLM prompts with comprehensive CI/CD integration, supporting multiple providers ... |
+| **[Multimodal RAG in LlamaCloud](https://www.llamaindex.ai/blog/multimodal-rag-in-llamacloud)** | 🟡 Emerging | ⚖️ Medium | document processing, visual QA, enterprise search | Comprehensive guide to implementing Retrieval-Augmented Generation systems that work with both text and image modalit... |
+
+### 🛠️ Tools & Utilities (2 resources)
+
+| Resource | Maturity | Effort | Use Case | Quick Summary |
+|----------|:--------:|:------:|----------|---------------|
+| **[ZenML: LLMOps in Production - 287+ Case Studies](https://www.zenml.io/blog/llmops-in-production-287-more-case-studies-of-what-actually-works)** | 🟢 Battle-tested | ⚡ Low | architecture planning, technology selection, team strategy | Comprehensive analysis of 287+ real-world LLMOps implementations, covering successful patterns, common pitfalls, and ... |
+| **[MCP for Beginners](https://github.com/microsoft/mcp-for-beginners/)**<br/>⭐ 450 • Multiple | 🟡 Emerging | ⚖️ Medium | agent development, tool integration, IDE plugins | Beginner-friendly tutorial and examples for Microsoft's Model Context Protocol (MCP), showing how to build tool-using... |
 
 ---
-
 
 ## 🧠 ML Engineering
 
-### 📦 General Tools
+### 🛠️ Tools & Utilities (1 resources)
 
-<table>
-<tr>
-<td width="60%">
+| Resource | Maturity | Effort | Use Case | Quick Summary |
+|----------|:--------:|:------:|----------|---------------|
+| **[ML Practical Use Cases](https://github.com/mallahyari/ml-practical-usecases)**<br/>⭐ 890 • Python | 🟢 Battle-tested | ⚡ Low | learning, project templates, proof of concepts | Collection of end-to-end machine learning use cases with practical implementations, covering common business scenario... |
 
-**[ML Practical Use Cases](https://github.com/mallahyari/ml-practical-usecases)**  
-⭐ 890 • Python • MIT License
+### 🧠 ML Frameworks & Training (1 resources)
 
-Collection of end-to-end machine learning use cases with practical implementations, covering common business scenarios and technical patterns.
-
-
-**💡 Why it's useful:** Provides ready-to-adapt templates for real projects, bridges gap between tutorials and production code, includes best practices and common pitfalls.
-
-
-</td>
-<td width="20%" align="center">
-
-**🟢 Battle-tested**  
-⚡ **Low Effort**  
-🕐 30 min setup
-
-</td>
-<td width="20%">
-
-**Perfect for:**
-- Learning
-- Project Templates
-- Proof Of Concepts
-- Team Training
-
-**Tags:** `examples` `templates` `notebooks` `learning`
-
-</td>
-</tr>
-</table>
-
-### 🧠 ML Frameworks & Training
-
-<table>
-<tr>
-<td width="60%">
-
-**[MLX - Apple Machine Learning Framework](https://github.com/ml-explore/mlx)**  
-⭐ 3,200 • Python • MIT License
-
-High-performance machine learning framework specifically optimized for Apple Silicon, designed for research and experimentation with efficient memory usage.
-
-
-**💡 Why it's useful:** Enables fast local ML experiments on MacBooks without cloud costs, optimized memory usage for large models, and seamless integration with Apple's ecosystem.
-
-
-</td>
-<td width="20%" align="center">
-
-**🟡 Emerging**  
-⚖️ **Medium Effort**  
-🕐 60 min setup
-
-</td>
-<td width="20%">
-
-**Perfect for:**
-- Model Training
-- Research
-- Prototyping
-- Local Inference
-
-**Tags:** `training` `apple-silicon` `performance` `research`
-
-</td>
-</tr>
-</table>
+| Resource | Maturity | Effort | Use Case | Quick Summary |
+|----------|:--------:|:------:|----------|---------------|
+| **[MLX - Apple Machine Learning Framework](https://github.com/ml-explore/mlx)**<br/>⭐ 3,200 • Python | 🟡 Emerging | ⚖️ Medium | model training, research, prototyping | High-performance machine learning framework specifically optimized for Apple Silicon, designed for research and exper... |
 
 ---
-
 
 ## 🔧 DevOps & SRE
 
-### 🏗️ Infrastructure & DevOps
+### 🏗️ Infrastructure & DevOps (2 resources)
 
-<table>
-<tr>
-<td width="60%">
+| Resource | Maturity | Effort | Use Case | Quick Summary |
+|----------|:--------:|:------:|----------|---------------|
+| **[Awesome Self-hosted](https://github.com/awesome-selfhosted/awesome-selfhosted)**<br/>⭐ 196,000 • Various | 🟢 Battle-tested | ⚖️ Medium | lab setups, privacy solutions, cost optimization | Comprehensive catalog of self-hostable network services and web applications, covering alternatives to popular SaaS p... |
+| **[Diagrams](https://github.com/mingrammer/diagrams)**<br/>⭐ 23,000 • Python | 🟢 Battle-tested | ⚡ Low | architecture documentation, system design, technical presentations | Create cloud system architecture diagrams programmatically using Python code, with support for major cloud providers ... |
 
-**[Awesome Self-hosted](https://github.com/awesome-selfhosted/awesome-selfhosted)**  
-⭐ 196,000 • Various • CC0 License
+### 📈 Testing & Performance (1 resources)
 
-Comprehensive catalog of self-hostable network services and web applications, covering alternatives to popular SaaS products with deployment instructions.
-
-
-**💡 Why it's useful:** Discovery engine for privacy-respecting alternatives, cost reduction through self-hosting, learning platform for infrastructure management and service deployment.
-
-
-</td>
-<td width="20%" align="center">
-
-**🟢 Battle-tested**  
-⚖️ **Medium Effort**  
-🕐 60 min setup
-
-</td>
-<td width="20%">
-
-**Perfect for:**
-- Lab Setups
-- Privacy Solutions
-- Cost Optimization
-- Learning Infrastructure
-
-**Tags:** `catalog` `infrastructure` `self-hosting` `services`
-
-</td>
-</tr>
-</table>
-
-<table>
-<tr>
-<td width="60%">
-
-**[Diagrams](https://github.com/mingrammer/diagrams)**  
-⭐ 23,000 • Python • MIT License
-
-Create cloud system architecture diagrams programmatically using Python code, with support for major cloud providers and services.
-
-
-**💡 Why it's useful:** Enables version-controlled, reproducible architecture documentation that stays in sync with code changes, integrates into CI/CD pipelines for automated documentation.
-
-
-</td>
-<td width="20%" align="center">
-
-**🟢 Battle-tested**  
-⚡ **Low Effort**  
-🕐 15 min setup
-
-</td>
-<td width="20%">
-
-**Perfect for:**
-- Architecture Documentation
-- System Design
-- Technical Presentations
-- Infrastructure As Code
-
-**Tags:** `documentation` `architecture` `diagrams` `infrastructure`
-
-</td>
-</tr>
-</table>
-
-### 📈 Performance & Monitoring
-
-<table>
-<tr>
-<td width="60%">
-
-**[Locust](https://github.com/locustio/locust)**  
-⭐ 26,800 • Python • MIT License
-
-Open-source load testing tool that lets you define test scenarios in plain Python code, supporting distributed testing across multiple machines with real-time monitoring.
-
-
-**💡 Why it's useful:** Enables realistic performance testing with familiar Python syntax, scales to simulate hundreds of thousands of users, and integrates seamlessly into CI/CD pipelines for automated performance validation.
-
-
-</td>
-<td width="20%" align="center">
-
-**🟢 Battle-tested**  
-⚖️ **Medium Effort**  
-🕐 45 min setup
-
-</td>
-<td width="20%">
-
-**Perfect for:**
-- Load Testing
-- Performance Validation
-- Stress Testing
-- Api Testing
-
-**Tags:** `load-testing` `performance` `python` `testing`
-
-</td>
-</tr>
-</table>
-
-<details>
-<summary>💡 <strong>Domain Insights</strong> - Click for expert tips</summary>
-
-**🎯 Getting Started with DevOps SRE:**
-1. Begin with infrastructure as code (use Diagrams)
-2. Implement monitoring before scaling
-3. Automate testing early in the pipeline
-4. Focus on observability from day one
-
-**⚠️ Common Pitfalls:**
-- Manual configuration without version control
-- Ignoring load testing until production issues
-- Insufficient monitoring and alerting
-
-</details>
+| Resource | Maturity | Effort | Use Case | Quick Summary |
+|----------|:--------:|:------:|----------|---------------|
+| **[Locust](https://github.com/locustio/locust)**<br/>⭐ 26,800 • Python | 🟢 Battle-tested | ⚖️ Medium | load testing, performance validation, stress testing | Open-source load testing tool that lets you define test scenarios in plain Python code, supporting distributed testin... |
 
 ---
-
 
 ## 📊 Data Engineering
 
-### 🗄️ Database & SQL Tools
+### 🗄️ SQL & Database Tools (1 resources)
 
-<table>
-<tr>
-<td width="60%">
-
-**[SLM SQL](https://github.com/CycloneBoy/slm_sql)**  
-⭐ 124 • Python • Apache-2.0 License
-
-Small Language Model specifically designed for SQL generation and database querying tasks, optimized for natural language to SQL conversion.
-
-
-**💡 Why it's useful:** Provides specialized SQL generation capabilities with better performance than general-purpose models for database tasks, lighter weight than large language models.
-
-
-</td>
-<td width="20%" align="center">
-
-**🔴 Experimental**  
-⚖️ **Medium Effort**  
-🕐 90 min setup
-
-</td>
-<td width="20%">
-
-**Perfect for:**
-- Natural Language Querying
-- Sql Learning Tools
-- Database Interfaces
-- Automation
-
-**Tags:** `sql` `language-model` `query-generation` `database`
-
-</td>
-</tr>
-</table>
+| Resource | Maturity | Effort | Use Case | Quick Summary |
+|----------|:--------:|:------:|----------|---------------|
+| **[SLM SQL](https://github.com/CycloneBoy/slm_sql)**<br/>⭐ 124 • Python | 🔴 Experimental | ⚖️ Medium | natural language querying, SQL learning tools, database interfaces | Small Language Model specifically designed for SQL generation and database querying tasks, optimized for natural lang... |
 
 ---
 
-
 ## 🔒 Security
 
-### 🔒 Security & Compliance
+### 🔒 Security & Compliance (2 resources)
 
-<table>
-<tr>
-<td width="60%">
-
-**[Trivy](https://github.com/aquasecurity/trivy)**  
-⭐ 29,000 • Go • Apache-2.0 License
-
-Comprehensive security scanner for containers, filesystems, Git repositories, and Kubernetes that detects vulnerabilities, misconfigurations, secrets, and SBOM.
-
-
-**💡 Why it's useful:** Provides unified multi-target security scanning with minimal configuration, covers entire software supply chain, and integrates seamlessly into existing DevOps workflows.
-
-
-</td>
-<td width="20%" align="center">
-
-**🟢 Battle-tested**  
-⚡ **Low Effort**  
-🕐 15 min setup
-
-</td>
-<td width="20%">
-
-**Perfect for:**
-- Vulnerability Scanning
-- Container Security
-- Supply Chain Security
-- Compliance Checking
-
-**Tags:** `vulnerability-scanning` `containers` `security` `SBOM`
-
-</td>
-</tr>
-</table>
-
-<table>
-<tr>
-<td width="60%">
-
-**[kubesec](https://github.com/controlplaneio/kubesec)**  
-⭐ 1,200 • Go • Apache-2.0 License
-
-Security risk analysis tool for Kubernetes resources that scans YAML configurations for potential vulnerabilities and provides scoring with actionable recommendations.
-
-
-**💡 Why it's useful:** Enables proactive security assessment of Kubernetes deployments, enforces least-privilege principles, and integrates into CI/CD pipelines for automated security validation.
-
-
-</td>
-<td width="20%" align="center">
-
-**🟢 Battle-tested**  
-⚡ **Low Effort**  
-🕐 30 min setup
-
-</td>
-<td width="20%">
-
-**Perfect for:**
-- Security Scanning
-- Admission Control
-- Ci/Cd Integration
-- Compliance Validation
-
-**Tags:** `kubernetes` `security` `scanning` `configuration`
-
-</td>
-</tr>
-</table>
+| Resource | Maturity | Effort | Use Case | Quick Summary |
+|----------|:--------:|:------:|----------|---------------|
+| **[Trivy](https://github.com/aquasecurity/trivy)**<br/>⭐ 29,000 • Go | 🟢 Battle-tested | ⚡ Low | vulnerability scanning, container security, supply chain security | Comprehensive security scanner for containers, filesystems, Git repositories, and Kubernetes that detects vulnerabili... |
+| **[kubesec](https://github.com/controlplaneio/kubesec)**<br/>⭐ 1,200 • Go | 🟢 Battle-tested | ⚡ Low | security scanning, admission control, CI/CD integration | Security risk analysis tool for Kubernetes resources that scans YAML configurations for potential vulnerabilities and... |
 
 ---
 
 ## 🔥 Trending This Month
-*Recently added resources gaining traction*
 
-<div align="center">
+Recent additions that are gaining traction:
 
-| 🚀 **New Addition** | ⭐ **Stars** | 🏷️ **Why It's Hot** |
-|---------------------|-------------|-------------------|
-| **[Awesome Self-hosted](https://github.com/awesome-selfhosted/awesome-selfhosted)** | 196,000 ↗️ | Discovery engine for privacy-respecting alternatives, cost r... |
-| **[Trivy](https://github.com/aquasecurity/trivy)** | 29,000 ↗️ | Provides unified multi-target security scanning with minimal... |
-| **[Locust](https://github.com/locustio/locust)** | 26,800 ↗️ | Enables realistic performance testing with familiar Python s... |
+• **[Awesome Self-hosted](https://github.com/awesome-selfhosted/awesome-selfhosted)** - Comprehensive catalog of self-hostable network services and web applications, covering alternatives to popular SaaS products with deployment instructions.
+• **[Trivy](https://github.com/aquasecurity/trivy)** - Comprehensive security scanner for containers, filesystems, Git repositories, and Kubernetes that detects vulnerabilities, misconfigurations, secrets, and SBOM.
+• **[Locust](https://github.com/locustio/locust)** - Open-source load testing tool that lets you define test scenarios in plain Python code, supporting distributed testing across multiple machines with real-time monitoring.
 
-</div>
 
 ## ⚡ Quick Wins
-*High-impact resources you can implement in under 2 hours*
 
-<table>
-<tr>
-<th width="30%">🎯 Resource</th>
-<th width="15%">⏱️ Setup</th>
-<th width="15%">📈 Impact</th>
-<th width="40%">✨ Quick Value</th>
-</tr>
-<tr>
-<td><strong><a href="https://github.com/aquasecurity/trivy">Trivy</a></strong><br/>Comprehensive security scanner for conta...</td>
-<td>15 min</td>
-<td>🔥 High</td>
-<td>Provides unified multi-target security scanning with minimal...</td>
-</tr>
-<tr>
-<td><strong><a href="https://github.com/mingrammer/diagrams">Diagrams</a></strong><br/>Create cloud system architecture diagram...</td>
-<td>15 min</td>
-<td>🔥 High</td>
-<td>Enables version-controlled, reproducible architecture docume...</td>
-</tr>
-<tr>
-<td><strong><a href="https://github.com/controlplaneio/kubesec">kubesec</a></strong><br/>Security risk analysis tool for Kubernet...</td>
-<td>30 min</td>
-<td>🔥 High</td>
-<td>Enables proactive security assessment of Kubernetes deployme...</td>
-</tr>
-</table>
+Resources you can implement in under 2 hours:
 
-## 🏷️ Browse by Category
+| Resource | Setup Time | Impact | Use Case |
+|----------|:----------:|:------:|----------|
+| [**Trivy**](https://github.com/aquasecurity/trivy) | 15 min | High | vulnerability scanning, container security |
+| [**Diagrams**](https://github.com/mingrammer/diagrams) | 15 min | High | architecture documentation, system design |
+| [**kubesec**](https://github.com/controlplaneio/kubesec) | 30 min | High | security scanning, admission control |
+| [**ML Practical Use Cases**](https://github.com/mallahyari/ml-practical-usecases) | 30 min | High | learning, project templates |
 
-<div align="center">
-
-**🎯 By Use Case**
-[Production Ready](README.md#battle-tested) • [Learning Resources](README.md#learning) • [Weekend Projects](README.md#medium-effort) • [Quick Implementations](README.md#low-effort)
-
-**🔧 By Technology**  
-[Python Tools](README.md#python) • [TypeScript/JS](README.md#typescript) • [Docker/K8s](README.md#containers) • [Cloud Native](README.md#cloud)
-
-**⚡ By Effort Level**
-[Quick Wins (⚡)](README.md#quick-wins) • [Weekend Projects (⚖️)](README.md#weekend) • [Major Initiatives (🔥)](README.md#major)
-
-</div>
-
----
-
-## 📊 Repository Insights
-
-<div align="center">
-<table>
-<tr>
-<td align="center">
-
-### 📈 **Growth Stats**
-- **Total Resources:** {stats['total_resources']}
-- **Domains Covered:** {stats['domains_covered']}
-- **Avg GitHub Stars:** {stats['avg_stars']:,.1f}k
-- **Community Contributors:** 3
-
-</td>
-<td align="center">
-
-### 🏆 **Quality Metrics**
-- **Battle-tested:** {stats['battle_tested_pct']}%
-- **Production Ready:** {stats['production_ready_pct']}%  
-- **Quick Setup (<2hrs):** {stats['quick_setup_pct']}%
-- **Regular Updates:** 100%
-
-</td>
-</tr>
-</table>
-</div>
-
-### 🏷️ Popular Tags
-{' '.join([f'`{tag}`' for tag, _ in stats['popular_tags']])}
-
----
 
 ## 🤝 Contributing
 
-<div align="center">
+Found a resource that significantly improved your engineering workflow? 
 
-Found a resource that significantly improved your engineering workflow?
+**Quick Add:** Create an issue with the URL and a brief "why it's useful" note.
 
-**[📝 Quick Add via Issue](../../issues/new/choose)** • **[🛠️ Detailed Contribution Guide](CONTRIBUTING.md)** • **[🤖 Use Claude Code Agent](#claude-code-integration)**
+**Detailed Add:** Follow the [contribution template](.github/ISSUE_TEMPLATE/add-resource.md).
 
-</div>
+**Quality Standards:**
+- Must have used it successfully in a real project
+- Should solve a concrete engineering problem
+- Include honest assessment of effort/complexity
 
-### ✅ Quality Standards
-- ✅ **Battle-tested** in real projects
-- ✅ **Solves concrete** engineering problems  
-- ✅ **Honest assessment** of effort/complexity
-- ✅ **Clear practical value** with specific benefits
+---
+
+## 📊 Repository Stats
+
+• **Total Resources:** 13
+• **Domains Covered:** 6
+• **Average GitHub Stars:** 28,276.4k
+• **Last Updated:** September 2025
+• **Contributors:** 1
+
+
+## 🏷️ Tag Cloud
+
+`architecture` `patterns` `evaluation` `testing` `rag` `performance` `infrastructure` `security` `prompts` `ci-cd` `regression` `case-studies` `production` `mlops` `multimodal`
 
 ---
 
 ## 🎖️ Recognition
 
-<div align="center">
-
-*This arsenal reflects real engineering experience. Every resource has been battle-tested in production or significantly advanced learning.*
+This arsenal reflects real engineering experience. Every resource has been battle-tested in production or significantly advanced learning.
 
 **No affiliate links • No sponsored content • Just honest recommendations**
 
 ---
 
-**Built with ❤️ by [@yourusername](https://github.com/yourusername)**  
-*Licensed under MIT • Content under CC BY 4.0*
+## 📄 License
+
+Content and curation by [@taghikhah](https://github.com/taghikhah). Resource descriptions under CC BY 4.0. Code examples under MIT.
 
 ⭐ **Star this repo** if you find it valuable • **[Share feedback](../../discussions)**
 
-</div>
-
-<!-- Auto-generated from data/resources.yaml on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} -->
+<!-- Auto-generated from data/resources.yaml on 2025-09-22 13:28:22 -->

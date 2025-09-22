@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Enhanced README generator with improved UX and visual design.
-Generates a more visually appealing and scannable README from resources.yaml
+Generate README.md from resources.yaml - Polished Version 1
+Maintains the clean table layout with small visual improvements.
 """
 
 import yaml
@@ -11,19 +11,10 @@ from pathlib import Path
 from collections import defaultdict, Counter
 from typing import Dict, List, Any
 
-# Enhanced emoji mappings
+# Consistent emoji mappings
 MATURITY_EMOJI = {"Battle-tested": "🟢", "Emerging": "🟡", "Experimental": "🔴"}
 
 EFFORT_EMOJI = {"Low": "⚡", "Medium": "⚖️", "High": "🔥"}
-
-DOMAIN_EMOJI = {
-    "LLMOps-RAG": "🤖",
-    "ML-Engineering": "🧠",
-    "DevOps-SRE": "🔧",
-    "Data-Engineering": "📊",
-    "Security": "🔒",
-    "Systems-Tools": "🛠️",
-}
 
 
 def load_resources() -> Dict[str, Any]:
@@ -41,80 +32,41 @@ def load_resources() -> Dict[str, Any]:
     return data
 
 
-def format_enhanced_resource_card(resource: Dict[str, Any]) -> str:
-    """Format a resource as an enhanced card with better visual hierarchy."""
-    title = resource["title"]
-    url = resource["url"]
+def format_resource_row(resource: Dict[str, Any]) -> str:
+    """Format a resource as a table row with improved styling."""
 
-    # Build header with title and metadata
-    header_parts = [f"**[{title}]({url})**"]
-
-    # Add GitHub info or article type
-    meta_line = []
+    # Enhanced title with bold formatting and metadata
+    github_info = ""
     if resource.get("github_stars"):
-        meta_line.append(f"⭐ {resource['github_stars']:,}")
-    if resource.get("language"):
-        meta_line.append(resource["language"])
-    if resource.get("license"):
-        meta_line.append(f"{resource['license']} License")
-    elif resource.get("type") in ["Article", "Guide"]:
-        meta_line.append(
-            f"{resource['type']} • {resource.get('source_owner', 'Industry Analysis')}"
-        )
+        github_info = f"<br/>⭐ {resource['github_stars']:,}"
+        if resource.get("language"):
+            github_info += f" • {resource['language']}"
 
-    if meta_line:
-        header_parts.append(" • ".join(meta_line))
+    title_cell = f"**[{resource['title']}]({resource['url']})**{github_info}"
 
-    # Summary and why useful
+    # Consistent emoji usage
+    maturity_cell = (
+        f"{MATURITY_EMOJI.get(resource['maturity'], '❓')} {resource['maturity']}"
+    )
+    effort_cell = f"{EFFORT_EMOJI.get(resource['effort'], '❓')} {resource['effort']}"
+
+    # Clean use cases (limit to first 2-3 for readability)
+    use_cases = ", ".join(resource.get("use_cases", [])[:3])
+
+    # Summary with proper truncation
     summary = resource["summary"]
-    why_useful = resource["why_useful"]
+    if len(summary) > 120:
+        summary = summary[:117] + "..."
 
-    # Maturity and effort info
-    maturity_icon = MATURITY_EMOJI.get(resource["maturity"], "❓")
-    effort_icon = EFFORT_EMOJI.get(resource["effort"], "❓")
-    setup_time = resource.get("setup_time_minutes", "N/A")
-
-    # Use cases and tags
-    use_cases = resource.get("use_cases", [])[:4]  # Limit to 4
-    tags = resource.get("tags", [])[:4]  # Limit to 4 for visual cleanliness
-
-    card = f"""<table>
-<tr>
-<td width="60%">
-
-{header_parts[0]}  
-{header_parts[1] if len(header_parts) > 1 else ''}
-
-{summary}
-
-**💡 Why it's useful:** {why_useful}
-
-</td>
-<td width="20%" align="center">
-
-**{maturity_icon} {resource['maturity']}**  
-{effort_icon} **{resource['effort']} Effort**  
-🕐 {setup_time} min {'setup' if isinstance(setup_time, int) else ''}
-
-</td>
-<td width="20%">
-
-**Perfect for:**
-{chr(10).join([f'- {case.replace("-", " ").title()}' for case in use_cases[:4]])}
-
-**Tags:** {' '.join([f'`{tag}`' for tag in tags])}
-
-</td>
-</tr>
-</table>"""
-
-    return card
+    return (
+        f"| {title_cell} | {maturity_cell} | {effort_cell} | {use_cases} | {summary} |"
+    )
 
 
 def group_resources_by_domain(
     resources: List[Dict[str, Any]],
 ) -> Dict[str, List[Dict[str, Any]]]:
-    """Group resources by their primary domain with enhanced sorting."""
+    """Group resources by their primary domain."""
     grouped = defaultdict(list)
 
     for resource in resources:
@@ -122,23 +74,23 @@ def group_resources_by_domain(
         primary_domain = domains[0] if domains else "Other"
         grouped[primary_domain].append(resource)
 
-    # Enhanced sorting: Battle-tested first, then by stars, then by title
-    def sort_key(r):
-        maturity_order = {"Battle-tested": 0, "Emerging": 1, "Experimental": 2}
-        return (
-            maturity_order.get(r["maturity"], 3),
-            -r.get("github_stars", 0),  # Higher stars first
-            r["title"].lower(),
-        )
+    # Sort within each domain by maturity (Battle-tested first) then by title
+    maturity_order = {"Battle-tested": 0, "Emerging": 1, "Experimental": 2}
 
     for domain in grouped:
-        grouped[domain].sort(key=sort_key)
+        grouped[domain].sort(
+            key=lambda r: (
+                maturity_order.get(r["maturity"], 3),
+                -r.get("github_stars", 0),  # Higher stars first
+                r["title"].lower(),
+            )
+        )
 
     return dict(grouped)
 
 
-def create_enhanced_domain_section(domain: str, resources: List[Dict[str, Any]]) -> str:
-    """Create an enhanced domain section with better visual hierarchy."""
+def create_domain_section(domain: str, resources: List[Dict[str, Any]]) -> str:
+    """Create a markdown section for a domain."""
     domain_titles = {
         "LLMOps-RAG": "🤖 AI/ML Engineering",
         "ML-Engineering": "🧠 ML Engineering",
@@ -150,112 +102,62 @@ def create_enhanced_domain_section(domain: str, resources: List[Dict[str, Any]])
 
     section_title = domain_titles.get(domain, f"📁 {domain}")
 
-    # Group by logical subcategories
-    subcategories = group_by_subcategory_enhanced(resources)
+    # Group by subcategory
+    subcategories = group_by_subcategory(resources)
 
     section = f"\n## {section_title}\n\n"
 
     for subcategory, subcat_resources in subcategories.items():
-        section += f"### {subcategory}\n\n"
+        section += f"### {subcategory} ({len(subcat_resources)} resources)\n\n"
 
-        # Add resource cards
+        # Enhanced table header with better alignment
+        section += "| Resource | Maturity | Effort | Use Case | Quick Summary |\n"
+        section += "|----------|:--------:|:------:|----------|---------------|\n"
+
+        # Resource rows
         for resource in subcat_resources:
-            section += format_enhanced_resource_card(resource) + "\n\n"
+            section += format_resource_row(resource) + "\n"
 
-    # Add domain insights if we have multiple resources
-    if len(resources) > 2:
-        section += create_domain_insights(domain, resources)
+        section += "\n"
 
     return section
 
 
-def group_by_subcategory_enhanced(
+def group_by_subcategory(
     resources: List[Dict[str, Any]],
 ) -> Dict[str, List[Dict[str, Any]]]:
-    """Enhanced subcategory grouping with better logic."""
+    """Group resources into logical subcategories based on tags and types."""
     subcategories = defaultdict(list)
 
     for resource in resources:
         tags = [tag.lower() for tag in resource.get("tags", [])]
-        resource_type = resource.get("type", "Other")
 
-        # More sophisticated categorization
+        # Improved categorization logic
         if any(tag in tags for tag in ["llmops", "rag", "prompts", "evaluation"]):
             subcategories["🎯 LLMOps & RAG Systems"].append(resource)
         elif any(
             tag in tags for tag in ["training", "frameworks", "models", "apple-silicon"]
         ):
             subcategories["🧠 ML Frameworks & Training"].append(resource)
-        elif any(tag in tags for tag in ["load-testing", "performance", "monitoring"]):
-            subcategories["📈 Performance & Monitoring"].append(resource)
         elif any(
-            tag in tags for tag in ["infrastructure", "devops", "ci-cd", "deployment"]
+            tag in tags for tag in ["devops", "infrastructure", "ci-cd", "deployment"]
         ):
             subcategories["🏗️ Infrastructure & DevOps"].append(resource)
+        elif any(
+            tag in tags
+            for tag in ["testing", "performance", "load-testing", "monitoring"]
+        ):
+            subcategories["📈 Testing & Performance"].append(resource)
         elif any(tag in tags for tag in ["sql", "database", "query"]):
-            subcategories["🗄️ Database & SQL Tools"].append(resource)
+            subcategories["🗄️ SQL & Database Tools"].append(resource)
         elif any(tag in tags for tag in ["documentation", "diagrams", "visualization"]):
             subcategories["📋 Documentation & Visualization"].append(resource)
         elif any(tag in tags for tag in ["security", "scanning", "auth"]):
             subcategories["🔒 Security & Compliance"].append(resource)
         else:
-            # Fallback based on domain
-            if resource.get("domain", [""])[0] == "Systems-Tools":
-                subcategories["🛠️ Tools & Utilities"].append(resource)
-            else:
-                subcategories["📦 General Tools"].append(resource)
+            subcategories["🛠️ Tools & Utilities"].append(resource)
 
     return dict(subcategories)
-
-
-def create_domain_insights(domain: str, resources: List[Dict[str, Any]]) -> str:
-    """Create domain-specific insights and tips."""
-    insights = {
-        "LLMOps-RAG": {
-            "getting_started": [
-                "Start with basic prompt testing (use promptfoo)",
-                "Read the ZenML case studies for architecture patterns",
-                "Implement evaluation before scaling",
-                "Focus on cost optimization early",
-            ],
-            "pitfalls": [
-                "Over-engineering evaluation frameworks too early",
-                "Ignoring cost implications of model choices",
-                "Insufficient context management strategies",
-            ],
-        },
-        "DevOps-SRE": {
-            "getting_started": [
-                "Begin with infrastructure as code (use Diagrams)",
-                "Implement monitoring before scaling",
-                "Automate testing early in the pipeline",
-                "Focus on observability from day one",
-            ],
-            "pitfalls": [
-                "Manual configuration without version control",
-                "Ignoring load testing until production issues",
-                "Insufficient monitoring and alerting",
-            ],
-        },
-    }
-
-    domain_insight = insights.get(domain)
-    if not domain_insight:
-        return ""
-
-    section = f"""<details>
-<summary>💡 <strong>Domain Insights</strong> - Click for expert tips</summary>
-
-**🎯 Getting Started with {domain.replace('-', ' ')}:**
-{chr(10).join([f'{i+1}. {tip}' for i, tip in enumerate(domain_insight['getting_started'])])}
-
-**⚠️ Common Pitfalls:**
-{chr(10).join([f'- {pitfall}' for pitfall in domain_insight['pitfalls']])}
-
-</details>
-
-"""
-    return section
 
 
 def generate_quick_navigation(
@@ -263,68 +165,44 @@ def generate_quick_navigation(
 ) -> str:
     """Generate the enhanced quick navigation section."""
     domain_info = {
-        "LLMOps-RAG": ("🤖 **AI/ML**", "LLMOps, RAG, Training"),
-        "DevOps-SRE": ("🔧 **DevOps**", "Infrastructure, Monitoring"),
-        "Data-Engineering": ("📊 **Data**", "Pipelines, Processing"),
-        "Systems-Tools": ("🏗️ **Systems**", "Architecture, Documentation"),
-        "Security": ("🔒 **Security**", "Scanning, Compliance"),
-        "ML-Engineering": ("🎓 **Learning**", "Guides, Case Studies"),
+        "LLMOps-RAG": ("🤖 **AI/ML**", "aiml-engineering"),
+        "ML-Engineering": ("🧠 **ML Engineering**", "ml-engineering"),
+        "DevOps-SRE": ("🔧 **DevOps/SRE**", "devops--sre"),
+        "Data-Engineering": ("📊 **Data Eng**", "data-engineering"),
+        "Security": ("🔒 **Security**", "security"),
+        "Systems-Tools": ("🛠️ **Systems**", "systems--tools"),
     }
 
-    nav_section = """## 🎯 Quick Navigation
+    nav_section = '\n## 🎯 Quick Navigation\n\n<div align="center">\n\n'
 
-<table align="center">
-<tr>"""
+    # Create table header
+    headers = []
+    links = []
+    counts = []
 
-    domains = list(grouped_resources.keys())
-    for i, domain in enumerate(domains[:3]):  # First row
-        emoji_title, description = domain_info.get(
-            domain, (f"📁 **{domain}**", "Various tools")
-        )
-        count = len(grouped_resources[domain])
-        anchor = domain.lower().replace("-", "").replace("rag", "ml")
-
-        nav_section += f"""
-<td align="center" width="150">
-
-### {emoji_title}
-**{count} resources**
-[Explore →](#{anchor})
-
-*{description}*
-
-</td>"""
-
-    nav_section += "\n</tr>"
-
-    if len(domains) > 3:  # Second row if needed
-        nav_section += "\n<tr>"
-        for domain in domains[3:6]:
-            emoji_title, description = domain_info.get(
-                domain, (f"📁 **{domain}**", "Various tools")
+    for domain, resources in grouped_resources.items():
+        if domain in domain_info:
+            emoji_title, anchor = domain_info[domain]
+            headers.append(emoji_title)
+            links.append(
+                f"[Jump to {emoji_title.replace('**', '').replace('🤖 ', '').replace('🧠 ', '').replace('🔧 ', '').replace('📊 ', '').replace('🔒 ', '').replace('🛠️ ', '')}](#{anchor})"
             )
-            count = len(grouped_resources[domain])
-            anchor = domain.lower().replace("-", "").replace("rag", "ml")
+            counts.append(f"**{len(resources)} resources**")
 
-            nav_section += f"""
-<td align="center">
+    # Build the navigation table
+    nav_section += "| " + " | ".join(headers) + " |\n"
+    nav_section += "|" + ":------------:|" * len(headers) + "\n"
+    nav_section += "| " + " | ".join(links) + " |\n"
+    nav_section += "| " + " | ".join(counts) + " |\n"
 
-### {emoji_title}
-**{count} resources**
-[Explore →](#{anchor})
-
-*{description}*
-
-</td>"""
-        nav_section += "\n</tr>"
-
-    nav_section += "\n</table>"
+    nav_section += "\n</div>\n\n"
+    nav_section += "**🏷️ Filter by:** [⚡ Quick Wins](#quick-wins) • [🟢 Production Ready](#production-ready) • [🟡 Emerging](#emerging) • [🔥 Trending](#trending)\n"
 
     return nav_section
 
 
-def generate_quick_wins_enhanced(resources: List[Dict[str, Any]]) -> str:
-    """Generate enhanced quick wins section."""
+def generate_quick_wins_section(resources: List[Dict[str, Any]]) -> str:
+    """Generate the Quick Wins section."""
     quick_wins = [
         r
         for r in resources
@@ -343,231 +221,170 @@ def generate_quick_wins_enhanced(resources: List[Dict[str, Any]]) -> str:
         )
     )
 
-    section = """## ⚡ Quick Wins
-*High-impact resources you can implement in under 2 hours*
+    section = "\n## ⚡ Quick Wins\n\n"
+    section += "Resources you can implement in under 2 hours:\n\n"
+    section += "| Resource | Setup Time | Impact | Use Case |\n"
+    section += "|----------|:----------:|:------:|----------|\n"
 
-<table>
-<tr>
-<th width="30%">🎯 Resource</th>
-<th width="15%">⏱️ Setup</th>
-<th width="15%">📈 Impact</th>
-<th width="40%">✨ Quick Value</th>
-</tr>"""
-
-    for resource in quick_wins[:3]:  # Top 3
+    for resource in quick_wins[:4]:  # Limit to top 4
         setup_time = f"{resource.get('setup_time_minutes', 'N/A')} min"
-        impact = "🔥 High" if resource["maturity"] == "Battle-tested" else "⚡ Medium"
-        quick_value = resource["why_useful"].split(".")[0][:60] + "..."
+        impact = "High" if resource["maturity"] == "Battle-tested" else "Medium"
+        use_case = ", ".join(resource.get("use_cases", [])[:2])
 
-        section += f"""
-<tr>
-<td><strong><a href="{resource['url']}">{resource['title']}</a></strong><br/>{resource['summary'].split('.')[0][:40]}...</td>
-<td>{setup_time}</td>
-<td>{impact}</td>
-<td>{quick_value}</td>
-</tr>"""
+        section += f"| [**{resource['title']}**]({resource['url']}) | {setup_time} | {impact} | {use_case} |\n"
 
-    section += "\n</table>"
-
-    return section + "\n\n"
+    return section + "\n"
 
 
-def generate_trending_enhanced(resources: List[Dict[str, Any]]) -> str:
-    """Generate enhanced trending section."""
-    # Sort by added date, prioritize recent and high stars
+def generate_trending_section(resources: List[Dict[str, Any]]) -> str:
+    """Generate trending section with recently added resources."""
+    # Sort by added date, take most recent
     recent_resources = sorted(
         resources,
         key=lambda r: (r.get("added", "2020-01-01"), r.get("github_stars", 0)),
         reverse=True,
     )[:3]
 
-    section = """## 🔥 Trending This Month
-*Recently added resources gaining traction*
-
-<div align="center">
-
-| 🚀 **New Addition** | ⭐ **Stars** | 🏷️ **Why It's Hot** |
-|---------------------|-------------|-------------------|"""
+    section = "\n## 🔥 Trending This Month\n\n"
+    section += "Recent additions that are gaining traction:\n\n"
 
     for resource in recent_resources:
-        stars = (
-            f"{resource.get('github_stars', 0):,} ↗️"
-            if resource.get("github_stars")
-            else "New ↗️"
-        )
-        why_hot = resource["why_useful"].split(".")[0][:60] + "..."
+        summary_line = resource["summary"].split(".")[0] + "."
+        section += f"• **[{resource['title']}]({resource['url']})** - {summary_line}\n"
 
-        section += f"""
-| **[{resource['title']}]({resource['url']})** | {stars} | {why_hot} |"""
-
-    section += "\n\n</div>"
-
-    return section + "\n\n"
+    return section + "\n"
 
 
-def calculate_enhanced_stats(resources: List[Dict[str, Any]]) -> Dict[str, Any]:
-    """Calculate enhanced repository statistics."""
+def calculate_stats(resources: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """Calculate repository statistics."""
     total_resources = len(resources)
 
-    # Quality metrics
-    battle_tested = len([r for r in resources if r.get("maturity") == "Battle-tested"])
-    production_ready = len(
-        [r for r in resources if r.get("maturity") in ["Battle-tested", "Emerging"]]
-    )
-    quick_setup = len([r for r in resources if r.get("effort") == "Low"])
-
-    # Domain counts
+    # Count by domain
     domain_counts = Counter()
     for resource in resources:
         for domain in resource.get("domain", []):
             domain_counts[domain] += 1
 
-    # Stars
+    # Average GitHub stars
     stars = [r.get("github_stars", 0) for r in resources if r.get("github_stars")]
     avg_stars = sum(stars) / len(stars) if stars else 0
 
-    # Tags
+    # All unique tags
     all_tags = []
     for resource in resources:
         all_tags.extend(resource.get("tags", []))
 
     return {
         "total_resources": total_resources,
-        "battle_tested_pct": int((battle_tested / total_resources) * 100),
-        "production_ready_pct": int((production_ready / total_resources) * 100),
-        "quick_setup_pct": int((quick_setup / total_resources) * 100),
         "domains_covered": len(domain_counts),
         "avg_stars": avg_stars,
-        "popular_tags": Counter(all_tags).most_common(12),
+        "tag_counts": Counter(all_tags),
         "last_updated": datetime.now().strftime("%B %Y"),
     }
 
 
-def generate_enhanced_readme(
+def generate_stats_section(stats: Dict[str, Any]) -> str:
+    """Generate the repository stats section."""
+    section = "\n## 📊 Repository Stats\n\n"
+    section += f"• **Total Resources:** {stats['total_resources']}\n"
+    section += f"• **Domains Covered:** {stats['domains_covered']}\n"
+    section += (
+        f"• **Average GitHub Stars:** {stats['avg_stars']:,.1f}k\n"
+        if stats["avg_stars"] > 1000
+        else f"• **Average GitHub Stars:** {stats['avg_stars']:,.0f}\n"
+    )
+    section += f"• **Last Updated:** {stats['last_updated']}\n"
+    section += f"• **Contributors:** 1\n\n"
+
+    return section
+
+
+def generate_tag_cloud(stats: Dict[str, Any]) -> str:
+    """Generate tag cloud section."""
+    top_tags = stats["tag_counts"].most_common(15)
+
+    section = "\n## 🏷️ Tag Cloud\n\n"
+    tag_list = " ".join([f"`{tag}`" for tag, _ in top_tags])
+    section += tag_list + "\n"
+
+    return section
+
+
+def update_readme_template(
     resources: List[Dict[str, Any]], stats: Dict[str, Any]
 ) -> str:
-    """Generate the complete README content with enhanced formatting."""
+    """Generate the complete README.md content."""
     grouped = group_resources_by_domain(resources)
 
-    readme = f"""# My Engineering Knowledgebase
-
+    # Header with improved badges
+    readme_content = f"""# Engineering Arsenal 🛠️
 
 A curated, enterprise-grade collection of links, repos, and notes that actually helped me build real systems (ML/AI, LLMOps, DevOps, Data Eng, SRE, Security). Each entry includes structured metadata, honest assessments, and why it's useful in practice.
 
 <div align="center">
 
-![Resources](https://img.shields.io/badge/Resources-{stats['total_resources']}-blue?style=for-the-badge) ![Domains](https://img.shields.io/badge/Domains-{stats['domains_covered']}-green?style=for-the-badge) ![Last Updated](https://img.shields.io/badge/Updated-{stats['last_updated'].replace(' ', '%20')}-red?style=for-the-badge)
-
-**[🎯 Quick Navigation](#-quick-navigation) • [⚡ Quick Wins](#-quick-wins) • [🔥 Trending](#-trending) • [🤝 Contributing](#-contributing)**
+![Resources](https://img.shields.io/badge/Resources-{stats['total_resources']}-blue) ![Domains](https://img.shields.io/badge/Domains-{stats['domains_covered']}-green) ![Contributors](https://img.shields.io/badge/Contributors-1-orange) ![Last Updated](https://img.shields.io/badge/Updated-{stats['last_updated'].replace(' ', '%20')}-red)
 
 </div>
-
----
 
 {generate_quick_navigation(grouped)}
 
 ---
-
 """
 
-    # Add domain sections
+    # Generate domain sections
     for domain, domain_resources in grouped.items():
-        readme += create_enhanced_domain_section(domain, domain_resources)
-        readme += "---\n\n"
+        readme_content += create_domain_section(domain, domain_resources)
+        readme_content += "---\n"
 
     # Add special sections
-    readme += generate_trending_enhanced(resources)
-    readme += generate_quick_wins_enhanced(resources)
+    readme_content += generate_trending_section(resources)
+    readme_content += generate_quick_wins_section(resources)
 
-    # Add browse by category
-    readme += """## 🏷️ Browse by Category
-
-<div align="center">
-
-**🎯 By Use Case**
-[Production Ready](README.md#battle-tested) • [Learning Resources](README.md#learning) • [Weekend Projects](README.md#medium-effort) • [Quick Implementations](README.md#low-effort)
-
-**🔧 By Technology**  
-[Python Tools](README.md#python) • [TypeScript/JS](README.md#typescript) • [Docker/K8s](README.md#containers) • [Cloud Native](README.md#cloud)
-
-**⚡ By Effort Level**
-[Quick Wins (⚡)](README.md#quick-wins) • [Weekend Projects (⚖️)](README.md#weekend) • [Major Initiatives (🔥)](README.md#major)
-
-</div>
-
----
-
-## 📊 Repository Insights
-
-<div align="center">
-<table>
-<tr>
-<td align="center">
-
-### 📈 **Growth Stats**
-- **Total Resources:** {stats['total_resources']}
-- **Domains Covered:** {stats['domains_covered']}
-- **Avg GitHub Stars:** {stats['avg_stars']:,.1f}k
-- **Community Contributors:** 3
-
-</td>
-<td align="center">
-
-### 🏆 **Quality Metrics**
-- **Battle-tested:** {stats['battle_tested_pct']}%
-- **Production Ready:** {stats['production_ready_pct']}%  
-- **Quick Setup (<2hrs):** {stats['quick_setup_pct']}%
-- **Regular Updates:** 100%
-
-</td>
-</tr>
-</table>
-</div>
-
-### 🏷️ Popular Tags
-{' '.join([f'`{tag}`' for tag, _ in stats['popular_tags']])}
-
----
-
+    # Contributing section
+    readme_content += """
 ## 🤝 Contributing
 
-<div align="center">
+Found a resource that significantly improved your engineering workflow? 
 
-Found a resource that significantly improved your engineering workflow?
+**Quick Add:** Create an issue with the URL and a brief "why it's useful" note.
 
-**[📝 Quick Add via Issue](../../issues/new/choose)** • **[🛠️ Detailed Contribution Guide](CONTRIBUTING.md)** • **[🤖 Use Claude Code Agent](#claude-code-integration)**
+**Detailed Add:** Follow the [contribution template](.github/ISSUE_TEMPLATE/add-resource.md).
 
-</div>
+**Quality Standards:**
+- Must have used it successfully in a real project
+- Should solve a concrete engineering problem
+- Include honest assessment of effort/complexity
 
-### ✅ Quality Standards
-- ✅ **Battle-tested** in real projects
-- ✅ **Solves concrete** engineering problems  
-- ✅ **Honest assessment** of effort/complexity
-- ✅ **Clear practical value** with specific benefits
+---
+"""
 
+    # Stats and tag cloud
+    readme_content += generate_stats_section(stats)
+    readme_content += generate_tag_cloud(stats)
+
+    # Footer
+    readme_content += f"""
 ---
 
 ## 🎖️ Recognition
 
-<div align="center">
-
-*This arsenal reflects real engineering experience. Every resource has been battle-tested in production or significantly advanced learning.*
+This arsenal reflects real engineering experience. Every resource has been battle-tested in production or significantly advanced learning.
 
 **No affiliate links • No sponsored content • Just honest recommendations**
 
 ---
 
-**Built with ❤️ by [@yourusername](https://github.com/yourusername)**  
-*Licensed under MIT • Content under CC BY 4.0*
+## 📄 License
+
+Content and curation by [@taghikhah](https://github.com/taghikhah). Resource descriptions under CC BY 4.0. Code examples under MIT.
 
 ⭐ **Star this repo** if you find it valuable • **[Share feedback](../../discussions)**
-
-</div>
 
 <!-- Auto-generated from data/resources.yaml on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} -->
 """
 
-    return readme
+    return readme_content
 
 
 def main():
@@ -578,19 +395,21 @@ def main():
         resources = data["resources"]
 
         print(f"📊 Processing {len(resources)} resources...")
-        stats = calculate_enhanced_stats(resources)
+        stats = calculate_stats(resources)
 
-        print("📝 Generating enhanced README.md...")
-        readme_content = generate_enhanced_readme(resources, stats)
+        print("📝 Generating polished README.md...")
+        readme_content = update_readme_template(resources, stats)
 
         # Write to README.md
         readme_path = Path("README.md")
         with open(readme_path, "w", encoding="utf-8") as file:
             file.write(readme_content)
 
-        print(f"✅ Successfully generated enhanced README.md!")
         print(
-            f"📈 Stats: {stats['total_resources']} resources, {stats['battle_tested_pct']}% battle-tested"
+            f"✅ Successfully generated README.md with {stats['total_resources']} resources!"
+        )
+        print(
+            f"📈 Stats: {stats['domains_covered']} domains, {len(stats['tag_counts'])} unique tags"
         )
 
     except Exception as e:
