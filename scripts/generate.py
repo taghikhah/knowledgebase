@@ -5,7 +5,6 @@ Maintains the clean table layout with small visual improvements.
 """
 
 import yaml
-import re
 from datetime import datetime
 from pathlib import Path
 from collections import defaultdict, Counter
@@ -101,16 +100,18 @@ def create_domain_section(domain: str, resources: List[Dict[str, Any]]) -> str:
     }
 
     section_title = domain_titles.get(domain, f"📁 {domain}")
+    resource_count = len(resources)
 
-    # Group by subcategory
+    # Group by subcategory if we can infer them
     subcategories = group_by_subcategory(resources)
 
-    section = f"\n## {section_title}\n\n"
+    section = f"\n### {section_title}\n\n"
 
     for subcategory, subcat_resources in subcategories.items():
-        section += f"### {subcategory} ({len(subcat_resources)} resources)\n\n"
+        section += f"<details open>\n"
+        section += f"<summary><strong>{subcategory}</strong> ({len(subcat_resources)} resources)</summary>\n\n"
 
-        # Enhanced table header with better alignment
+        # Table header
         section += "| Resource | Maturity | Effort | Use Case | Quick Summary |\n"
         section += "|----------|:--------:|:------:|----------|---------------|\n"
 
@@ -118,7 +119,7 @@ def create_domain_section(domain: str, resources: List[Dict[str, Any]]) -> str:
         for resource in subcat_resources:
             section += format_resource_row(resource) + "\n"
 
-        section += "\n"
+        section += "\n</details>\n"
 
     return section
 
@@ -288,11 +289,11 @@ def generate_stats_section(stats: Dict[str, Any]) -> str:
     section = "\n## 📊 Repository Stats\n\n"
     section += f"• **Total Resources:** {stats['total_resources']}\n"
     section += f"• **Domains Covered:** {stats['domains_covered']}\n"
-    section += (
-        f"• **Average GitHub Stars:** {stats['avg_stars']:,.1f}k\n"
-        if stats["avg_stars"] > 1000
-        else f"• **Average GitHub Stars:** {stats['avg_stars']:,.0f}\n"
-    )
+    # section += (
+    #     f"• **Average GitHub Stars:** {stats['avg_stars']:,.1f}k\n"
+    #     if stats["avg_stars"] > 1000
+    #     else f"• **Average GitHub Stars:** {stats['avg_stars']:,.0f}\n"
+    # )
     section += f"• **Last Updated:** {stats['last_updated']}\n"
     section += f"• **Contributors:** 1\n\n"
 
@@ -335,7 +336,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
     # Generate domain sections
     for domain, domain_resources in grouped.items():
         readme_content += create_domain_section(domain, domain_resources)
-        readme_content += "---\n"
+        readme_content += "\n---\n"
 
     # Add special sections
     readme_content += generate_trending_section(resources)
