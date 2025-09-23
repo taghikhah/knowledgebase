@@ -6,18 +6,14 @@ resources:
   - id: promptfoo
     title: promptfoo
     url: https://github.com/promptfoo/promptfoo
-    domain: [LLMOps-RAG]
+    domains: [AI-Engineering]
     type: Repo
     maturity: Emerging
-    effort: Low
-    tags: [evaluation, prompts, testing, ci-cd, regression]
-    source_owner: promptfoo
-    license: MIT
+    tags: [evaluation, prompts, testing, ci-cd]
     github_stars: 2100
-    language: TypeScript
-    added: "2024-09-22"
-    last_checked: "2024-09-22"
-    last_updated: "2024-09"
+    published: '2023-04-28'
+    last_updated: '2024-09'
+    added: '2024-09-23'
     summary: >
       Testing and evaluation framework for LLM prompts with comprehensive CI/CD integration,
       supporting multiple providers and evaluation metrics.
@@ -25,7 +21,6 @@ resources:
       Prevents prompt regression in production, enables systematic comparison of providers/models,
       and provides automated quality gates for LLM applications.
     good_for: [testing, production, mlops]
-    setup_time_minutes: 30
     prerequisites: [Node.js, CLI experience]
     use_cases:
       [
@@ -37,17 +32,15 @@ resources:
     related: [zenml-llmops-cases, llamaindex-multimodal]
 
   - id: zenml-llmops-cases
-    title: "ZenML: LLMOps in Production - 287+ Case Studies"
+    title: 'ZenML: LLMOps in Production - 287+ Case Studies'
     url: https://www.zenml.io/blog/llmops-in-production-287-more-case-studies-of-what-actually-works
-    domain: [LLMOps-RAG, ML-Engineering]
+    domains: [AI-Engineering]
     type: Article
     maturity: Battle-tested
-    effort: Low
     tags: [case-studies, production, mlops, architecture, patterns]
-    source_owner: zenml-io
-    license: N/A
-    added: "2024-09-22"
-    last_checked: "2024-09-22"
+    published: '2024-07-17'
+    last_updated: '2024-09'
+    added: '2024-09-23'
     summary: >
       Comprehensive analysis of 287+ real-world LLMOps implementations, covering successful
       patterns, common pitfalls, and technology stack choices across various industries.
@@ -55,7 +48,6 @@ resources:
       Provides reality check for architecture decisions, helps benchmark approaches against
       proven patterns, and saves months of trial-and-error in production deployments.
     good_for: [architecture, strategy, learning]
-    setup_time_minutes: 45
     prerequisites: [MLOps knowledge, production experience]
     use_cases:
       [architecture planning, technology selection, team strategy, benchmarking]
@@ -64,23 +56,20 @@ resources:
   - id: llamaindex-multimodal
     title: Multimodal RAG in LlamaCloud
     url: https://www.llamaindex.ai/blog/multimodal-rag-in-llamacloud
-    domain: [LLMOps-RAG]
+    domains: [AI-Engineering]
     type: Guide
     maturity: Emerging
-    effort: Medium
-    tags: [rag, multimodal, retrieval, images, documents]
-    source_owner: llamaindex
-    license: N/A
-    added: "2024-09-22"
-    last_checked: "2024-09-22"
+    tags: [rag, multimodal, retrieval]
+    published: '2024-06'
+    last_updated: '2024-09'
+    added: '2024-09-23'
     summary: >
       Comprehensive guide to implementing Retrieval-Augmented Generation systems that work
       with both text and image modalities using LlamaIndex and LlamaCloud.
     why_useful: >
       Shows practical pathways to add visual understanding to enterprise RAG systems,
       handles complex document types with embedded diagrams and charts.
-    good_for: [POCs, enterprise-rag, learning]
-    setup_time_minutes: 120
+    good_for: [POCs, learning]
     prerequisites: [Python, RAG concepts, LlamaIndex basics]
     use_cases:
       [document processing, visual QA, enterprise search, multimodal chatbots]
@@ -89,26 +78,21 @@ resources:
   - id: mlx-apple
     title: MLX - Apple Machine Learning Framework
     url: https://github.com/ml-explore/mlx
-    domain: [ML-Engineering]
+    domains: [AI-Engineering]
     type: Repo
     maturity: Emerging
-    effort: Medium
-    tags: [training, apple-silicon, performance, research, frameworks]
-    source_owner: ml-explore
-    license: MIT
+    tags: [training, performance, research, frameworks]
     github_stars: 3200
-    language: Python
-    added: "2024-09-22"
-    last_checked: "2024-09-22"
-    last_updated: "2024-09"
+    published: '2023-11-28'
+    last_updated: '2024-09'
+    added: '2024-09-23'
     summary: >
       High-performance machine learning framework specifically optimized for Apple Silicon,
       designed for research and experimentation with efficient memory usage.
     why_useful: >
       Enables fast local ML experiments on MacBooks without cloud costs, optimized memory
       usage for large models, and seamless integration with Apple's ecosystem.
-    good_for: [research, prototyping, local-development]
-    setup_time_minutes: 60
+    good_for: [research, prototyping]
     prerequisites: [Python, Apple Silicon Mac, ML basics]
     use_cases: [model training, research, prototyping, local inference]
     related: [ml-practical-usecases]
@@ -116,26 +100,21 @@ resources:
   - id: ml-practical-usecases
     title: ML Practical Use Cases
     url: https://github.com/mallahyari/ml-practical-usecases
-    domain: [ML-Engineering]
+    domains: [AI-Engineering]
     type: Repo
     maturity: Battle-tested
-    effort: Low
-    tags: [examples, templates, notebooks, learning, patterns]
-    source_owner: mallahyari
-    license: MIT
+    tags: [templates, learning, patterns]
     github_stars: 890
-    language: Python
-    added: "2024-09-22"
-    last_checked: "2024-09-22"
-    last_updated: "2024-08"
+    published: '2020-01'
+    last_updated: '2024-08'
+    added: '2024-09-23'
     summary: >
       Collection of end-to-end machine learning use cases with practical implementations,
       covering common business scenarios and technical patterns.
     why_useful: >
       Provides ready-to-adapt templates for real projects, bridges gap between tutorials
       and production code, includes best practices and common pitfalls.
-    good_for: [learning, templates, POCs]
-    setup_time_minutes: 30
+    good_for: [learning, POCs]
     prerequisites: [Python, basic ML knowledge]
     use_cases: [learning, project templates, proof of concepts, team training]
     related: [mlx-apple, zenml-llmops-cases]
@@ -143,26 +122,21 @@ resources:
   - id: diagrams-mingrammer
     title: Diagrams
     url: https://github.com/mingrammer/diagrams
-    domain: [DevOps-SRE, Systems-Tools]
+    domains: [Platform-Engineering, Developer-Tools]
     type: Repo
     maturity: Battle-tested
-    effort: Low
-    tags: [documentation, architecture, diagrams, infrastructure, visualization]
-    source_owner: mingrammer
-    license: MIT
+    tags: [documentation, architecture, infrastructure, visualization]
     github_stars: 23000
-    language: Python
-    added: "2024-09-22"
-    last_checked: "2024-09-22"
-    last_updated: "2024-08"
+    published: '2020-02-02'
+    last_updated: '2024-08'
+    added: '2024-09-23'
     summary: >
       Create cloud system architecture diagrams programmatically using Python code,
       with support for major cloud providers and services.
     why_useful: >
       Enables version-controlled, reproducible architecture documentation that stays in sync
       with code changes, integrates into CI/CD pipelines for automated documentation.
-    good_for: [documentation, architecture, presentations]
-    setup_time_minutes: 15
+    good_for: [documentation, architecture]
     prerequisites: [Python, basic architecture knowledge]
     use_cases:
       [
@@ -176,26 +150,21 @@ resources:
   - id: awesome-selfhosted
     title: Awesome Self-hosted
     url: https://github.com/awesome-selfhosted/awesome-selfhosted
-    domain: [DevOps-SRE, Systems-Tools]
+    domains: [Platform-Engineering, Developer-Tools]
     type: Repo
     maturity: Battle-tested
-    effort: Medium
-    tags: [catalog, infrastructure, self-hosting, services, privacy]
-    source_owner: awesome-selfhosted
-    license: CC0
+    tags: [catalog, infrastructure, self-hosting, services]
     github_stars: 196000
-    language: Various
-    added: "2024-09-22"
-    last_checked: "2024-09-22"
-    last_updated: "2024-09"
+    published: '2015-06-01'
+    last_updated: '2024-09'
+    added: '2024-09-23'
     summary: >
       Comprehensive catalog of self-hostable network services and web applications,
       covering alternatives to popular SaaS products with deployment instructions.
     why_useful: >
       Discovery engine for privacy-respecting alternatives, cost reduction through self-hosting,
       learning platform for infrastructure management and service deployment.
-    good_for: [discovery, infrastructure, learning]
-    setup_time_minutes: 60
+    good_for: [discovery, learning]
     prerequisites: [Linux basics, containerization knowledge]
     use_cases:
       [
@@ -209,26 +178,21 @@ resources:
   - id: slm-sql
     title: SLM SQL
     url: https://github.com/CycloneBoy/slm_sql
-    domain: [Data-Engineering, Systems-Tools]
+    domains: [Data-Engineering, Developer-Tools]
     type: Repo
     maturity: Experimental
-    effort: Medium
-    tags: [sql, language-model, query-generation, database, nl2sql]
-    source_owner: CycloneBoy
-    license: Apache-2.0
+    tags: [sql, query, database, nl2sql]
     github_stars: 124
-    language: Python
-    added: "2024-09-22"
-    last_checked: "2024-09-22"
-    last_updated: "2024-07"
+    published: '2022-01'
+    last_updated: '2024-07'
+    added: '2024-09-23'
     summary: >
       Small Language Model specifically designed for SQL generation and database querying tasks,
       optimized for natural language to SQL conversion.
     why_useful: >
       Provides specialized SQL generation capabilities with better performance than general-purpose
       models for database tasks, lighter weight than large language models.
-    good_for: [experimentation, database-tooling, learning]
-    setup_time_minutes: 90
+    good_for: [experimentation, learning]
     prerequisites: [Python, SQL knowledge, basic ML understanding]
     use_cases:
       [
@@ -242,18 +206,14 @@ resources:
   - id: mcp-beginners
     title: MCP for Beginners
     url: https://github.com/microsoft/mcp-for-beginners/
-    domain: [LLMOps-RAG, Systems-Tools]
+    domains: [AI-Engineering, Developer-Tools]
     type: Repo
     maturity: Emerging
-    effort: Medium
     tags: [agents, protocol, microsoft, integration, tools]
-    source_owner: microsoft
-    license: MIT
     github_stars: 450
-    language: Multiple
-    added: "2024-09-22"
-    last_checked: "2024-09-22"
-    last_updated: "2024-08"
+    published: '2024-01'
+    last_updated: '2024-08'
+    added: '2024-09-23'
     summary: >
       Beginner-friendly tutorial and examples for Microsoft's Model Context Protocol (MCP),
       showing how to build tool-using agents and IDE integrations.
@@ -261,7 +221,6 @@ resources:
       Clarifies how to expose tools and services to LLMs with stable interfaces,
       provides foundation for building agentic workflows and editor integrations.
     good_for: [learning, integration, POCs]
-    setup_time_minutes: 120
     prerequisites: [basic programming, API concepts, LLM familiarity]
     use_cases:
       [agent development, tool integration, IDE plugins, agentic workflows]
@@ -270,18 +229,14 @@ resources:
   - id: locust-load-testing
     title: Locust
     url: https://github.com/locustio/locust
-    domain: [DevOps-SRE, Systems-Tools]
+    domains: [Platform-Engineering, Developer-Tools]
     type: Repo
     maturity: Battle-tested
-    effort: Medium
-    tags: [load-testing, performance, python, testing, distributed, monitoring]
-    source_owner: locustio
-    license: MIT
+    tags: [load-testing, performance, testing, monitoring]
     github_stars: 26800
-    language: Python
-    added: "2024-09-22"
-    last_checked: "2024-09-22"
-    last_updated: "2024-09"
+    published: '2011-02-17'
+    last_updated: '2024-09'
+    added: '2024-09-23'
     summary: >
       Open-source load testing tool that lets you define test scenarios in plain Python code,
       supporting distributed testing across multiple machines with real-time monitoring.
@@ -289,7 +244,6 @@ resources:
       Enables realistic performance testing with familiar Python syntax, scales to simulate
       hundreds of thousands of users, and integrates seamlessly into CI/CD pipelines for automated performance validation.
     good_for: [testing, production, POCs]
-    setup_time_minutes: 45
     prerequisites: [Python, basic testing concepts, HTTP knowledge]
     use_cases:
       [
@@ -298,22 +252,20 @@ resources:
         stress testing,
         API testing,
         CI/CD integration,
-        capacity planning
+        capacity planning,
       ]
     related: [diagrams-mingrammer]
 
   - id: llm-patterns-eugeneyan
-    title: "LLM Patterns: A Comprehensive Guide"
+    title: 'LLM Patterns: A Comprehensive Guide'
     url: https://eugeneyan.com/writing/llm-patterns/
-    domain: [LLMOps-RAG]
+    domains: [AI-Engineering]
     type: Article
     maturity: Battle-tested
-    effort: Medium
     tags: [patterns, architecture, evaluation, rag, fine-tuning, guardrails]
-    source_owner: eugeneyan
-    license: N/A
-    added: "2024-09-22"
-    last_checked: "2024-09-22"
+    published: '2023-12'
+    last_updated: '2024-09'
+    added: '2024-09-23'
     summary: >
       Comprehensive exploration of practical patterns for building LLM systems, covering
       evaluation, RAG, fine-tuning, caching, guardrails, defensive UX, and user feedback.
@@ -321,7 +273,6 @@ resources:
       Synthesizes complex academic research into pragmatic, implementable patterns that bridge
       theoretical knowledge with practical engineering challenges in production LLM systems.
     good_for: [architecture, production, learning]
-    setup_time_minutes: 45
     prerequisites: [LLM experience, system design knowledge]
     use_cases:
       [
@@ -329,25 +280,21 @@ resources:
         pattern implementation,
         production design,
         team education,
-        evaluation frameworks
+        evaluation frameworks,
       ]
     related: [zenml-llmops-cases, promptfoo, llamaindex-multimodal]
 
   - id: kubesec-controlplane
     title: kubesec
     url: https://github.com/controlplaneio/kubesec
-    domain: [Security, DevOps-SRE]
+    domains: [Security, Platform-Engineering]
     type: Repo
     maturity: Battle-tested
-    effort: Low
-    tags: [kubernetes, security, scanning, configuration, admission-controller]
-    source_owner: controlplaneio
-    license: Apache-2.0
+    tags: [kubernetes, scanning, configuration, admission-controller]
     github_stars: 1200
-    language: Go
-    added: "2024-09-22"
-    last_checked: "2024-09-22"
-    last_updated: "2024-09"
+    published: '2017-10-10'
+    last_updated: '2024-09'
+    added: '2024-09-23'
     summary: >
       Security risk analysis tool for Kubernetes resources that scans YAML configurations
       for potential vulnerabilities and provides scoring with actionable recommendations.
@@ -355,7 +302,6 @@ resources:
       Enables proactive security assessment of Kubernetes deployments, enforces least-privilege
       principles, and integrates into CI/CD pipelines for automated security validation.
     good_for: [production, testing, POCs]
-    setup_time_minutes: 30
     prerequisites: [Kubernetes knowledge, YAML familiarity]
     use_cases:
       [
@@ -363,25 +309,21 @@ resources:
         admission control,
         CI/CD integration,
         compliance validation,
-        configuration review
+        configuration review,
       ]
     related: [trivy-aquasecurity]
 
   - id: trivy-aquasecurity
     title: Trivy
     url: https://github.com/aquasecurity/trivy
-    domain: [Security, DevOps-SRE]
+    domains: [Security, Platform-Engineering]
     type: Repo
     maturity: Battle-tested
-    effort: Low
-    tags: [vulnerability-scanning, containers, security, SBOM, secrets]
-    source_owner: aquasecurity
-    license: Apache-2.0
+    tags: [vulnerability-scanning, containers, secrets, sbom]
     github_stars: 29000
-    language: Go
-    added: "2024-09-22"
-    last_checked: "2024-09-22"
-    last_updated: "2024-09"
+    published: '2019-04-11'
+    last_updated: '2024-09'
+    added: '2024-09-23'
     summary: >
       Comprehensive security scanner for containers, filesystems, Git repositories, and
       Kubernetes that detects vulnerabilities, misconfigurations, secrets, and SBOM.
@@ -389,7 +331,6 @@ resources:
       Provides unified multi-target security scanning with minimal configuration, covers
       entire software supply chain, and integrates seamlessly into existing DevOps workflows.
     good_for: [production, testing, POCs]
-    setup_time_minutes: 15
     prerequisites: [basic security concepts, container knowledge]
     use_cases:
       [
@@ -398,15 +339,706 @@ resources:
         supply chain security,
         compliance checking,
         secret detection,
-        SBOM generation
+        SBOM generation,
       ]
     related: [kubesec-controlplane]
 
+  - id: awesome-public-datasets
+    title: Awesome Public Datasets
+    url: https://github.com/awesomedata/awesome-public-datasets
+    domains: [Data-Engineering]
+    type: Repo
+    maturity: Battle-tested
+    tags: [datasets, catalog, research, public-data]
+    github_stars: 67800
+    published: '2021-01'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Curated collection of high-quality public datasets across 30+ domains including agriculture,
+      biology, climate, finance, and social sciences from authoritative sources like NASA and academic institutions.
+    why_useful: >
+      Provides centralized discovery of vetted datasets for research and ML projects, saves hours
+      of searching across scattered sources, includes metadata and direct links for quick access.
+    good_for: [research, learning, POCs]
+    prerequisites: [basic data analysis knowledge]
+    use_cases:
+      [
+        dataset discovery,
+        research projects,
+        machine learning training,
+        academic studies,
+        proof of concepts,
+        data exploration,
+      ]
+    related: [slm-sql]
+
+  - id: prettier
+    title: Prettier
+    url: https://github.com/prettier/prettier
+    domains: [Developer-Tools]
+    type: Repo
+    maturity: Battle-tested
+    tags: [code-formatting, javascript, typescript, automation, developer-tools]
+    github_stars: 51000
+    published: '2016-11-29'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Opinionated code formatter that automatically reformats code to enforce consistent styling
+      across JavaScript, TypeScript, CSS, HTML, and other languages with configurable rules.
+    why_useful: >
+      Eliminates style debates and manual formatting work, integrates seamlessly into editors
+      and CI/CD pipelines, and ensures consistent code quality across development teams.
+    good_for: [production, testing, POCs]
+    prerequisites: [Node.js, basic CLI knowledge]
+    use_cases:
+      [
+        code formatting,
+        style consistency,
+        automated formatting,
+        CI/CD integration,
+        team collaboration,
+        code quality,
+      ]
+    related: [lint-staged, husky]
+
+  - id: lint-staged
+    title: lint-staged
+    url: https://github.com/lint-staged/lint-staged
+    domains: [Developer-Tools]
+    type: Repo
+    maturity: Battle-tested
+    tags: [git-hooks, linting, pre-commit, code-quality, automation, workflow]
+    github_stars: 14200
+    published: '2016-01-15'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Runs linters and formatters only on git staged files before commits, preventing
+      problematic code from entering the repository while optimizing performance.
+    why_useful: >
+      Enforces code quality gates at commit time, runs tasks only on changed files for speed,
+      and integrates with any CLI-based linting or formatting tool for automated quality control.
+    good_for: [production, testing, POCs]
+    prerequisites: [Git, Node.js, understanding of linting tools]
+    use_cases:
+      [
+        pre-commit validation,
+        code quality enforcement,
+        automated formatting,
+        team workflow standardization,
+        CI/CD optimization,
+      ]
+    related: [prettier, husky]
+
+  - id: husky
+    title: Husky
+    url: https://github.com/typicode/husky
+    domains: [Developer-Tools]
+    type: Repo
+    maturity: Battle-tested
+    tags: [git-hooks, automation, workflow, pre-commit, developer-experience, nodejs]
+    github_stars: 34200
+    published: '2014-06-23'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Lightweight native Git hooks manager that automates workflow enforcement with
+      cross-platform support for all client-side Git hooks with minimal overhead.
+    why_useful: >
+      Simplifies Git hook management with 2kB footprint and 1ms execution time, enables
+      automated quality checks and workflow enforcement without complex configuration.
+    good_for: [production, testing, POCs]
+    prerequisites: [Git, Node.js, basic shell scripting]
+    use_cases:
+      [
+        git hook automation,
+        pre-commit checks,
+        workflow enforcement,
+        code quality gates,
+        team standardization,
+        CI/CD integration,
+      ]
+    related: [prettier, lint-staged]
+
+  - id: evidentlyai-ml-system-design
+    title: 'ML System Design: 650+ Case Studies Database'
+    url: https://www.evidentlyai.com/ml-system-design
+    domains: [AI-Engineering]
+    type: Guide
+    maturity: Battle-tested
+    tags: [case-studies, architecture, production]
+    published: '2024-01'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Curated database of 650+ ML and LLM case studies from 100+ companies including Netflix,
+      Airbnb, and DoorDash, covering real-world AI system implementations across industries.
+    why_useful: >
+      Provides concrete, production-validated examples of ML system design decisions,
+      bridges theory-practice gap with detailed implementation insights from leading companies.
+    good_for: [architecture, learning, strategy]
+    prerequisites: [ML engineering knowledge, system design basics]
+    use_cases:
+      [
+        system architecture,
+        design decisions,
+        industry benchmarking,
+        learning from production,
+        team education,
+        implementation strategies,
+      ]
+    related: [zenml-llmops-cases, ml-practical-usecases]
+
+  - id: eugeneyan-llm-problems
+    title: 'How to Match LLM Patterns to Problems'
+    url: https://eugeneyan.com/writing/llm-problems/
+    domains: [AI-Engineering]
+    type: Article
+    maturity: Battle-tested
+    tags: [problem-solving, patterns, performance, production]
+    published: '2024-06'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Systematic framework for identifying and solving common LLM implementation challenges,
+      covering performance, reliability, latency, and quality issues with pattern-based solutions.
+    why_useful: >
+      Provides structured approach to diagnosing LLM problems and matching them to proven
+      solution patterns like RAG, fine-tuning, and guardrails with practical implementation guidance.
+    good_for: [production, learning]
+    prerequisites: [LLM experience, system design knowledge]
+    use_cases:
+      [
+        problem diagnosis,
+        solution selection,
+        performance optimization,
+        production troubleshooting,
+        system improvement,
+        pattern implementation,
+      ]
+    related: [llm-patterns-eugeneyan, zenml-llmops-cases, promptfoo]
+
+  - id: claude-context-zilliz
+    title: Claude Context - MCP Semantic Code Search
+    url: https://github.com/zilliztech/claude-context
+    domains: [AI-Engineering]
+    type: Repo
+    maturity: Emerging
+    tags: [mcp, code-search, semantic-search, vector-database, indexing]
+    github_stars: 3700
+    published: '2024-06-06'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      MCP plugin enabling semantic code search for AI coding agents like Claude Code,
+      providing efficient codebase indexing and context management with ~40% token reduction.
+    why_useful: >
+      Transforms entire codebase into searchable context for AI agents, uses hybrid search
+      (BM25 + vector) for precise code discovery, and significantly reduces token usage.
+    good_for: [production, POCs, learning]
+    prerequisites: [Node.js, OpenAI API key, vector database knowledge]
+    use_cases:
+      [
+        AI code assistance,
+        semantic code search,
+        context management,
+        codebase exploration,
+        token optimization,
+        agent enhancement,
+      ]
+    related: [mcp-beginners]
+
+  - id: mcp-chrome-extension
+    title: MCP Chrome Extension
+    url: https://github.com/hangwin/mcp-chrome
+    domains: [AI-Engineering]
+    type: Repo
+    maturity: Experimental
+    tags: [mcp, browser-automation, chrome-extension, ai-control, automation]
+    github_stars: 8100
+    published: '2024-06-09'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Chrome extension transforming browsers into AI-controlled automation tools with 20+ tools
+      for browser management, content analysis, and web page interaction.
+    why_useful: >
+      Enables AI assistants to directly control browser environments, automates complex web tasks,
+      and provides intelligent content analysis without separate browser instances.
+    good_for: [experimentation, automation, POCs]
+    prerequisites: [Node.js, Chrome browser, MCP protocol understanding]
+    use_cases:
+      [
+        browser automation,
+        web scraping,
+        content analysis,
+        AI-driven web tasks,
+        workflow automation,
+        testing automation,
+      ]
+    related: [mcp-beginners, claude-context-zilliz]
+
+  - id: awesome-mcp-servers
+    title: Awesome MCP Servers
+    url: https://github.com/punkpeye/awesome-mcp-servers
+    domains: [AI-Engineering, Developer-Tools]
+    type: Repo
+    maturity: Battle-tested
+    tags: [mcp, catalog, awesome-list, discovery, community, protocol]
+    github_stars: 70900
+    published: '2024-11-30'
+    last_updated: '2024-12'
+    added: '2024-09-23'
+    summary: >
+      Comprehensive curated list of 20+ categories of MCP servers covering aerospace, biology,
+      cloud platforms, coding, and communication with detailed metadata and community resources.
+    why_useful: >
+      Centralized discovery platform for MCP server implementations, saves research time,
+      provides technical details and compatibility info for rapid MCP ecosystem exploration.
+    good_for: [discovery, learning, POCs]
+    prerequisites: [basic MCP understanding]
+    use_cases:
+      [
+        MCP server discovery,
+        ecosystem exploration,
+        integration planning,
+        community resources,
+        protocol learning,
+        server comparison,
+      ]
+    related: [mcp-beginners, mcp-so-directory]
+
+  - id: mcp-so-directory
+    title: MCP.so - MCP Server Directory
+    url: https://mcp.so/
+    domains: [AI-Engineering, Developer-Tools]
+    type: Tool
+    maturity: Battle-tested
+    tags: [mcp, discovery, community, documentation, platform]
+    published: '2024-01'
+    last_updated: '2024-12'
+    added: '2024-09-23'
+    summary: >
+      Community-driven platform cataloging 16,624+ MCP servers and clients with categorized
+      listings, installation guides, and comprehensive documentation.
+    why_useful: >
+      Provides centralized discovery of MCP ecosystem, includes detailed technical documentation,
+      enables dynamic knowledge acquisition and precise scenario adaptation for AI systems.
+    good_for: [discovery, production, learning]
+    prerequisites: [basic web browsing]
+    use_cases:
+      [
+        MCP server discovery,
+        integration planning,
+        documentation access,
+        community resources,
+        ecosystem exploration,
+        server selection,
+      ]
+    related: [awesome-mcp-servers, mcp-beginners]
+
+  - id: deeplearning-ai-mcp-course
+    title: 'DeepLearning.AI: Build Rich-Context AI Apps with MCP'
+    url: https://www.deeplearning.ai/short-courses/mcp-build-rich-context-ai-apps-with-anthropic/
+    domains: [AI-Engineering]
+    type: Guide
+    maturity: Battle-tested
+    tags: [mcp, course, learning, anthropic, ai-development, protocol]
+    published: '2024-12'
+    last_updated: '2024-12'
+    added: '2024-09-23'
+    summary: >
+      Hands-on course developed with Anthropic teaching MCP protocol for building standardized
+      AI applications with external system connections and context-rich integrations.
+    why_useful: >
+      Authoritative education from Anthropic partnership, provides practical implementation
+      strategies, solves AI development fragmentation with standardized protocol approach.
+    good_for: [learning, production, strategy]
+    prerequisites: [Python familiarity, LLM application development basics]
+    use_cases:
+      [
+        MCP protocol learning,
+        AI application development,
+        standardization strategy,
+        integration patterns,
+        skill development,
+        best practices,
+      ]
+    related: [mcp-beginners, awesome-mcp-servers]
+
+  - id: ableton-mcp
+    title: Ableton MCP - AI Music Production
+    url: https://github.com/ahujasid/ableton-mcp
+    domains: [AI-Engineering]
+    type: Repo
+    maturity: Experimental
+    tags: [mcp, ai-control, creative-tools, automation]
+    github_stars: 1900
+    published: '2024-03-19'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      AI-powered integration allowing Claude to directly control Ableton Live for prompt-assisted
+      music production, track creation, and Live session manipulation.
+    why_useful: >
+      Enables natural language music creation, bridges AI and digital audio workstations,
+      opens new creative workflows for AI-assisted music production and experimentation.
+    good_for: [experimentation, creative-projects, learning]
+    prerequisites: [Ableton Live 10+, Python, music production knowledge]
+    use_cases:
+      [
+        AI music creation,
+        creative automation,
+        experimental music,
+        workflow enhancement,
+        educational projects,
+        artistic exploration,
+      ]
+    related: [mcp-beginners]
+
+  - id: function-calling-vs-mcp-fotie
+    title: 'Function Calling vs MCP: What You Need to Know'
+    url: https://blog.fotiecodes.com/function-calling-vs-model-context-protocol-mcp-what-you-need-to-know-cm88zfwik000108ji0a1d54fc
+    domains: [AI-Engineering]
+    type: Article
+    maturity: Battle-tested
+    tags: [mcp, ai-integration, llm, protocol, architecture]
+    published: '2024-03-14'
+    last_updated: '2024-03'
+    added: '2024-09-23'
+    summary: >
+      Comprehensive technical comparison of Function Calling and Model Context Protocol (MCP),
+      explaining how function calling translates natural language to API calls while MCP standardizes execution.
+    why_useful: >
+      Clarifies the relationship between two key AI integration concepts, provides concrete JSON examples
+      from multiple LLM providers, and helps architects choose appropriate patterns for AI system design.
+    good_for: [learning, architecture, strategy]
+    prerequisites: [basic AI/LLM knowledge, API concepts]
+    use_cases:
+      [
+        AI system architecture,
+        protocol comparison,
+        integration planning,
+        technical education,
+        design decisions,
+        technology evaluation,
+      ]
+    related: [mcp-beginners, deeplearning-ai-mcp-course, awesome-mcp-servers]
+
+  - id: graphiti-zep
+    title: Graphiti - Real-Time Knowledge Graphs for AI
+    url: https://github.com/getzep/graphiti
+    domains: [AI-Engineering]
+    type: Repo
+    maturity: Emerging
+    tags: [graph-rag, knowledge-graphs, agents]
+    github_stars: 18400
+    published: '2024-08-08'
+    last_updated: '2024-12'
+    added: '2024-09-23'
+    summary: >
+      Framework for building real-time knowledge graphs that dynamically integrate user interactions,
+      structured/unstructured data, and external information with bi-temporal tracking.
+    why_useful: >
+      Enables AI agents with persistent, evolving memory systems, supports incremental graph updates,
+      and provides advanced temporal tracking capabilities beyond traditional RAG approaches.
+    good_for: [production, research, POCs]
+    prerequisites: [Python 3.10+, graph database knowledge, LLM APIs]
+    use_cases:
+      [
+        AI agent memory,
+        knowledge graph RAG,
+        temporal data tracking,
+        enterprise AI systems,
+        research applications,
+        context-aware agents,
+      ]
+    related: [nano-graphrag, neo4j-graphrag-guide]
+
+  - id: nano-graphrag
+    title: nano-graphrag - Lightweight GraphRAG Implementation
+    url: https://github.com/gusye1234/nano-graphrag
+    domains: [AI-Engineering]
+    type: Repo
+    maturity: Emerging
+    tags: [graph-rag, retrieval]
+    github_stars: 3400
+    published: '2024-07-25'
+    last_updated: '2024-12'
+    added: '2024-09-23'
+    summary: >
+      Simplified, hackable GraphRAG implementation in ~1,100 lines with flexible components
+      for LLM, embedding, vector storage, and graph storage with async support.
+    why_useful: >
+      Provides accessible entry point to GraphRAG with modular design, supports incremental updates,
+      and offers cleaner alternative to Microsoft's official implementation.
+    good_for: [learning, POCs, experimentation]
+    prerequisites: [Python 3.9+, basic GraphRAG concepts]
+    use_cases:
+      [
+        GraphRAG learning,
+        rapid prototyping,
+        custom implementations,
+        research experiments,
+        lightweight deployments,
+        educational projects,
+      ]
+    related: [graphiti-zep, neo4j-graphrag-guide]
+
+  - id: langgraph-multi-agent
+    title: LangGraph Multi-Agent Systems Documentation
+    url: https://langchain-ai.github.io/langgraph/concepts/multi_agent/
+    domains: [AI-Engineering]
+    type: Guide
+    maturity: Battle-tested
+    tags: [agents, architecture]
+    published: '2024-06'
+    last_updated: '2024-12'
+    added: '2024-09-23'
+    summary: >
+      Comprehensive documentation on multi-agent architectures including network, supervisor,
+      hierarchical patterns with communication strategies and state management.
+    why_useful: >
+      Provides deep technical insights for building sophisticated multi-agent systems with
+      practical code examples, architectural patterns, and implementation trade-offs.
+    good_for: [learning, production, architecture]
+    prerequisites: [Python, LangGraph basics, multi-agent concepts]
+    use_cases:
+      [
+        multi-agent system design,
+        agent coordination,
+        complex AI workflows,
+        distributed AI systems,
+        enterprise automation,
+        research applications,
+      ]
+    related: [langgraph-agent-architectures, graphiti-zep]
+
+  - id: graphrag-official-site
+    title: GraphRAG Official Documentation
+    url: https://graphrag.com/
+    domains: [AI-Engineering]
+    type: Guide
+    maturity: Battle-tested
+    tags: [graph-rag, documentation, knowledge-graphs, retrieval]
+    published: '2024-01'
+    last_updated: '2024-12'
+    added: '2024-09-23'
+    summary: >
+      Comprehensive documentation hub for GraphRAG covering conceptual overviews, how-to guides,
+      technical references, and research appendices with community resources.
+    why_useful: >
+      Authoritative resource for GraphRAG implementation from leading graph database company,
+      provides structured learning path from basics to advanced implementation.
+    good_for: [learning, documentation, strategy]
+    prerequisites: [basic RAG knowledge, graph database concepts]
+    use_cases:
+      [
+        GraphRAG learning,
+        implementation planning,
+        reference documentation,
+        concept understanding,
+        best practices,
+        community engagement,
+      ]
+    related: [neo4j-graphrag-guide, nano-graphrag, graphiti-zep]
+
+  - id: neo4j-graphrag-guide
+    title: 'Neo4j GraphRAG Field Guide: 9 RAG Patterns'
+    url: https://neo4j.com/developer-blog/graphrag-field-guide-rag-patterns/
+    domains: [AI-Engineering]
+    type: Article
+    maturity: Battle-tested
+    tags: [graph-rag, patterns, retrieval]
+    published: '2024-09-16'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Structured guide to 9 GraphRAG patterns across basic, intermediate, and advanced levels
+      including vector search, community summaries, and dynamic Cypher generation.
+    why_useful: >
+      Provides practical implementation roadmap for GraphRAG with concrete patterns, code examples,
+      and complexity progression from leading graph database authority.
+    good_for: [production, learning, architecture]
+    prerequisites: [graph databases, RAG concepts, Neo4j knowledge helpful]
+    use_cases:
+      [
+        GraphRAG implementation,
+        pattern selection,
+        system architecture,
+        enterprise RAG,
+        knowledge management,
+        advanced retrieval,
+      ]
+    related: [graphrag-official-site, nano-graphrag, graphiti-zep]
+
+  - id: langgraph-agent-architectures
+    title: LangGraph Agent Architectures Concepts
+    url: https://langchain-ai.github.io/langgraph/concepts/agentic_concepts/#agent-architectures
+    domains: [AI-Engineering]
+    type: Guide
+    maturity: Battle-tested
+    tags: [agents, architecture, workflow]
+    published: '2024-06'
+    last_updated: '2024-12'
+    added: '2024-09-23'
+    summary: >
+      Comprehensive guide to agent architectures where LLMs control application flow, covering
+      routers, tool-calling agents, and custom architectures with human-in-the-loop.
+    why_useful: >
+      Balances theoretical understanding with practical implementation, provides framework for
+      building flexible agent systems beyond rigid hard-coded workflows.
+    good_for: [architecture, learning, production]
+    prerequisites: [LangGraph basics, LLM application development]
+    use_cases:
+      [
+        agent system design,
+        workflow automation,
+        intelligent applications,
+        adaptive AI systems,
+        enterprise automation,
+        research platforms,
+      ]
+    related: [langgraph-multi-agent, graphiti-zep]
+
+  - id: essential-graphrag-book
+    title: 'Essential GraphRAG: Knowledge Graph-Enhanced RAG'
+    url: https://neo4j.com/essential-graphrag/
+    domains: [AI-Engineering]
+    type: Guide
+    maturity: Battle-tested
+    tags: [graph-rag, knowledge-graphs, rag]
+    published: '2024-09-02'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Free 176-page Manning book by Neo4j experts covering GraphRAG implementation, vector similarity,
+      knowledge graph construction with LLMs, agentic RAG, and performance evaluation.
+    why_useful: >
+      Comprehensive free resource from authoritative graph database company, provides practical guidance
+      for reducing LLM hallucinations and building accurate GraphRAG systems with structured data.
+    good_for: [learning, production, strategy]
+    prerequisites: [intermediate Python, basic RAG knowledge, graph concepts]
+    use_cases:
+      [
+        GraphRAG learning,
+        system implementation,
+        LLM accuracy improvement,
+        knowledge modeling,
+        enterprise RAG,
+        research applications,
+      ]
+    related:
+      [
+        neo4j-graphrag-guide,
+        graphrag-official-site,
+        graphiti-zep,
+        nano-graphrag,
+      ]
+
+  - id: copilotkit
+    title: CopilotKit
+    url: https://github.com/CopilotKit/CopilotKit
+    domains: [AI-Engineering]
+    type: Repo
+    maturity: Emerging
+    tags: [ai-integration, agents, typescript]
+    github_stars: 23900
+    published: '2023-06-19'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      React framework for building AI copilots and in-app AI agents with elegant UI components,
+      security features, and rapid integration via CLI tools.
+    why_useful: >
+      Dramatically reduces time to integrate AI assistants into web applications, provides
+      production-ready security and UI components, supports complex AI agent workflows.
+    good_for: [production, POCs, integration]
+    prerequisites: [React, JavaScript/TypeScript, web development]
+    use_cases:
+      [
+        AI chatbots,
+        in-app assistants,
+        agentic interfaces,
+        AI-powered UX,
+        copilot features,
+        user engagement,
+      ]
+    related: [promptfoo, zenml-llmops-cases]
+
+  - id: k6-load-testing
+    title: k6
+    url: https://github.com/grafana/k6
+    domains: [Platform-Engineering]
+    type: Repo
+    maturity: Battle-tested
+    tags: [load-testing, performance, javascript, ci-cd, monitoring]
+    github_stars: 28800
+    published: '2016-03-21'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Modern load testing tool using Go and JavaScript for performance testing with
+      developer-friendly scripting and extensive protocol support.
+    why_useful: >
+      Enables realistic load testing with JavaScript-based scenarios, integrates seamlessly
+      with CI/CD pipelines, provides detailed metrics and Grafana integration.
+    good_for: [production, testing, performance]
+    prerequisites: [JavaScript basics, performance testing concepts]
+    use_cases:
+      [
+        load testing,
+        performance validation,
+        CI/CD integration,
+        stress testing,
+        capacity planning,
+        API testing,
+      ]
+    related: [locust-load-testing]
+
+  - id: dozzle
+    title: Dozzle
+    url: https://github.com/amir20/dozzle
+    domains: [Platform-Engineering]
+    type: Repo
+    maturity: Emerging
+    tags: [docker, logging, monitoring, containers, web-ui]
+    github_stars: 9600
+    published: '2018-10-30'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Lightweight real-time log viewer for Docker containers with intelligent search,
+      split-screen viewing, and multi-container support in a 7MB package.
+    why_useful: >
+      Provides instant visibility into container logs without storage overhead, eliminates
+      need for complex logging infrastructure for development and small deployments.
+    good_for: [monitoring, debugging]
+    prerequisites: [Docker basics, container concepts]
+    use_cases:
+      [
+        container debugging,
+        log monitoring,
+        development workflow,
+        troubleshooting,
+        real-time alerts,
+        multi-container apps,
+      ]
+    related: [locust-load-testing]
+
 # Metadata for the collection
 metadata:
-  total_resources: 13
+  total_resources: 36
   domains:
-    [LLMOps-RAG, ML-Engineering, DevOps-SRE, Data-Engineering, Security, Systems-Tools]
-  last_updated: "2024-09-22"
-  version: "1.0.0"
-  maintainer: "Your GitHub Username"
+    [
+      AI-Engineering,
+      Platform-Engineering,
+      Data-Engineering,
+      Security,
+      Developer-Tools,
+    ]
+  last_updated: '2024-09-23'
+  version: '1.1.0'
+  maintainer: 'Your GitHub Username'

@@ -1,0 +1,165 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Engineering Arsenal Resource Schema",
+  "description": "Schema for engineering resources with updated taxonomy and controlled vocabulary",
+  "type": "object",
+  "properties": {
+    "resources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/resource"
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "total_resources": {"type": "integer"},
+        "domains": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "last_updated": {"type": "string"},
+        "version": {"type": "string"},
+        "maintainer": {"type": "string"}
+      }
+    }
+  },
+  "required": ["resources"],
+  "definitions": {
+    "resource": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the resource",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "title": {
+          "type": "string",
+          "description": "Resource title"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Resource URL"
+        },
+        "domains": {
+          "type": "array",
+          "description": "Resource domains (supports multiple)",
+          "items": {
+            "type": "string",
+            "enum": [
+              "AI-Engineering",
+              "Platform-Engineering",
+              "Data-Engineering",
+              "Security",
+              "Developer-Tools",
+              "Other"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 3
+        },
+        "type": {
+          "type": "string",
+          "enum": ["Repo", "Article", "Guide", "Tool", "Framework", "Dataset"],
+          "description": "Resource type"
+        },
+        "maturity": {
+          "type": "string",
+          "enum": ["Battle-tested", "Adopted", "Emerging", "Experimental"],
+          "description": "Resource maturity level"
+        },
+        "tags": {
+          "type": "array",
+          "description": "Controlled vocabulary tags",
+          "items": {"type": "string"},
+          "maxItems": 6
+        },
+        "github_stars": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "GitHub stars count (for repos)"
+        },
+        "published": {
+          "type": "string",
+          "pattern": "^\\d{4}(-\\d{2})?(-\\d{2})?$",
+          "description": "Publication date (YYYY, YYYY-MM, or YYYY-MM-DD)"
+        },
+        "last_updated": {
+          "type": "string",
+          "pattern": "^\\d{4}(-\\d{2})?(-\\d{2})?$",
+          "description": "Last update date (YYYY, YYYY-MM, or YYYY-MM-DD)"
+        },
+        "added": {
+          "type": "string",
+          "pattern": "^\\d{4}(-\\d{2})?(-\\d{2})?$",
+          "description": "Date added to knowledgebase (YYYY, YYYY-MM, or YYYY-MM-DD)"
+        },
+        "summary": {
+          "type": "string",
+          "description": "Concise resource summary"
+        },
+        "why_useful": {
+          "type": "string",
+          "description": "Why this resource is valuable"
+        },
+        "good_for": {
+          "type": "array",
+          "description": "Use case categories",
+          "items": {
+            "type": "string",
+            "enum": [
+              "production",
+              "mlops",
+              "testing",
+              "evaluation",
+              "prototyping",
+              "learning",
+              "research",
+              "experimentation",
+              "architecture",
+              "strategy",
+              "POCs",
+              "documentation",
+              "discovery",
+              "integration",
+              "monitoring",
+              "debugging",
+              "performance",
+              "automation",
+              "creative-projects"
+            ]
+          }
+        },
+        "prerequisites": {
+          "type": "array",
+          "description": "Technical prerequisites",
+          "items": {"type": "string"}
+        },
+        "use_cases": {
+          "type": "array",
+          "description": "Specific use cases",
+          "items": {"type": "string"}
+        },
+        "related": {
+          "type": "array",
+          "description": "Related resource IDs",
+          "items": {"type": "string"}
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "url",
+        "domains",
+        "type",
+        "maturity",
+        "tags",
+        "summary",
+        "good_for"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

@@ -17,38 +17,32 @@ REQUIRED_FIELDS = [
     "id",
     "title",
     "url",
-    "domain",
+    "domains",
     "type",
     "maturity",
-    "effort",
     "tags",
-    "published",
-    "last_updated",
     "summary",
-    "why_useful",
     "good_for",
 ]
 
 OPTIONAL_FIELDS = [
-    "source_owner",
-    "license",
     "github_stars",
-    "language",
-    "setup_time_minutes",
+    "published",
+    "last_updated",
+    "added",
+    "why_useful",
     "prerequisites",
     "use_cases",
     "related",
 ]
 
 VALID_DOMAINS = [
-    "LLMOps-RAG",
-    "ML-Engineering",
-    "DevOps-SRE",
+    "AI-Engineering",
+    "Platform-Engineering",
     "Data-Engineering",
     "Security",
-    "Systems-Tools",
-    "System-Design",
-    "Productivity",
+    "Developer-Tools",
+    "Other",
 ]
 
 VALID_TYPES = [
@@ -62,9 +56,28 @@ VALID_TYPES = [
     "Spec",
 ]
 
-VALID_MATURITY = ["Battle-tested", "Emerging", "Experimental"]
-VALID_EFFORT = ["Low", "Medium", "High"]
-VALID_GOOD_FOR = ["learning", "production", "POCs", "research", "templates"]
+VALID_MATURITY = ["Battle-tested", "Adopted", "Emerging", "Experimental"]
+VALID_GOOD_FOR = [
+    "production",
+    "mlops",
+    "testing",
+    "evaluation",
+    "prototyping",
+    "learning",
+    "research",
+    "experimentation",
+    "architecture",
+    "strategy",
+    "POCs",
+    "documentation",
+    "discovery",
+    "integration",
+    "monitoring",
+    "debugging",
+    "performance",
+    "automation",
+    "creative-projects",
+]
 
 
 class ValidationError(Exception):
@@ -114,22 +127,24 @@ class ResourceValidator:
             "url",
             "type",
             "maturity",
-            "effort",
             "summary",
             "why_useful",
+            "published",
+            "last_updated",
+            "added",
         ]
         for field in string_fields:
             if field in resource and not isinstance(resource[field], str):
                 raise ValidationError(f"Field '{field}' must be a string")
 
         # List fields
-        list_fields = ["domain", "tags", "good_for"]
+        list_fields = ["domains", "tags", "good_for", "prerequisites", "use_cases", "related"]
         for field in list_fields:
             if field in resource and not isinstance(resource[field], list):
                 raise ValidationError(f"Field '{field}' must be a list")
 
         # Integer fields
-        int_fields = ["github_stars", "setup_time_minutes"]
+        int_fields = ["github_stars"]
         for field in int_fields:
             if field in resource and not isinstance(resource[field], int):
                 raise ValidationError(f"Field '{field}' must be an integer")
@@ -140,9 +155,9 @@ class ResourceValidator:
         """Validate field values against allowed options."""
 
         # Domain validation
-        domains = resource.get("domain", [])
-        if len(domains) > 2:
-            raise ValidationError("Maximum 2 domains allowed")
+        domains = resource.get("domains", [])
+        if len(domains) > 3:
+            raise ValidationError("Maximum 3 domains allowed")
 
         invalid_domains = [d for d in domains if d not in VALID_DOMAINS]
         if invalid_domains:
@@ -162,10 +177,12 @@ class ResourceValidator:
                 f"Invalid maturity: {resource.get('maturity')}. Valid: {VALID_MATURITY}"
             )
 
-        # Effort validation
-        if resource.get("effort") not in VALID_EFFORT:
+        # Good for validation
+        good_for = resource.get("good_for", [])
+        invalid_good_for = [g for g in good_for if g not in VALID_GOOD_FOR]
+        if invalid_good_for:
             raise ValidationError(
-                f"Invalid effort: {resource.get('effort')}. Valid: {VALID_EFFORT}"
+                f"Invalid good_for values: {invalid_good_for}. Valid: {VALID_GOOD_FOR}"
             )
 
         # Tags validation
@@ -176,12 +193,12 @@ class ResourceValidator:
             )
 
         # Date validation
-        date_fields = ["published", "last_updated"]
+        date_fields = ["published", "last_updated", "added"]
         for field in date_fields:
             if field in resource:
                 date_value = resource[field]
-                # Allow YYYY-MM-DD or YYYY-MM formats
-                valid_formats = ["%Y-%m-%d", "%Y-%m"]
+                # Allow YYYY-MM-DD or YYYY-MM or YYYY formats
+                valid_formats = ["%Y-%m-%d", "%Y-%m", "%Y"]
                 is_valid = False
                 for fmt in valid_formats:
                     try:
@@ -193,7 +210,7 @@ class ResourceValidator:
 
                 if not is_valid:
                     raise ValidationError(
-                        f"Invalid date format for '{field}': {date_value}. Use YYYY-MM-DD or YYYY-MM"
+                        f"Invalid date format for '{field}': {date_value}. Use YYYY-MM-DD, YYYY-MM, or YYYY"
                     )
 
     def _validate_uniqueness(self, resource: Dict[str, Any], resource_id: str) -> None:

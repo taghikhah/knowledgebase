@@ -1,19 +1,24 @@
 #!/usr/bin/env python3
 """
-Generate README.md from resources.yaml - Final Polished Version
-Clean table layout with section descriptions and focused content.
+Generate README.md from resources.yaml - Hybrid Version
+Beautiful presentation with advanced categorization algorithm.
 """
 
 import yaml
+import re
 from datetime import datetime
 from pathlib import Path
 from collections import defaultdict, Counter
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional
 
-# Consistent emoji mappings
-MATURITY_EMOJI = {"Battle-tested": "🛡️", "Emerging": "🔧", "Experimental": "🧪"}
+# Consistent emoji mappings (from original)
+MATURITY_EMOJI = {"Battle-tested": "🛡️", "Emerging": "🔧", "Experimental": "🧪", "Adopted": "🔧"}
 
 EFFORT_EMOJI = {"Low": "🎯", "Medium": "⚙️", "High": "🚀"}
+
+# New advanced sorting constants
+MATURITY_RANK = {"Battle-tested": 0, "Adopted": 1, "Emerging": 2, "Experimental": 3}
+GOOD_FOR_PRIORITY = ["production", "mlops", "testing", "evaluation", "prototyping"]
 
 
 def load_resources() -> Dict[str, Any]:
@@ -43,16 +48,22 @@ def format_resource_row(resource: Dict[str, Any]) -> str:
                 f"{stars/1000:.0f}K" if stars % 1000 == 0 else f"{stars/1000:.1f}K"
             )
         else:
-            formatted_stars = f"~1K"
+            formatted_stars = f"<1K"
         github_info = f"<br/>⭐ {formatted_stars}"
-        # if resource.get("language"):
-        #     github_info += f" • {resource['language']}"
 
     title_cell = f"**[{resource['title']}]({resource['url']})**{github_info}"
 
     # Consistent emoji usage (emoji only, no text)
     maturity_cell = MATURITY_EMOJI.get(resource["maturity"], "❓")
-    effort_cell = EFFORT_EMOJI.get(resource["effort"], "❓")
+
+    # Use good_for instead of effort since effort was removed
+    good_for_list = resource.get("good_for", [])
+    if "production" in good_for_list:
+        effort_cell = "🎯"  # Production-ready gets priority
+    elif any(x in good_for_list for x in ["mlops", "testing"]):
+        effort_cell = "⚙️"  # Medium complexity
+    else:
+        effort_cell = "🚀"  # High learning/research value
 
     # Clean use cases (limit to first 2-3 for readability)
     use_cases = ", ".join(resource.get("use_cases", [])[:3])
@@ -67,28 +78,64 @@ def format_resource_row(resource: Dict[str, Any]) -> str:
     )
 
 
+def parse_date(date_str: Optional[str]) -> datetime:
+    """Parse date string in various formats, return datetime for sorting."""
+    if not date_str:
+        return datetime(1900, 1, 1)  # Very old date for sorting
+
+    # Try different formats
+    formats = ["%Y-%m-%d", "%Y-%m", "%Y"]
+    for fmt in formats:
+        try:
+            return datetime.strptime(date_str, fmt)
+        except ValueError:
+            continue
+
+    return datetime(1900, 1, 1)
+
+
+def get_sort_key(resource: Dict[str, Any]) -> tuple:
+    """Generate sort key for stable, signal-first sorting."""
+    # Maturity rank (lower is better)
+    maturity_rank = MATURITY_RANK.get(resource.get("maturity"), 99)
+
+    # Date key (newer first)
+    last_updated = resource.get("last_updated")
+    published = resource.get("published")
+    added = resource.get("added")
+    date_key = -int(parse_date(last_updated or published or added).timestamp())
+
+    # GitHub stars (more first)
+    github_stars = -(resource.get("github_stars") or 0)
+
+    # Good_for priority (lower index is better)
+    good_for = resource.get("good_for", [])
+    good_for_key = min([GOOD_FOR_PRIORITY.index(g) for g in good_for if g in GOOD_FOR_PRIORITY] or [len(GOOD_FOR_PRIORITY)])
+
+    # Title for alphabetical tiebreak
+    title = resource.get("title", "").lower()
+
+    return (maturity_rank, date_key, github_stars, good_for_key, title)
+
+
 def group_resources_by_domain(
     resources: List[Dict[str, Any]],
 ) -> Dict[str, List[Dict[str, Any]]]:
-    """Group resources by their primary domain."""
+    """Group resources by their domains (multi-domain support)."""
     grouped = defaultdict(list)
 
     for resource in resources:
-        domains = resource.get("domain", [])
-        primary_domain = domains[0] if domains else "Other"
-        grouped[primary_domain].append(resource)
+        domains = resource.get("domains", resource.get("domain", ["Other"]))
+        if isinstance(domains, str):
+            domains = [domains]
 
-    # Sort within each domain by maturity (Battle-tested first) then by title
-    maturity_order = {"Battle-tested": 0, "Emerging": 1, "Experimental": 2}
+        # Add resource to each of its domains
+        for domain in domains:
+            grouped[domain].append(resource)
 
+    # Sort within each domain using new advanced sorting
     for domain in grouped:
-        grouped[domain].sort(
-            key=lambda r: (
-                maturity_order.get(r["maturity"], 3),
-                -r.get("github_stars", 0),  # Higher stars first
-                r["title"].lower(),
-            )
-        )
+        grouped[domain].sort(key=get_sort_key)
 
     return dict(grouped)
 
@@ -96,12 +143,11 @@ def group_resources_by_domain(
 def get_domain_description(domain: str) -> str:
     """Get a brief description for each domain section."""
     descriptions = {
-        "LLMOps-RAG": "Tools and frameworks for operating Large Language Models in production, including prompt testing, RAG systems, and evaluation frameworks.",
-        "ML-Engineering": "Machine learning frameworks, training tools, and platforms for building and deploying ML systems at scale.",
-        "DevOps-SRE": "Infrastructure automation, monitoring, testing, and reliability engineering tools for production systems.",
-        "Data-Engineering": "Tools for data pipelines, processing, storage, and analytics infrastructure.",
-        "Security": "Security scanning, authentication, compliance, and vulnerability management tools.",
-        "Systems-Tools": "Development utilities, documentation tools, and system design resources for engineering teams.",
+        "AI-Engineering": "Agents/MCP, RAG & knowledge systems, testing & eval, training & frameworks, architecture.",
+        "Platform-Engineering": "Observability & performance, infra & services (IaC), container platforms, build & delivery, docs/runbooks.",
+        "Data-Engineering": "Discovery & governance, query & storage, pipelines & orchestration, analytics & BI.",
+        "Security": "Supply chain & vuln mgmt, infra/runtime security, secrets/auth/compliance.",
+        "Developer-Tools": "Code quality, browser/web tools, CLI/editors/productivity, creative/specialized.",
     }
     return descriptions.get(domain, "Various engineering tools and resources.")
 
@@ -109,19 +155,18 @@ def get_domain_description(domain: str) -> str:
 def create_domain_section(domain: str, resources: List[Dict[str, Any]]) -> str:
     """Create a markdown section for a domain with description."""
     domain_titles = {
-        "LLMOps-RAG": "🤖 AI/ML Engineering",
-        "ML-Engineering": "🧠 ML Engineering",
-        "DevOps-SRE": "🔧 DevOps & SRE",
+        "AI-Engineering": "🤖 AI Engineering",
+        "Platform-Engineering": "🏗️ Platform Engineering",
         "Data-Engineering": "📊 Data Engineering",
         "Security": "🔒 Security",
-        "Systems-Tools": "🛠️ Systems & Tools",
+        "Developer-Tools": "🛠️ Developer Tools",
     }
 
     section_title = domain_titles.get(domain, f"📁 {domain}")
     domain_description = get_domain_description(domain)
 
-    # Group by subcategory
-    subcategories = group_by_subcategory(resources)
+    # Group by subcategory using new algorithm
+    subcategories = group_by_subcategory(resources, domain)
 
     section = f"\n### {section_title}\n\n"
     section += f"*{domain_description}*\n\n"
@@ -144,38 +189,77 @@ def create_domain_section(domain: str, resources: List[Dict[str, Any]]) -> str:
 
 
 def group_by_subcategory(
-    resources: List[Dict[str, Any]],
+    resources: List[Dict[str, Any]], domain: str
 ) -> Dict[str, List[Dict[str, Any]]]:
-    """Group resources into logical subcategories based on tags and types."""
+    """Group resources into logical subcategories using new domain-specific rules."""
     subcategories = defaultdict(list)
 
     for resource in resources:
         tags = [tag.lower() for tag in resource.get("tags", [])]
 
-        # Improved categorization logic
-        if any(tag in tags for tag in ["llmops", "rag", "prompts", "evaluation"]):
-            subcategories["🎯 LLMOps & RAG Systems"].append(resource)
-        elif any(
-            tag in tags for tag in ["training", "frameworks", "models", "apple-silicon"]
-        ):
-            subcategories["🧠 ML Frameworks & Training"].append(resource)
-        elif any(
-            tag in tags for tag in ["devops", "infrastructure", "ci-cd", "deployment"]
-        ):
-            subcategories["🏗️ Infrastructure & DevOps"].append(resource)
-        elif any(
-            tag in tags
-            for tag in ["testing", "performance", "load-testing", "monitoring"]
-        ):
-            subcategories["📈 Testing & Performance"].append(resource)
-        elif any(tag in tags for tag in ["sql", "database", "query"]):
-            subcategories["🗄️ SQL & Database Tools"].append(resource)
-        elif any(tag in tags for tag in ["documentation", "diagrams", "visualization"]):
-            subcategories["📋 Documentation & Visualization"].append(resource)
-        elif any(tag in tags for tag in ["security", "scanning", "auth"]):
-            subcategories["🔒 Security & Compliance"].append(resource)
+        if domain == "AI-Engineering":
+            if any(tag in tags for tag in ["agents", "mcp", "integration", "protocol"]):
+                subcategories["🤖 Agent Systems & Integration"].append(resource)
+            elif any(tag in tags for tag in ["rag", "graph-rag", "knowledge-graphs", "retrieval"]):
+                subcategories["🧠 RAG & Knowledge Systems"].append(resource)
+            elif any(tag in tags for tag in ["evaluation", "testing", "prompts"]):
+                subcategories["🎯 Testing & Evaluation"].append(resource)
+            elif any(tag in tags for tag in ["training", "frameworks"]):
+                subcategories["🏗️ Training & Frameworks"].append(resource)
+            elif any(tag in tags for tag in ["architecture", "case-studies", "patterns"]):
+                subcategories["📚 Architecture & Best Practices"].append(resource)
+            else:
+                subcategories["🛠️ Core AI Tools"].append(resource)
+
+        elif domain == "Platform-Engineering":
+            if any(tag in tags for tag in ["performance", "monitoring", "observability"]):
+                subcategories["📈 Performance & Observability"].append(resource)
+            elif any(tag in tags for tag in ["infrastructure", "self-hosting", "catalog", "services"]):
+                subcategories["🏗️ Infrastructure & Services"].append(resource)
+            elif any(tag in tags for tag in ["containers", "docker", "logs"]):
+                subcategories["🐳 Container Platforms"].append(resource)
+            elif any(tag in tags for tag in ["documentation", "diagrams", "architecture"]):
+                subcategories["📋 Documentation & Architecture"].append(resource)
+            else:
+                subcategories["🛠️ Platform Tools"].append(resource)
+
+        elif domain == "Data-Engineering":
+            if any(tag in tags for tag in ["datasets", "catalog", "discovery", "public-data"]):
+                subcategories["🔍 Data Discovery & Catalogs"].append(resource)
+            elif any(tag in tags for tag in ["sql", "database", "nl2sql"]):
+                subcategories["🗄️ Query & Database Tools"].append(resource)
+            elif any(tag in tags for tag in ["pipelines", "etl", "processing"]):
+                subcategories["⚙️ Pipelines & Processing"].append(resource)
+            else:
+                subcategories["🏗️ Data Infrastructure"].append(resource)
+
+        elif domain == "Security":
+            if any(tag in tags for tag in ["vulnerability-scanning", "containers", "supply-chain"]):
+                subcategories["🛡️ Vulnerability Management"].append(resource)
+            elif any(tag in tags for tag in ["kubernetes", "admission-controller", "configuration"]):
+                subcategories["🏗️ Infrastructure Security"].append(resource)
+            elif any(tag in tags for tag in ["secrets", "auth", "compliance"]):
+                subcategories["🔐 Access & Compliance"].append(resource)
+            else:
+                subcategories["🛠️ Security Tools"].append(resource)
+
+        elif domain == "Developer-Tools":
+            if any(tag in tags for tag in ["code-formatting", "linting", "git-hooks", "pre-commit"]):
+                subcategories["✨ Code Quality & Standards"].append(resource)
+            elif any(tag in tags for tag in ["browser-automation", "chrome-extension"]):
+                subcategories["🌐 Browser & Web Tools"].append(resource)
+            elif any(tag in tags for tag in ["creative-tools"]):
+                subcategories["🎨 Creative & Specialized Tools"].append(resource)
+            else:
+                subcategories["🛠️ Development Utilities"].append(resource)
+
         else:
+            # Fallback for other domains
             subcategories["🛠️ Tools & Utilities"].append(resource)
+
+    # Sort each subcategory using advanced sorting
+    for subcat_resources in subcategories.values():
+        subcat_resources.sort(key=get_sort_key)
 
     return dict(subcategories)
 
@@ -185,24 +269,19 @@ def generate_quick_navigation(
 ) -> str:
     """Generate the quick navigation section with descriptions."""
     domain_info = {
-        "LLMOps-RAG": ("🤖 **AI/ML**", "aiml-engineering", "LLM operations & RAG"),
-        "ML-Engineering": (
-            "🧠 **ML Engineering**",
-            "ml-engineering",
-            "ML frameworks & training",
-        ),
-        "DevOps-SRE": (
-            "🔧 **DevOps/SRE**",
-            "devops--sre",
+        "AI-Engineering": ("🤖 **AI Engineering**", "ai-engineering", "Agents, RAG & ML systems"),
+        "Platform-Engineering": (
+            "🏗️ **Platform Engineering**",
+            "platform-engineering",
             "Infrastructure & reliability",
         ),
         "Data-Engineering": (
-            "📊 **Data Eng**",
+            "📊 **Data Engineering**",
             "data-engineering",
             "Data pipelines & processing",
         ),
         "Security": ("🔒 **Security**", "security", "Security & compliance"),
-        "Systems-Tools": ("🛠️ **Systems**", "systems--tools", "Development utilities"),
+        "Developer-Tools": ("🛠️ **Developer Tools**", "developer-tools", "Development utilities"),
     }
 
     nav_section = '\n### Quick Navigation\n\n<div align="center">\n\n'
@@ -220,8 +299,7 @@ def generate_quick_navigation(
             clean_title = (
                 emoji_title.replace("**", "")
                 .replace("🤖 ", "")
-                .replace("🧠 ", "")
-                .replace("🔧 ", "")
+                .replace("🏗️ ", "")
                 .replace("📊 ", "")
                 .replace("🔒 ", "")
                 .replace("🛠️ ", "")
@@ -251,10 +329,11 @@ def generate_quick_navigation(
 
 def generate_quick_wins_section(resources: List[Dict[str, Any]]) -> str:
     """Generate the Quick Wins section with one best resource per domain."""
+    # Use good_for instead of effort for quick wins
     quick_wins = [
         r
         for r in resources
-        if r.get("effort") == "Low"
+        if "production" in r.get("good_for", [])
         and r.get("maturity") in ["Battle-tested", "Emerging"]
     ]
 
@@ -264,13 +343,17 @@ def generate_quick_wins_section(resources: List[Dict[str, Any]]) -> str:
     # Group by domain and pick the best resource from each domain
     domain_best = {}
     for resource in quick_wins:
-        domain = resource.get("domain", ["Other"])[0]
+        domains = resource.get("domains", resource.get("domain", ["Other"]))
+        if isinstance(domains, str):
+            domains = [domains]
+
+        primary_domain = domains[0]
 
         # If we haven't seen this domain or this resource is better
-        if domain not in domain_best:
-            domain_best[domain] = resource
+        if primary_domain not in domain_best:
+            domain_best[primary_domain] = resource
         else:
-            current_best = domain_best[domain]
+            current_best = domain_best[primary_domain]
             # Better if: battle-tested > emerging, then higher stars
             is_better = (
                 resource["maturity"] == "Battle-tested"
@@ -281,13 +364,13 @@ def generate_quick_wins_section(resources: List[Dict[str, Any]]) -> str:
                 > current_best.get("github_stars", 0)
             )
             if is_better:
-                domain_best[domain] = resource
+                domain_best[primary_domain] = resource
 
     if not domain_best:
         return ""
 
     section = "\n## Quick Wins\n\n"
-    section += "*Best quick win in each domain - high-impact resources you can implement in under 2 hours.*\n\n"
+    section += "*Best quick win in each domain - high-impact resources you can implement quickly.*\n\n"
     section += "| Domain | Use Case | Resource |\n"
     section += "|:------|----------|----------|\n"
 
@@ -308,7 +391,10 @@ def calculate_basic_stats(resources: List[Dict[str, Any]]) -> Dict[str, Any]:
     # Count by domain
     domain_counts = Counter()
     for resource in resources:
-        for domain in resource.get("domain", []):
+        domains = resource.get("domains", resource.get("domain", []))
+        if isinstance(domains, str):
+            domains = [domains]
+        for domain in domains:
             domain_counts[domain] += 1
 
     # All unique tags
@@ -344,7 +430,7 @@ def update_readme_template(
     # Header with improved badges
     readme_content = f"""# Engineering Arsenal (Knowledgebase)
 
-A curated, enterprise-grade collection of links, repos, and notes that actually helped me build real systems (ML/AI, LLMOps, DevOps, Data Eng, SRE, Security). Each entry includes structured metadata, honest assessments, and why it's useful in practice.
+A curated, enterprise-grade collection of links, repos, and notes that actually helped me build real systems (AI, Platform, Data, Security, Developer Tools). Each entry includes structured metadata, honest assessments, and why it's useful in practice.
 
 <div align="center">
 
@@ -356,7 +442,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 ## Domains
 
-Here you will find tools and resources organized by engineering domain, each with a brief description to help you navigate. 
+Here you will find tools and resources organized by engineering domain, each with a brief description to help you navigate.
 
 > Please consider following table legends below for maturity and effort indicators.
 
@@ -365,10 +451,10 @@ Here you will find tools and resources organized by engineering domain, each wit
 - 🔧 **Emerging** → Gaining significant traction, active development, worth adopting
 - 🧪 **Experimental** → Early stage but promising, good for research and experimentation
 
-**Time Investment:**
-- 🎯 **Low** → Quick setup and immediate value (under 2 hours)
-- ⚙️ **Medium** → Weekend project with moderate learning curve
-- 🚀 **High** → Major undertaking requiring weeks of investment
+**Effort Investment:**
+- 🎯 **Production** → Ready for production use, proven value
+- ⚙️ **Medium** → Requires moderate setup and learning curve
+- 🚀 **Research** → High learning value, experimental or specialized use
 
 ---
 
@@ -386,7 +472,7 @@ Here you will find tools and resources organized by engineering domain, each wit
     readme_content += """
 ## Contributing
 
-Found a resource that significantly improved your engineering workflow? 
+Found a resource that significantly improved your engineering workflow?
 
 **Quick Add:** Create an issue with the URL and a brief "why it's useful" note.
 
@@ -437,7 +523,7 @@ def main():
         print(f"📊 Processing {len(resources)} resources...")
         stats = calculate_basic_stats(resources)
 
-        print("📝 Generating polished README.md...")
+        print("📝 Generating polished README.md with advanced categorization...")
         readme_content = update_readme_template(resources, stats)
 
         # Write to README.md
@@ -452,6 +538,12 @@ def main():
             f"📈 Stats: {stats['domains_covered']} domains, {len(stats['tag_counts'])} unique tags"
         )
 
+        # Show domain breakdown
+        grouped = group_resources_by_domain(resources)
+        for domain, domain_resources in grouped.items():
+            subcats = group_by_subcategory(domain_resources, domain)
+            print(f"  🔹 {domain}: {len(domain_resources)} resources in {len(subcats)} subcategories")
+
     except Exception as e:
         print(f"❌ Error generating README: {e}")
         return 1
@@ -461,3 +553,4 @@ def main():
 
 if __name__ == "__main__":
     exit(main())
+
