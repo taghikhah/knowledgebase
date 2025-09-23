@@ -38,81 +38,95 @@ When adding to `data/resources.yaml`, use this structure:
 - id: unique-slug-name
   title: Display Name
   url: https://example.com/resource
-  domain: [Primary-Domain, Secondary-Domain] # Max 2
-  type: Repo # Repo | Article | Guide | Tool | Framework | Dataset
-  maturity: Emerging # Battle-tested | Emerging | Experimental
-  effort: Medium # Low (<2hrs) | Medium (weekend) | High (weeks)
-  tags: [tag1, tag2, tag3, tag4, tag5] # Max 6, lowercase with hyphens
-  source_owner: github-username-or-org # If applicable
-  license: MIT # If known
-  github_stars: 1200 # If GitHub repo
-  language: Python # Primary language or N/A
-  added: 2024-09-22 # Date added
-  last_checked: 2024-09-22 # Last verification date
-  last_updated: 2024-09 # Last update from source (YYYY-MM)
-  summary: >
+  domains: [AI-Engineering] # Required: 1-3 domains from controlled list
+  type: Repo # Required: Repo | Article | Guide | Tool | Framework | Dataset
+  maturity: Emerging # Required: Battle-tested | Adopted | Emerging | Experimental
+  tags: [tag1, tag2, tag3] # Required: max 6, from controlled vocabulary in data/tags.txt
+  github_stars: 1200 # Optional: for GitHub repos
+  published: '2024-01' # Optional: YYYY, YYYY-MM, or YYYY-MM-DD
+  last_updated: '2024-09' # Optional: when resource was last updated
+  added: '2024-09-23' # Optional: when added to this knowledgebase
+  summary: > # Required: concise description
     2-3 sentence factual description of what this resource is and what it does.
     Focus on capabilities and core functionality.
-  why_useful: >
+  why_useful: > # Optional: why it's valuable
     1-2 sentences explaining practical value. Use concrete examples like
     "saves 3 hours of debugging" or "prevents common production issues."
-  good_for: [learning, production, POCs] # Target use cases
-  setup_time_minutes: 60 # Realistic estimate
-  prerequisites: [Python, Docker, basic-ML] # What you need to know
-  use_cases: [specific, concrete, examples, of, usage]
-  related: [other-resource-ids] # IDs from this file
+  good_for: [learning, production, POCs] # Required: from controlled vocabulary
+  prerequisites: [Python, Docker, basic-ML] # Optional: what you need to know
+  use_cases: [specific, concrete, examples, of, usage] # Optional: concrete examples
+  related: [other-resource-ids] # Optional: cross-references by ID
 ```
 
 ## 🏷️ Domain Classification
 
-Choose **1-2 domains maximum**:
+Choose **1-3 domains maximum** from the new taxonomy:
 
-| Domain             | Description                             | Examples                                          |
-| ------------------ | --------------------------------------- | ------------------------------------------------- |
-| `LLMOps-RAG`       | LLM operations, RAG, prompt engineering | Testing frameworks, evaluation tools, RAG systems |
-| `ML-Engineering`   | Traditional ML, training, frameworks    | Training tools, feature stores, model serving     |
-| `DevOps-SRE`       | Infrastructure, monitoring, deployment  | CI/CD, monitoring, infrastructure as code         |
-| `Data-Engineering` | Pipelines, processing, storage          | ETL tools, data quality, stream processing        |
-| `Security`         | Application & infrastructure security   | Scanning tools, authentication, compliance        |
-| `Systems-Tools`    | Development tools, utilities            | Diagrams, CLI tools, development utilities        |
+| Domain                | Description                                          | Examples                                     |
+| --------------------- | ---------------------------------------------------- | -------------------------------------------- |
+| `AI-Engineering`      | Agents/MCP, RAG & knowledge systems, testing & eval | Agent systems, RAG, evaluation, ML training |
+| `Platform-Engineering` | Infrastructure, observability, container platforms  | Monitoring, IaC, containers, CI/CD          |
+| `Data-Engineering`    | Discovery, query & storage, pipelines & analytics   | Data catalogs, SQL tools, ETL, analytics    |
+| `Security`            | Supply chain, runtime security, auth & compliance   | Vulnerability scanning, secrets, compliance |
+| `Developer-Tools`     | Code quality, browser tools, CLI/productivity       | Formatters, browser automation, utilities    |
+| `Other`               | Resources that don't fit other categories           | General tools and utilities                  |
 
 ## 🔄 Maturity Assessment Guidelines
 
 Be honest about maturity levels:
 
-- **Battle-tested** 🟢: Widely adopted in production, stable APIs, strong community
-
+- **Battle-tested** 🛡️: Widely adopted in production, stable APIs, strong community
   - Examples: Docker, Kubernetes, React, PostgreSQL
   - Indicators: 1000+ GitHub stars, enterprise adoption, stable releases
 
-- **Emerging** 🟡: Gaining traction, active development, some production use
+- **Adopted** 🔧: Growing adoption, proven in multiple use cases
+  - Examples: Tools gaining enterprise traction, established frameworks
+  - Indicators: 500+ stars, multiple production deployments, active community
 
+- **Emerging** 🔧: Gaining traction, active development, some production use
   - Examples: New frameworks getting adoption, tools with growing communities
   - Indicators: 100-1000 stars, regular releases, growing documentation
 
-- **Experimental** 🔴: Early stage, research projects, proof of concepts
+- **Experimental** 🧪: Early stage, research projects, proof of concepts
   - Examples: Academic research, early prototypes, bleeding-edge tools
   - Indicators: <100 stars, irregular updates, limited documentation
 
-## ⚡ Effort Level Guidelines
+## 🎯 Good For Categories
 
-- **Low** (⚡): Can implement/use within 2 hours
-  - Copy-paste examples, simple CLI tools, reading material
-- **Medium** (⚖️): Weekend project, requires some learning
-  - New frameworks, complex configurations, moderate learning curve
-- **High** (🔥): Major time investment, weeks to implement
-  - Complete system overhauls, steep learning curves, enterprise deployments
+Use specific categories from our controlled vocabulary:
+
+- **production**: Ready for production use, proven reliability
+- **mlops**: Specifically valuable for ML operations and workflows
+- **testing**: Testing, evaluation, and quality assurance
+- **evaluation**: Performance measurement and benchmarking
+- **prototyping**: Rapid prototyping and proof of concepts
+- **learning**: Educational resources and skill development
+- **research**: Research projects and academic work
+- **experimentation**: Experimental and exploratory work
+- **architecture**: System design and architectural decisions
+- **strategy**: Strategic planning and decision making
+- **POCs**: Proof of concept development
+- **documentation**: Documentation and knowledge management
+- **discovery**: Resource discovery and exploration
+- **integration**: System integration and connectivity
+- **monitoring**: Observability and monitoring
+- **debugging**: Troubleshooting and debugging
+- **performance**: Performance optimization
+- **automation**: Workflow automation
+- **creative-projects**: Creative and artistic applications
 
 ## 🏷️ Tagging Best Practices
 
-Use **4-6 tags maximum**, follow these patterns:
+Use **3-6 tags maximum** from the controlled vocabulary in `data/tags.txt`:
 
-**Technology tags**: `python`, `docker`, `kubernetes`, `sql`, `typescript`
-**Purpose tags**: `testing`, `monitoring`, `documentation`, `automation`
-**Domain tags**: `mlops`, `devops`, `rag`, `cicd`, `security`
-**Pattern tags**: `patterns`, `best-practices`, `case-studies`, `templates`
+**AI-Engineering**: `agents`, `mcp`, `rag`, `graph-rag`, `evaluation`, `training`, `architecture`
+**Platform-Engineering**: `performance`, `monitoring`, `infrastructure`, `containers`, `ci-cd`, `documentation`
+**Data-Engineering**: `datasets`, `sql`, `pipelines`, `analytics`, `governance`, `discovery`
+**Security**: `vulnerability-scanning`, `secrets`, `compliance`, `supply-chain`
+**Developer-Tools**: `code-formatting`, `browser-automation`, `productivity`, `cli`
+**Cross-cutting**: `patterns`, `open-source`, `frameworks`, `learning`, `battle-tested`
 
-Use lowercase with hyphens: `machine-learning`, `ci-cd`, `natural-language`
+All tags must be from the controlled vocabulary. To add new tags, update `data/tags.txt` with justification.
 
 ## ✅ PR Review Process
 
@@ -177,6 +191,16 @@ This repository uses GitHub Actions to:
 - Regenerate README tables from YAML
 
 Don't manually edit README.md tables - they'll be overwritten!
+
+## 📋 Schema Validation
+
+All resources are validated against `data/schema.json`. The system enforces:
+
+- **Required fields**: id, title, url, domains, type, maturity, tags, summary, good_for
+- **Controlled vocabularies**: domains, types, maturity levels, good_for values
+- **Tag validation**: All tags must exist in `data/tags.txt`
+- **Multi-domain support**: Resources can belong to multiple domains (max 3)
+- **Date validation**: Flexible date formats (YYYY, YYYY-MM, YYYY-MM-DD)
 
 ## ❓ Questions?
 

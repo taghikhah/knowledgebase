@@ -16,9 +16,9 @@ assignees: []
 
 <!-- Repo | Article | Guide | Tool | Framework | Dataset -->
 
-**Primary Domain:**
+**Domains (1-3 max):**
 
-<!-- LLMOps-RAG | ML-Engineering | DevOps-SRE | Data-Engineering | Security | Systems-Tools -->
+<!-- AI-Engineering | Platform-Engineering | Data-Engineering | Security | Developer-Tools | Other -->
 
 ## 🎯 Why This Resource?
 
@@ -38,15 +38,11 @@ assignees: []
 
 **Maturity Level:**
 
-<!-- Battle-tested (widely adopted) | Emerging (gaining traction) | Experimental (early stage) -->
+<!-- Battle-tested (widely adopted) | Adopted (growing adoption) | Emerging (gaining traction) | Experimental (early stage) -->
 
-**Implementation Effort:**
+**Good For (multiple allowed):**
 
-<!-- Low (<2 hours) | Medium (weekend project) | High (weeks to master) -->
-
-**Good For:**
-
-<!-- learning | production | POCs | research | templates -->
+<!-- production | mlops | testing | evaluation | prototyping | learning | research | experimentation | architecture | strategy | POCs | documentation | discovery | integration | monitoring | debugging | performance | automation | creative-projects -->
 
 **Prerequisites (if any):**
 
@@ -69,9 +65,9 @@ Please confirm this resource meets our standards:
 
 <!-- Any other resources in our arsenal this connects to -->
 
-**Tags Suggestion:**
+**Tags Suggestion (3-6 max):**
 
-<!-- 4-6 lowercase tags with hyphens, e.g., machine-learning, testing, docker -->
+<!-- Must be from controlled vocabulary in data/tags.txt, e.g., agents, rag, containers, sql, vulnerability-scanning -->
 
 **Additional Notes:**
 
