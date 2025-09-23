@@ -3,51 +3,58 @@ name: Update README from YAML
 on:
   push:
     branches: [main]
-    paths: ['data/resources.yaml']
+    paths: ['data/resources.yaml', 'data/schema.json', 'data/tags.txt']
   pull_request:
     branches: [main]
-    paths: ['data/resources.yaml']
+    paths: ['data/resources.yaml', 'data/schema.json', 'data/tags.txt']
   schedule:
     # Update weekly to refresh GitHub stars and check links
     - cron: '0 6 * * 1' # Every Monday at 6 AM UTC
   workflow_dispatch: # Allow manual trigger
 
+env:
+  PYTHON_VERSION: '3.11'
+
 jobs:
   validate:
     runs-on: ubuntu-latest
     name: Validate Resources
+    outputs:
+      validation-passed: ${{ steps.validate.outputs.passed }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python environment
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pyyaml requests
+          pip install pyyaml requests jsonschema
 
-      - name: Validate YAML schema
-        run: python scripts/validate.py
-
-      - name: Check for validation errors
+      - name: Validate YAML schema and content
+        id: validate
         run: |
-          if [ $? -ne 0 ]; then
-            echo "❌ Validation failed. Please fix errors in resources.yaml"
-            exit 1
-          else
+          echo "🔍 Validating resources.yaml..."
+          if python scripts/validate.py; then
             echo "✅ Validation passed!"
+            echo "passed=true" >> $GITHUB_OUTPUT
+          else
+            echo "❌ Validation failed!"
+            echo "passed=false" >> $GITHUB_OUTPUT
+            exit 1
           fi
 
   update-readme:
     runs-on: ubuntu-latest
     name: Update README
     needs: validate
-    if: github.event_name != 'pull_request' # Only run on main branch, not PRs
+    if: github.event_name != 'pull_request' && needs.validate.outputs.validation-passed == 'true'
 
     steps:
       - name: Checkout repository
@@ -55,77 +62,24 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Set up Python
+      - name: Setup Python environment
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pyyaml requests
+          pip install pyyaml requests jsonschema
 
-      - name: Fetch GitHub stars (if scheduled)
+      - name: Update GitHub stars
         if: github.event_name == 'schedule'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "🌟 Updating GitHub stars..."
-          python - << 'EOF'
-          import yaml
-          import requests
-          import json
-          import os
-          from pathlib import Path
-
-          # Load resources
-          with open('data/resources.yaml', 'r') as f:
-              data = yaml.safe_load(f)
-
-          # GitHub API headers
-          headers = {
-              'Authorization': f'token {os.environ["GITHUB_TOKEN"]}',
-              'Accept': 'application/vnd.github.v3+json'
-          }
-
-          updated = False
-
-          for resource in data['resources']:
-              url = resource.get('url', '')
-              if 'github.com' in url and '/tree/' not in url and '/blob/' not in url:
-                  # Extract owner/repo from GitHub URL
-                  try:
-                      parts = url.replace('https://github.com/', '').strip('/').split('/')
-                      if len(parts) >= 2:
-                          owner, repo = parts[0], parts[1]
-                          
-                          # Fetch current stars
-                          api_url = f'https://api.github.com/repos/{owner}/{repo}'
-                          response = requests.get(api_url, headers=headers, timeout=10)
-                          
-                          if response.status_code == 200:
-                              repo_data = response.json()
-                              new_stars = repo_data.get('stargazers_count', 0)
-                              old_stars = resource.get('github_stars', 0)
-                              
-                              if new_stars != old_stars:
-                                  resource['github_stars'] = new_stars
-                                  updated = True
-                                  print(f"Updated {resource['id']}: {old_stars} -> {new_stars} stars")
-                          else:
-                              print(f"Failed to fetch stars for {resource['id']}: {response.status_code}")
-                              
-                  except Exception as e:
-                      print(f"Error updating {resource['id']}: {e}")
-
-          # Save updated data
-          if updated:
-              with open('data/resources.yaml', 'w') as f:
-                  yaml.dump(data, f, default_flow_style=False, sort_keys=False)
-              print(f"✅ Updated star counts for {sum(1 for r in data['resources'] if 'github_stars' in r)} repositories")
-          else:
-              print("ℹ️ No star count updates needed")
-          EOF
+          python scripts/update_stars.py
 
       - name: Generate README.md
         run: |
@@ -135,27 +89,34 @@ jobs:
       - name: Check for changes
         id: changes
         run: |
-          if git diff --quiet HEAD README.md; then
+          if git diff --quiet HEAD README.md data/resources.yaml; then
             echo "changed=false" >> $GITHUB_OUTPUT
-            echo "ℹ️ No changes to README.md"
+            echo "ℹ️ No changes detected"
           else
             echo "changed=true" >> $GITHUB_OUTPUT
-            echo "📝 README.md has been updated"
+            echo "📝 Changes detected in README.md or resources.yaml"
           fi
 
       - name: Commit and push changes
         if: steps.changes.outputs.changed == 'true'
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
 
           git add README.md
 
           if [ "${{ github.event_name }}" = "schedule" ]; then
             git add data/resources.yaml  # Also commit star updates
-            git commit -m "🤖 Auto-update README.md and refresh GitHub stars"
+            git commit -m "🤖 Auto-update README.md and refresh GitHub stars
+
+            - Updated README.md from resources.yaml
+            - Refreshed GitHub star counts
+            - Generated on $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
           else
-            git commit -m "🤖 Auto-update README.md from resources.yaml"
+            git commit -m "🤖 Auto-update README.md from resources.yaml
+
+            - Generated from updated resources.yaml
+            - Updated on $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
           fi
 
           git push
@@ -169,10 +130,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python environment
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
 
       - name: Install dependencies
         run: |
@@ -182,69 +144,42 @@ jobs:
       - name: Check link accessibility
         run: |
           echo "🔗 Checking link accessibility..."
-          python - << 'EOF'
-          import yaml
-          import requests
-          from pathlib import Path
-          import sys
+          python scripts/check_links.py
 
-          def check_url(url, timeout=10):
-              try:
-                  response = requests.head(url, timeout=timeout, allow_redirects=True)
-                  return response.status_code < 400
-              except:
-                  try:
-                      response = requests.get(url, timeout=timeout, allow_redirects=True)
-                      return response.status_code < 400
-                  except:
-                      return False
+      - name: Create issue for broken links
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
 
-          # Load resources
-          with open('data/resources.yaml', 'r') as f:
-              data = yaml.safe_load(f)
+            // Check if broken links file exists
+            if (fs.existsSync('broken_links.json')) {
+              const brokenLinks = JSON.parse(fs.readFileSync('broken_links.json', 'utf8'));
 
-          broken_links = []
-          total_checked = 0
+              if (brokenLinks.length > 0) {
+                let issueBody = `## 🔗 Broken Links Detected\n\n`;
+                issueBody += `The weekly link check found ${brokenLinks.length} broken link(s):\n\n`;
 
-          for resource in data['resources']:
-              url = resource.get('url')
-              if url:
-                  total_checked += 1
-                  if not check_url(url):
-                      broken_links.append({
-                          'id': resource.get('id'),
-                          'title': resource.get('title'),
-                          'url': url
-                      })
-                      print(f"❌ Broken link in {resource.get('id')}: {url}")
-                  else:
-                      print(f"✅ {resource.get('id')}: OK")
+                for (const link of brokenLinks) {
+                  issueBody += `- **${link.title}** (\`${link.id}\`): ${link.url}\n`;
+                  issueBody += `  - Status: ${link.status}\n`;
+                  issueBody += `  - Error: ${link.error || 'N/A'}\n\n`;
+                }
 
-          print(f"\n📊 Link Check Results:")
-          print(f"  • Total links checked: {total_checked}")
-          print(f"  • Broken links found: {len(broken_links)}")
+                issueBody += `\n---\n*This issue was automatically created by the link checker workflow.*`;
 
-          if broken_links:
-              print(f"\n❌ Broken Links:")
-              for link in broken_links:
-                  print(f"  • {link['id']}: {link['url']}")
-              
-              # Create an issue for broken links
-              issue_body = "## 🔗 Broken Links Detected\\n\\n"
-              issue_body += "The weekly link check found the following broken links:\\n\\n"
-              for link in broken_links:
-                  issue_body += f"- **{link['title']}** (`{link['id']}`): {link['url']}\\n"
-              issue_body += "\\n*This issue was automatically created by the link checker workflow.*"
-              
-              print(f"\n📝 Issue body prepared for broken links")
-              # Note: Creating GitHub issues requires additional permissions
-              # For now, just report in the workflow log
-              
-          else:
-              print(f"\n🎉 All links are working!")
-          EOF
+                await github.rest.issues.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: `🔗 Broken Links Detected - ${new Date().toISOString().split('T')[0]}`,
+                  body: issueBody,
+                  labels: ['broken-links', 'maintenance']
+                });
+              }
+            }
 
-  pr-validation:
+  validate-pr:
     runs-on: ubuntu-latest
     name: PR Validation
     if: github.event_name == 'pull_request'
@@ -253,15 +188,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python environment
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pyyaml requests
+          pip install pyyaml requests jsonschema
 
       - name: Validate resources
         run: |
@@ -276,31 +212,62 @@ jobs:
       - name: Show README diff
         run: |
           echo "📝 README.md changes:"
-          git diff --no-index README.md README.md.new || true
+          if ! git diff --quiet HEAD README.md; then
+            git diff --no-index README.md README.md.backup 2>/dev/null || git diff HEAD README.md
+          else
+            echo "ℹ️ No changes to README.md"
+          fi
 
-      - name: Validate new entries
+      - name: Analyze changes
         run: |
-          echo "🆕 Checking for new entries..."
-          python - << 'EOF'
-          import yaml
+          echo "🔍 Analyzing resource changes..."
+          python scripts/analyze_changes.py
 
-          try:
-              with open('data/resources.yaml', 'r') as f:
-                  data = yaml.safe_load(f)
-              
-              new_resources = [r for r in data['resources'] if r.get('added') == '2024-09-22']
-              
-              if new_resources:
-                  print(f"🎉 Found {len(new_resources)} new resource(s):")
-                  for resource in new_resources:
-                      print(f"  • {resource.get('title')} ({resource.get('id')})")
-                      print(f"    Domain: {', '.join(resource.get('domain', []))}")
-                      print(f"    Maturity: {resource.get('maturity')}")
-                      print(f"    Summary: {resource.get('summary')[:100]}...")
-                      print()
-              else:
-                  print("ℹ️ No new resources detected in this PR")
-                  
-          except Exception as e:
-              print(f"Error checking new entries: {e}")
-          EOF
+      - name: Comment PR with preview
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            // Check if analysis results exist
+            if (fs.existsSync('pr_analysis.json')) {
+              const analysis = JSON.parse(fs.readFileSync('pr_analysis.json', 'utf8'));
+
+              let comment = `## 📋 PR Analysis\n\n`;
+
+              if (analysis.new_resources.length > 0) {
+                comment += `### 🆕 New Resources (${analysis.new_resources.length})\n\n`;
+                for (const resource of analysis.new_resources) {
+                  comment += `- **${resource.title}** (${resource.id})\n`;
+                  comment += `  - Domains: ${resource.domains.join(', ')}\n`;
+                  comment += `  - Maturity: ${resource.maturity}\n`;
+                  comment += `  - Summary: ${resource.summary.substring(0, 100)}...\n\n`;
+                }
+              }
+
+              if (analysis.modified_resources.length > 0) {
+                comment += `### ✏️ Modified Resources (${analysis.modified_resources.length})\n\n`;
+                for (const resource of analysis.modified_resources) {
+                  comment += `- **${resource.title}** (${resource.id})\n`;
+                }
+                comment += `\n`;
+              }
+
+              if (analysis.validation_warnings.length > 0) {
+                comment += `### ⚠️ Validation Warnings\n\n`;
+                for (const warning of analysis.validation_warnings) {
+                  comment += `- ${warning}\n`;
+                }
+                comment += `\n`;
+              }
+
+              comment += `---\n*Auto-generated by GitHub Actions*`;
+
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: comment
+              });
+            }
