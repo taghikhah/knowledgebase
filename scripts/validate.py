@@ -22,7 +22,8 @@ REQUIRED_FIELDS = [
     "maturity",
     "effort",
     "tags",
-    "added",
+    "published",
+    "last_updated",
     "summary",
     "why_useful",
     "good_for",
@@ -33,8 +34,6 @@ OPTIONAL_FIELDS = [
     "license",
     "github_stars",
     "language",
-    "last_checked",
-    "last_updated",
     "setup_time_minutes",
     "prerequisites",
     "use_cases",
@@ -177,14 +176,24 @@ class ResourceValidator:
             )
 
         # Date validation
-        date_fields = ["added", "last_checked"]
+        date_fields = ["published", "last_updated"]
         for field in date_fields:
             if field in resource:
-                try:
-                    datetime.strptime(resource[field], "%Y-%m-%d")
-                except ValueError:
+                date_value = resource[field]
+                # Allow YYYY-MM-DD or YYYY-MM formats
+                valid_formats = ["%Y-%m-%d", "%Y-%m"]
+                is_valid = False
+                for fmt in valid_formats:
+                    try:
+                        datetime.strptime(date_value, fmt)
+                        is_valid = True
+                        break
+                    except ValueError:
+                        continue
+
+                if not is_valid:
                     raise ValidationError(
-                        f"Invalid date format for '{field}': {resource[field]}. Use YYYY-MM-DD"
+                        f"Invalid date format for '{field}': {date_value}. Use YYYY-MM-DD or YYYY-MM"
                     )
 
     def _validate_uniqueness(self, resource: Dict[str, Any], resource_id: str) -> None:

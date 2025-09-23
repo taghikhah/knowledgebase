@@ -250,7 +250,7 @@ def generate_quick_navigation(
 
 
 def generate_quick_wins_section(resources: List[Dict[str, Any]]) -> str:
-    """Generate the Quick Wins section."""
+    """Generate the Quick Wins section with one best resource per domain."""
     quick_wins = [
         r
         for r in resources
@@ -261,25 +261,42 @@ def generate_quick_wins_section(resources: List[Dict[str, Any]]) -> str:
     if not quick_wins:
         return ""
 
-    # Sort by impact (battle-tested first, then by stars)
-    quick_wins.sort(
-        key=lambda r: (
-            0 if r["maturity"] == "Battle-tested" else 1,
-            -r.get("github_stars", 0),
-        )
-    )
+    # Group by domain and pick the best resource from each domain
+    domain_best = {}
+    for resource in quick_wins:
+        domain = resource.get("domain", ["Other"])[0]
+
+        # If we haven't seen this domain or this resource is better
+        if domain not in domain_best:
+            domain_best[domain] = resource
+        else:
+            current_best = domain_best[domain]
+            # Better if: battle-tested > emerging, then higher stars
+            is_better = (
+                resource["maturity"] == "Battle-tested"
+                and current_best["maturity"] != "Battle-tested"
+            ) or (
+                resource["maturity"] == current_best["maturity"]
+                and resource.get("github_stars", 0)
+                > current_best.get("github_stars", 0)
+            )
+            if is_better:
+                domain_best[domain] = resource
+
+    if not domain_best:
+        return ""
 
     section = "\n## Quick Wins\n\n"
-    section += "*High-impact resources you can implement in under 2 hours - perfect for immediate productivity gains.*\n\n"
-    section += "| Resource | Setup Time | Impact | Use Case |\n"
-    section += "|----------|:----------:|:------:|----------|\n"
+    section += "*Best quick win in each domain - high-impact resources you can implement in under 2 hours.*\n\n"
+    section += "| Domain | Use Case | Resource |\n"
+    section += "|:------|----------|----------|\n"
 
-    for resource in quick_wins[:4]:  # Limit to top 4
-        setup_time = f"{resource.get('setup_time_minutes', 'N/A')} min"
-        impact = "High" if resource["maturity"] == "Battle-tested" else "Medium"
+    # Sort domains for consistent output
+    for domain in sorted(domain_best.keys()):
+        resource = domain_best[domain]
         use_case = ", ".join(resource.get("use_cases", [])[:2])
 
-        section += f"| [**{resource['title']}**]({resource['url']}) | {setup_time} | {impact} | {use_case} |\n"
+        section += f"| {domain} | {use_case} | [**{resource['title']}**]({resource['url']}) |\n"
 
     return section + "\n"
 
