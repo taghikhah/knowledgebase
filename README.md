@@ -51,8 +51,8 @@ Here you will find tools and resources organized by engineering domain, each wit
 
 *Agents/MCP, RAG & knowledge systems, testing & eval, training & frameworks, architecture.*
 
-<details open>
-<summary><strong>🤖 Agent Systems & Integration</strong> (14 resources)</summary>
+<details>
+<summary><strong>Agent Systems & Integration</strong> (14 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -72,8 +72,8 @@ Here you will find tools and resources organized by engineering domain, each wit
 | **[Ableton MCP - AI Music Production](https://github.com/ahujasid/ableton-mcp)**<br/>⭐ 1.9K | 🧪 | 🚀 | AI music creation, creative automation, experimental music | AI-powered integration allowing Claude to directly control Ableton Live for prompt-assisted music production, track c... |
 
 </details>
-<details open>
-<summary><strong>🧠 RAG & Knowledge Systems</strong> (6 resources)</summary>
+<details>
+<summary><strong>RAG & Knowledge Systems</strong> (6 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -85,8 +85,8 @@ Here you will find tools and resources organized by engineering domain, each wit
 | **[Multimodal RAG in LlamaCloud](https://www.llamaindex.ai/blog/multimodal-rag-in-llamacloud)** | 🔧 | 🚀 | document processing, visual QA, enterprise search | Comprehensive guide to implementing Retrieval-Augmented Generation systems that work with both text and image modalit... |
 
 </details>
-<details open>
-<summary><strong>🎯 Testing & Evaluation</strong> (4 resources)</summary>
+<details>
+<summary><strong>Testing & Evaluation</strong> (4 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -96,8 +96,8 @@ Here you will find tools and resources organized by engineering domain, each wit
 | **[promptfoo](https://github.com/promptfoo/promptfoo)**<br/>⭐ 2.1K | 🔧 | 🎯 | prompt engineering, quality assurance, provider comparison | Testing and evaluation framework for LLM prompts with comprehensive CI/CD integration, supporting multiple providers ... |
 
 </details>
-<details open>
-<summary><strong>🏗️ Training & Frameworks</strong> (2 resources)</summary>
+<details>
+<summary><strong>Training & Frameworks</strong> (2 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -105,8 +105,8 @@ Here you will find tools and resources organized by engineering domain, each wit
 | **[MLX - Apple Machine Learning Framework](https://github.com/ml-explore/mlx)**<br/>⭐ 3.2K | 🔧 | 🚀 | model training, research, prototyping | High-performance machine learning framework specifically optimized for Apple Silicon, designed for research and exper... |
 
 </details>
-<details open>
-<summary><strong>🛠️ Core AI Tools</strong> (2 resources)</summary>
+<details>
+<summary><strong>Core AI Tools</strong> (2 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -114,8 +114,8 @@ Here you will find tools and resources organized by engineering domain, each wit
 | **[Firecrawl](https://github.com/firecrawl/firecrawl)**<br/>⭐ 59.3K | 🔧 | 🎯 | data extraction, AI training data, web scraping automation | Web data API service that crawls entire websites and converts content into LLM-ready markdown or structured data with... |
 
 </details>
-<details open>
-<summary><strong>📚 Architecture & Best Practices</strong> (4 resources)</summary>
+<details>
+<summary><strong>Architecture & Best Practices</strong> (4 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -132,8 +132,8 @@ Here you will find tools and resources organized by engineering domain, each wit
 
 *Observability & performance, infra & services (IaC), container platforms, build & delivery, docs/runbooks.*
 
-<details open>
-<summary><strong>🏗️ Infrastructure & Services</strong> (4 resources)</summary>
+<details>
+<summary><strong>Infrastructure & Services</strong> (4 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -143,16 +143,16 @@ Here you will find tools and resources organized by engineering domain, each wit
 | **[Diagrams](https://github.com/mingrammer/diagrams)**<br/>⭐ 23K | 🛡️ | 🚀 | architecture documentation, system design, technical presentations | Create cloud system architecture diagrams programmatically using Python code, with support for major cloud providers ... |
 
 </details>
-<details open>
-<summary><strong>🐳 Container Platforms</strong> (1 resources)</summary>
+<details>
+<summary><strong>Container Platforms</strong> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[Trivy](https://github.com/aquasecurity/trivy)**<br/>⭐ 29K | 🛡️ | 🎯 | vulnerability scanning, container security, supply chain security | Comprehensive security scanner for containers, filesystems, Git repositories, and Kubernetes that detects vulnerabili... |
 
 </details>
-<details open>
-<summary><strong>📈 Performance & Observability</strong> (3 resources)</summary>
+<details>
+<summary><strong>Performance & Observability</strong> (3 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -161,16 +161,16 @@ Here you will find tools and resources organized by engineering domain, each wit
 | **[Dozzle](https://github.com/amir20/dozzle)**<br/>⭐ 9.6K | 🔧 | 🚀 | container debugging, log monitoring, development workflow | Lightweight real-time log viewer for Docker containers with intelligent search, split-screen viewing, and multi-conta... |
 
 </details>
-<details open>
-<summary><strong>📋 Documentation & Architecture</strong> (1 resources)</summary>
+<details>
+<summary><strong>Documentation & Architecture</strong> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[Awesome System Design Resources](https://github.com/ashishps1/awesome-system-design-resources)**<br/>⭐ 26.1K | 🛡️ | 🚀 | interview preparation, system design learning, architecture planning | Comprehensive curated list of free system design learning resources including concepts, patterns, interview problems,... |
 
 </details>
-<details open>
-<summary><strong>🛠️ Platform Tools</strong> (2 resources)</summary>
+<details>
+<summary><strong>Platform Tools</strong> (2 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -185,8 +185,8 @@ Here you will find tools and resources organized by engineering domain, each wit
 
 *Code quality, browser/web tools, CLI/editors/productivity, creative/specialized.*
 
-<details open>
-<summary><strong>🛠️ Development Utilities</strong> (9 resources)</summary>
+<details>
+<summary><strong>Development Utilities</strong> (9 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -201,8 +201,8 @@ Here you will find tools and resources organized by engineering domain, each wit
 | **[SLM SQL](https://github.com/CycloneBoy/slm_sql)**<br/>⭐ <1K | 🧪 | 🚀 | natural language querying, SQL learning tools, database interfaces | Small Language Model specifically designed for SQL generation and database querying tasks, optimized for natural lang... |
 
 </details>
-<details open>
-<summary><strong>✨ Code Quality & Standards</strong> (3 resources)</summary>
+<details>
+<summary><strong>Code Quality & Standards</strong> (3 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -218,16 +218,16 @@ Here you will find tools and resources organized by engineering domain, each wit
 
 *Discovery & governance, query & storage, pipelines & orchestration, analytics & BI.*
 
-<details open>
-<summary><strong>🔍 Data Discovery & Catalogs</strong> (1 resources)</summary>
+<details>
+<summary><strong>Data Discovery & Catalogs</strong> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets)**<br/>⭐ 67.8K | 🛡️ | 🚀 | dataset discovery, research projects, machine learning training | Curated collection of high-quality public datasets across 30+ domains including agriculture, biology, climate, financ... |
 
 </details>
-<details open>
-<summary><strong>🏗️ Data Infrastructure</strong> (2 resources)</summary>
+<details>
+<summary><strong>Data Infrastructure</strong> (2 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -235,8 +235,8 @@ Here you will find tools and resources organized by engineering domain, each wit
 | **[Firecrawl](https://github.com/firecrawl/firecrawl)**<br/>⭐ 59.3K | 🔧 | 🎯 | data extraction, AI training data, web scraping automation | Web data API service that crawls entire websites and converts content into LLM-ready markdown or structured data with... |
 
 </details>
-<details open>
-<summary><strong>🗄️ Query & Database Tools</strong> (1 resources)</summary>
+<details>
+<summary><strong>Query & Database Tools</strong> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -250,24 +250,24 @@ Here you will find tools and resources organized by engineering domain, each wit
 
 *Supply chain & vuln mgmt, infra/runtime security, secrets/auth/compliance.*
 
-<details open>
-<summary><strong>🛡️ Vulnerability Management</strong> (1 resources)</summary>
+<details>
+<summary><strong>Vulnerability Management</strong> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[Trivy](https://github.com/aquasecurity/trivy)**<br/>⭐ 29K | 🛡️ | 🎯 | vulnerability scanning, container security, supply chain security | Comprehensive security scanner for containers, filesystems, Git repositories, and Kubernetes that detects vulnerabili... |
 
 </details>
-<details open>
-<summary><strong>🏗️ Infrastructure Security</strong> (1 resources)</summary>
+<details>
+<summary><strong>Infrastructure Security</strong> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[kubesec](https://github.com/controlplaneio/kubesec)**<br/>⭐ 1.2K | 🛡️ | 🎯 | security scanning, admission control, CI/CD integration | Security risk analysis tool for Kubernetes resources that scans YAML configurations for potential vulnerabilities and... |
 
 </details>
-<details open>
-<summary><strong>🔐 Access & Compliance</strong> (1 resources)</summary>
+<details>
+<summary><strong>Access & Compliance</strong> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -324,4 +324,4 @@ Content and curation by [@taghikhah](https://github.com/taghikhah). Resource des
 
 ⭐ **Star this repo** if you find it valuable • **[Share feedback](../../discussions)**
 
-<!-- Auto-generated from data/resources.yaml on 2025-09-24 11:52:00 -->
+<!-- Auto-generated from data/resources.yaml on 2025-09-24 12:04:47 -->

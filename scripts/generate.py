@@ -12,7 +12,12 @@ from collections import defaultdict, Counter
 from typing import Dict, List, Any, Optional
 
 # Consistent emoji mappings (from original)
-MATURITY_EMOJI = {"Battle-tested": "🛡️", "Emerging": "🔧", "Experimental": "🧪", "Adopted": "🔧"}
+MATURITY_EMOJI = {
+    "Battle-tested": "🛡️",
+    "Emerging": "🔧",
+    "Experimental": "🧪",
+    "Adopted": "🔧",
+}
 
 EFFORT_EMOJI = {"Low": "🎯", "Medium": "⚙️", "High": "🚀"}
 
@@ -110,7 +115,10 @@ def get_sort_key(resource: Dict[str, Any]) -> tuple:
 
     # Good_for priority (lower index is better)
     good_for = resource.get("good_for", [])
-    good_for_key = min([GOOD_FOR_PRIORITY.index(g) for g in good_for if g in GOOD_FOR_PRIORITY] or [len(GOOD_FOR_PRIORITY)])
+    good_for_key = min(
+        [GOOD_FOR_PRIORITY.index(g) for g in good_for if g in GOOD_FOR_PRIORITY]
+        or [len(GOOD_FOR_PRIORITY)]
+    )
 
     # Title for alphabetical tiebreak
     title = resource.get("title", "").lower()
@@ -172,7 +180,7 @@ def create_domain_section(domain: str, resources: List[Dict[str, Any]]) -> str:
     section += f"*{domain_description}*\n\n"
 
     for subcategory, subcat_resources in subcategories.items():
-        section += f"<details open>\n"
+        section += f"<details>\n"
         section += f"<summary><strong>{subcategory}</strong> ({len(subcat_resources)} resources)</summary>\n\n"
 
         # Table header
@@ -199,63 +207,87 @@ def group_by_subcategory(
 
         if domain == "AI-Engineering":
             if any(tag in tags for tag in ["agents", "mcp", "integration", "protocol"]):
-                subcategories["🤖 Agent Systems & Integration"].append(resource)
-            elif any(tag in tags for tag in ["rag", "graph-rag", "knowledge-graphs", "retrieval"]):
-                subcategories["🧠 RAG & Knowledge Systems"].append(resource)
+                subcategories["Agent Systems & Integration"].append(resource)
+            elif any(
+                tag in tags
+                for tag in ["rag", "graph-rag", "knowledge-graphs", "retrieval"]
+            ):
+                subcategories["RAG & Knowledge Systems"].append(resource)
             elif any(tag in tags for tag in ["evaluation", "testing", "prompts"]):
-                subcategories["🎯 Testing & Evaluation"].append(resource)
+                subcategories["Testing & Evaluation"].append(resource)
             elif any(tag in tags for tag in ["training", "frameworks"]):
-                subcategories["🏗️ Training & Frameworks"].append(resource)
-            elif any(tag in tags for tag in ["architecture", "case-studies", "patterns"]):
-                subcategories["📚 Architecture & Best Practices"].append(resource)
+                subcategories["Training & Frameworks"].append(resource)
+            elif any(
+                tag in tags for tag in ["architecture", "case-studies", "patterns"]
+            ):
+                subcategories["Architecture & Best Practices"].append(resource)
             else:
-                subcategories["🛠️ Core AI Tools"].append(resource)
+                subcategories["Core AI Tools"].append(resource)
 
         elif domain == "Platform-Engineering":
-            if any(tag in tags for tag in ["performance", "monitoring", "observability"]):
-                subcategories["📈 Performance & Observability"].append(resource)
-            elif any(tag in tags for tag in ["infrastructure", "self-hosting", "catalog", "services"]):
-                subcategories["🏗️ Infrastructure & Services"].append(resource)
+            if any(
+                tag in tags for tag in ["performance", "monitoring", "observability"]
+            ):
+                subcategories["Performance & Observability"].append(resource)
+            elif any(
+                tag in tags
+                for tag in ["infrastructure", "self-hosting", "catalog", "services"]
+            ):
+                subcategories["Infrastructure & Services"].append(resource)
             elif any(tag in tags for tag in ["containers", "docker", "logs"]):
-                subcategories["🐳 Container Platforms"].append(resource)
-            elif any(tag in tags for tag in ["documentation", "diagrams", "architecture"]):
-                subcategories["📋 Documentation & Architecture"].append(resource)
+                subcategories["Container Platforms"].append(resource)
+            elif any(
+                tag in tags for tag in ["documentation", "diagrams", "architecture"]
+            ):
+                subcategories["Documentation & Architecture"].append(resource)
             else:
-                subcategories["🛠️ Platform Tools"].append(resource)
+                subcategories["Platform Tools"].append(resource)
 
         elif domain == "Data-Engineering":
-            if any(tag in tags for tag in ["datasets", "catalog", "discovery", "public-data"]):
-                subcategories["🔍 Data Discovery & Catalogs"].append(resource)
+            if any(
+                tag in tags
+                for tag in ["datasets", "catalog", "discovery", "public-data"]
+            ):
+                subcategories["Data Discovery & Catalogs"].append(resource)
             elif any(tag in tags for tag in ["sql", "database", "nl2sql"]):
-                subcategories["🗄️ Query & Database Tools"].append(resource)
+                subcategories["Query & Database Tools"].append(resource)
             elif any(tag in tags for tag in ["pipelines", "etl", "processing"]):
-                subcategories["⚙️ Pipelines & Processing"].append(resource)
+                subcategories["Pipelines & Processing"].append(resource)
             else:
-                subcategories["🏗️ Data Infrastructure"].append(resource)
+                subcategories["Data Infrastructure"].append(resource)
 
         elif domain == "Security":
-            if any(tag in tags for tag in ["vulnerability-scanning", "containers", "supply-chain"]):
-                subcategories["🛡️ Vulnerability Management"].append(resource)
-            elif any(tag in tags for tag in ["kubernetes", "admission-controller", "configuration"]):
-                subcategories["🏗️ Infrastructure Security"].append(resource)
+            if any(
+                tag in tags
+                for tag in ["vulnerability-scanning", "containers", "supply-chain"]
+            ):
+                subcategories["Vulnerability Management"].append(resource)
+            elif any(
+                tag in tags
+                for tag in ["kubernetes", "admission-controller", "configuration"]
+            ):
+                subcategories["Infrastructure Security"].append(resource)
             elif any(tag in tags for tag in ["secrets", "auth", "compliance"]):
-                subcategories["🔐 Access & Compliance"].append(resource)
+                subcategories["Access & Compliance"].append(resource)
             else:
-                subcategories["🛠️ Security Tools"].append(resource)
+                subcategories["Security Tools"].append(resource)
 
         elif domain == "Developer-Tools":
-            if any(tag in tags for tag in ["code-formatting", "linting", "git-hooks", "pre-commit"]):
-                subcategories["✨ Code Quality & Standards"].append(resource)
+            if any(
+                tag in tags
+                for tag in ["code-formatting", "linting", "git-hooks", "pre-commit"]
+            ):
+                subcategories["Code Quality & Standards"].append(resource)
             elif any(tag in tags for tag in ["browser-automation", "chrome-extension"]):
-                subcategories["🌐 Browser & Web Tools"].append(resource)
+                subcategories["Browser & Web Tools"].append(resource)
             elif any(tag in tags for tag in ["creative-tools"]):
-                subcategories["🎨 Creative & Specialized Tools"].append(resource)
+                subcategories["Creative & Specialized Tools"].append(resource)
             else:
-                subcategories["🛠️ Development Utilities"].append(resource)
+                subcategories["Development Utilities"].append(resource)
 
         else:
             # Fallback for other domains
-            subcategories["🛠️ Tools & Utilities"].append(resource)
+            subcategories["Tools & Utilities"].append(resource)
 
     # Sort each subcategory using advanced sorting
     for subcat_resources in subcategories.values():
@@ -269,7 +301,11 @@ def generate_quick_navigation(
 ) -> str:
     """Generate the quick navigation section with descriptions."""
     domain_info = {
-        "AI-Engineering": ("🤖 **AI Engineering**", "ai-engineering", "Agents, RAG & ML systems"),
+        "AI-Engineering": (
+            "🤖 **AI Engineering**",
+            "ai-engineering",
+            "Agents, RAG & ML systems",
+        ),
         "Platform-Engineering": (
             "🏗️ **Platform Engineering**",
             "platform-engineering",
@@ -281,7 +317,11 @@ def generate_quick_navigation(
             "Data pipelines & processing",
         ),
         "Security": ("🔒 **Security**", "security", "Security & compliance"),
-        "Developer-Tools": ("🛠️ **Developer Tools**", "developer-tools", "Development utilities"),
+        "Developer-Tools": (
+            "🛠️ **Developer Tools**",
+            "developer-tools",
+            "Development utilities",
+        ),
     }
 
     nav_section = '\n### Quick Navigation\n\n<div align="center">\n\n'
@@ -542,7 +582,9 @@ def main():
         grouped = group_resources_by_domain(resources)
         for domain, domain_resources in grouped.items():
             subcats = group_by_subcategory(domain_resources, domain)
-            print(f"  🔹 {domain}: {len(domain_resources)} resources in {len(subcats)} subcategories")
+            print(
+                f"  🔹 {domain}: {len(domain_resources)} resources in {len(subcats)} subcategories"
+            )
 
     except Exception as e:
         print(f"❌ Error generating README: {e}")
@@ -553,4 +595,3 @@ def main():
 
 if __name__ == "__main__":
     exit(main())
-
