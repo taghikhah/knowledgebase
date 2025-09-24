@@ -1028,9 +1028,339 @@ resources:
       ]
     related: [locust-load-testing]
 
+  - id: llm-course-mlabonne
+    title: LLM Course
+    url: https://github.com/mlabonne/llm-course
+    domains: [AI-Engineering]
+    type: Repo
+    maturity: Battle-tested
+    tags: [course, learning, frameworks, training, fine-tuning, patterns]
+    github_stars: 62700
+    published: '2023-06-17'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Comprehensive free course for learning Large Language Models with structured roadmap,
+      practical Colab notebooks, and coverage from fundamentals to advanced deployment.
+    why_useful: >
+      Provides complete learning path from LLM mathematics to production deployment,
+      combines theoretical knowledge with hands-on implementation via interactive notebooks.
+    good_for: [learning, research, strategy]
+    prerequisites: [Python, machine learning basics, neural network concepts]
+    use_cases:
+      [
+        LLM education,
+        self-paced learning,
+        team training,
+        research foundation,
+        implementation planning,
+        skill development,
+      ]
+    related: [ml-practical-usecases, zenml-llmops-cases, llm-patterns-eugeneyan]
+
+  - id: generative-ai-for-beginners-microsoft
+    title: Generative AI for Beginners
+    url: https://github.com/microsoft/generative-ai-for-beginners
+    domains: [AI-Engineering]
+    type: Repo
+    maturity: Battle-tested
+    tags: [course, learning, microsoft, ai-development, prompts]
+    github_stars: 98800
+    published: '2023-06-19'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Free 21-lesson course teaching everything needed to build generative AI applications,
+      created by Microsoft Cloud Advocates with multilingual support and hands-on coding.
+    why_useful: >
+      Comprehensive beginner-friendly curriculum covering prompt engineering, responsible AI,
+      and practical application development with video tutorials and project-based learning.
+    good_for: [learning, strategy, POCs]
+    prerequisites: [basic programming, Python or TypeScript]
+    use_cases:
+      [
+        AI education,
+        skill development,
+        team training,
+        curriculum development,
+        generative AI onboarding,
+        project templates,
+      ]
+    related: [llm-course-mlabonne, deeplearning-ai-mcp-course]
+
+  - id: task-go
+    title: Task
+    url: https://github.com/go-task/task
+    domains: [Platform-Engineering, Developer-Tools]
+    type: Repo
+    maturity: Battle-tested
+    tags: [automation, build, workflow, yaml, cli]
+    github_stars: 13800
+    published: '2017-02-27'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Simple task runner and build tool written in Go, designed as a modern alternative
+      to GNU Make with YAML-based configuration and cross-platform support.
+    why_useful: >
+      Eliminates complex Makefiles with intuitive YAML syntax, provides consistent
+      task execution across platforms, and simplifies build automation workflows.
+    good_for: [automation, production, POCs]
+    prerequisites: [YAML knowledge, basic CLI understanding]
+    use_cases:
+      [
+        build automation,
+        task orchestration,
+        workflow management,
+        CI/CD pipelines,
+        development workflows,
+        cross-platform builds,
+      ]
+    related: [husky, lint-staged]
+
+  - id: awesome-system-design-resources
+    title: Awesome System Design Resources
+    url: https://github.com/ashishps1/awesome-system-design-resources
+    domains: [Platform-Engineering]
+    type: Repo
+    maturity: Battle-tested
+    tags: [awesome-list, architecture, learning, discovery]
+    github_stars: 26100
+    published: '2023-10-25'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Comprehensive curated list of free system design learning resources including concepts,
+      patterns, interview problems, and engineering articles organized by difficulty level.
+    why_useful: >
+      Centralized discovery platform for system design education, covers theoretical concepts
+      to practical implementations, essential for technical interviews and architecture learning.
+    good_for: [learning, strategy, architecture]
+    prerequisites: [basic computer science knowledge]
+    use_cases:
+      [
+        interview preparation,
+        system design learning,
+        architecture planning,
+        skill development,
+        team education,
+        reference materials,
+      ]
+    related: [evidentlyai-ml-system-design, diagrams-mingrammer]
+
+  - id: evidently-ai
+    title: Evidently
+    url: https://github.com/evidentlyai/evidently
+    domains: [AI-Engineering, Data-Engineering]
+    type: Repo
+    maturity: Battle-tested
+    tags: [monitoring, evaluation, mlops, testing, observability]
+    github_stars: 6600
+    published: '2020-11-25'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Open-source Python library for ML and LLM observability with 100+ built-in metrics
+      for evaluating, testing, and monitoring data drift, model performance, and AI systems.
+    why_useful: >
+      Provides comprehensive ML monitoring with modular design, supports both offline evaluations
+      and live monitoring, essential for maintaining AI system reliability in production.
+    good_for: [production, monitoring, mlops]
+    prerequisites: [Python, ML knowledge, data science basics]
+    use_cases:
+      [
+        model monitoring,
+        data drift detection,
+        ML evaluation,
+        performance tracking,
+        quality assurance,
+        production monitoring,
+      ]
+    related: [zenml-llmops-cases, awesome-mlops]
+
+  - id: awesome-mlops
+    title: Awesome MLOps
+    url: https://github.com/visenger/awesome-mlops
+    domains: [AI-Engineering, Platform-Engineering]
+    type: Repo
+    maturity: Battle-tested
+    tags: [awesome-list, mlops, discovery, catalog, learning]
+    github_stars: 13300
+    published: '2020-03-03'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Curated reference list for Machine Learning Operations covering workflow management,
+      feature stores, deployment, monitoring, and infrastructure with industry best practices.
+    why_useful: >
+      Comprehensive MLOps resource aggregation from industry experts, provides learning paths
+      from beginner to advanced, covers both theoretical concepts and practical implementations.
+    good_for: [discovery, learning, strategy]
+    prerequisites: [basic ML knowledge, understanding of software engineering]
+    use_cases:
+      [
+        MLOps learning,
+        resource discovery,
+        technology selection,
+        best practices,
+        team education,
+        industry benchmarking,
+      ]
+    related: [evidently-ai, zenml-llmops-cases, evidentlyai-ml-system-design]
+
+  - id: firecrawl
+    title: Firecrawl
+    url: https://github.com/firecrawl/firecrawl
+    domains: [AI-Engineering, Data-Engineering]
+    type: Repo
+    maturity: Emerging
+    tags: [web-scraping, data-extraction, ai-integration, api]
+    github_stars: 59300
+    published: '2024-04-15'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Web data API service that crawls entire websites and converts content into LLM-ready
+      markdown or structured data with advanced scraping capabilities for AI applications.
+    why_useful: >
+      Handles complex web scraping challenges with anti-bot mechanisms, provides clean data
+      for AI training, and integrates seamlessly with major AI frameworks like LangChain.
+    good_for: [production, integration, POCs]
+    prerequisites: [API concepts, web development basics]
+    use_cases:
+      [
+        data extraction,
+        AI training data,
+        web scraping automation,
+        content aggregation,
+        research data collection,
+        LLM data preparation,
+      ]
+    related: [awesome-public-datasets]
+
+  - id: awesome-chatgpt-prompts
+    title: Awesome ChatGPT Prompts
+    url: https://github.com/f/awesome-chatgpt-prompts
+    domains: [AI-Engineering]
+    type: Repo
+    maturity: Battle-tested
+    tags: [prompts, awesome-list, templates, learning]
+    github_stars: 134000
+    published: '2022-12-05'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Curated collection of ChatGPT prompts for various roles and scenarios, providing
+      templates for effective AI interactions across professional and creative domains.
+    why_useful: >
+      Demonstrates effective prompt engineering techniques, offers ready-to-use templates
+      for different use cases, and helps users understand how to structure AI interactions.
+    good_for: [learning, experimentation, POCs]
+    prerequisites: [basic LLM understanding]
+    use_cases:
+      [
+        prompt engineering,
+        AI interaction design,
+        role-playing scenarios,
+        creative writing,
+        professional assistance,
+        learning templates,
+      ]
+    related: [promptfoo, llm-patterns-eugeneyan]
+
+  - id: livekit
+    title: LiveKit
+    url: https://github.com/livekit/livekit
+    domains: [Developer-Tools, Platform-Engineering]
+    type: Repo
+    maturity: Battle-tested
+    tags: [webrtc, real-time, communication, streaming, infrastructure]
+    github_stars: 14900
+    published: '2020-09-30'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Open-source real-time communication platform providing scalable WebRTC infrastructure
+      for building video, audio, and data streaming applications with multi-platform SDKs.
+    why_useful: >
+      Eliminates WebRTC complexity with distributed SFU architecture, provides production-ready
+      real-time communication infrastructure with advanced features like end-to-end encryption.
+    good_for: [production, integration, POCs]
+    prerequisites: [WebRTC concepts, JavaScript/Go knowledge]
+    use_cases:
+      [
+        video conferencing,
+        live streaming,
+        real-time collaboration,
+        interactive applications,
+        multiplayer experiences,
+        communication platforms,
+      ]
+    related: [awesome-selfhosted]
+
+  - id: art-openpipe
+    title: ART - Agent Reinforcement Trainer
+    url: https://github.com/OpenPipe/ART
+    domains: [AI-Engineering]
+    type: Repo
+    maturity: Experimental
+    tags: [agents, training, reinforcement-learning, evaluation]
+    github_stars: 7400
+    published: '2024-03-10'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Reinforcement learning framework for training multi-step AI agents using GRPO
+      with automatic reward generation and zero-shot training capabilities.
+    why_useful: >
+      Eliminates manual reward engineering with LLM-as-judge approach, enables 2-3x faster
+      agent development, and provides flexible training across different tasks and models.
+    good_for: [research, experimentation, learning]
+    prerequisites: [reinforcement learning basics, Python, agent concepts]
+    use_cases:
+      [
+        agent training,
+        reinforcement learning,
+        AI skill development,
+        multi-step reasoning,
+        behavioral optimization,
+        research experiments,
+      ]
+    related: [promptfoo, copilotkit]
+
+  - id: parlant
+    title: Parlant
+    url: https://github.com/emcie-co/parlant
+    domains: [AI-Engineering, Security]
+    type: Repo
+    maturity: Emerging
+    tags: [compliance, guardrails, agents, governance, rules]
+    github_stars: 12500
+    published: '2024-02-15'
+    last_updated: '2024-09'
+    added: '2024-09-23'
+    summary: >
+      Python framework for building AI agents with guaranteed rule compliance and predictable
+      behavior through dynamic guideline matching and conversational journey control.
+    why_useful: >
+      Ensures AI agents follow instructions reliably, prevents hallucinations and off-topic
+      responses, provides full explainability for compliance-critical applications.
+    good_for: [production, strategy, monitoring]
+    prerequisites: [Python, AI agent concepts, compliance requirements]
+    use_cases:
+      [
+        compliant AI agents,
+        financial services AI,
+        healthcare chatbots,
+        legal tech applications,
+        enterprise AI governance,
+        regulated industries,
+      ]
+    related: [promptfoo, copilotkit]
+
 # Metadata for the collection
 metadata:
-  total_resources: 36
+  total_resources: 47
   domains:
     [
       AI-Engineering,
