@@ -102,7 +102,7 @@ def parse_date(date_str: Optional[str]) -> datetime:
 def get_sort_key(resource: Dict[str, Any]) -> tuple:
     """Generate sort key for stable, signal-first sorting."""
     # Maturity rank (lower is better)
-    maturity_rank = MATURITY_RANK.get(resource.get("maturity"), 99)
+    maturity_rank = MATURITY_RANK.get(resource.get("maturity", ""), 99)
 
     # Date key (newer first)
     last_updated = resource.get("last_updated")
