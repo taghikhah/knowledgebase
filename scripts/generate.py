@@ -56,7 +56,7 @@ def format_resource_row(resource: Dict[str, Any]) -> str:
             formatted_stars = f"<1K"
         github_info = f"<br/>⭐ {formatted_stars}"
 
-    title_cell = f"**[{resource['title']}]({resource['url']})**{github_info}"
+    title_cell = f"**<a href=\"{resource['url']}\" target=\"_blank\">{resource['title']} ↗</a>**{github_info}"
 
     # Consistent emoji usage (emoji only, no text)
     maturity_cell = MATURITY_EMOJI.get(resource["maturity"], "❓")
@@ -419,7 +419,7 @@ def generate_quick_wins_section(resources: List[Dict[str, Any]]) -> str:
         resource = domain_best[domain]
         use_case = ", ".join(resource.get("use_cases", [])[:2])
 
-        section += f"| {domain} | {use_case} | [**{resource['title']}**]({resource['url']}) |\n"
+        section += f"| {domain} | {use_case} | **<a href=\"{resource['url']}\" target=\"_blank\">{resource['title']} ↗</a>** |\n"
 
     return section + "\n"
 
