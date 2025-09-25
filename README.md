@@ -4,7 +4,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 <div align="center">
 
-![Resources](https://img.shields.io/badge/Resources-47-blue) ![Domains](https://img.shields.io/badge/Domains-5-green) ![Contributors](https://img.shields.io/badge/Contributors-1-orange) ![Last Updated](https://img.shields.io/badge/Updated-September%202025-red)
+![Resources](https://img.shields.io/badge/Resources-51-blue) ![Domains](https://img.shields.io/badge/Domains-5-green) ![Contributors](https://img.shields.io/badge/Contributors-1-orange) ![Last Updated](https://img.shields.io/badge/Updated-September%202025-red)
 
 </div>
 
@@ -16,7 +16,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 | 🤖 **AI Engineering** | 🏗️ **Platform Engineering** | 🛠️ **Developer Tools** | 📊 **Data Engineering** | 🔒 **Security** |
 |:------------:|:------------:|:------------:|:------------:|:------------:|
 | [Jump to AI Engineering](#ai-engineering) | [Jump to Platform Engineering](#platform-engineering) | [Jump to Developer Tools](#developer-tools) | [Jump to Data Engineering](#data-engineering) | [Jump to Security](#security) |
-| **32 resources** | **11 resources** | **12 resources** | **4 resources** | **3 resources** |
+| **35 resources** | **13 resources** | **13 resources** | **5 resources** | **3 resources** |
 | *Agents, RAG & ML systems* | *Infrastructure & reliability* | *Development utilities* | *Data pipelines & processing* | *Security & compliance* |
 
 </div>
@@ -52,7 +52,7 @@ Here you will find tools and resources organized by engineering domain, each wit
 *Agents/MCP, RAG & knowledge systems, testing & eval, training & frameworks, architecture.*
 
 <details>
-<summary><strong>Agent Systems & Integration</strong> (14 resources)</summary>
+<summary><strong>Agent Systems & Integration</strong> (17 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -63,10 +63,13 @@ Here you will find tools and resources organized by engineering domain, each wit
 | **[MCP.so - MCP Server Directory](https://mcp.so/)** | 🛡️ | 🎯 | MCP server discovery, integration planning, documentation access | Community-driven platform cataloging 16,624+ MCP servers and clients with categorized listings, installation guides, ... |
 | **[Function Calling vs MCP: What You Need to Know](https://blog.fotiecodes.com/function-calling-vs-model-context-protocol-mcp-what-you-need-to-know-cm88zfwik000108ji0a1d54fc)** | 🛡️ | 🚀 | AI system architecture, protocol comparison, integration planning | Comprehensive technical comparison of Function Calling and Model Context Protocol (MCP), explaining how function call... |
 | **[Graphiti - Real-Time Knowledge Graphs for AI](https://github.com/getzep/graphiti)**<br/>⭐ 18.4K | 🔧 | 🎯 | AI agent memory, knowledge graph RAG, temporal data tracking | Framework for building real-time knowledge graphs that dynamically integrate user interactions, structured/unstructur... |
+| **[Browser Use](https://github.com/browser-use/browser-use)**<br/>⭐ 70.5K | 🔧 | 🚀 | automated web tasks, browser automation, AI-driven web interactions | AI-powered browser automation framework enabling agents to control web browsers, automate online tasks, and interact ... |
 | **[CopilotKit](https://github.com/CopilotKit/CopilotKit)**<br/>⭐ 23.9K | 🔧 | 🎯 | AI chatbots, in-app assistants, agentic interfaces | React framework for building AI copilots and in-app AI agents with elegant UI components, security features, and rapi... |
+| **[Agent Development Kit (ADK)](https://github.com/google/adk-python)**<br/>⭐ 13.2K | 🔧 | 🎯 | intelligent assistants, multi-agent workflows, enterprise AI solutions | Open-source Python toolkit for building, evaluating, and deploying sophisticated AI agents with flexible architecture... |
 | **[Parlant](https://github.com/emcie-co/parlant)**<br/>⭐ 12.5K | 🔧 | 🎯 | compliant AI agents, financial services AI, healthcare chatbots | Python framework for building AI agents with guaranteed rule compliance and predictable behavior through dynamic guid... |
 | **[Claude Context - MCP Semantic Code Search](https://github.com/zilliztech/claude-context)**<br/>⭐ 3.7K | 🔧 | 🎯 | AI code assistance, semantic code search, context management | MCP plugin enabling semantic code search for AI coding agents like Claude Code, providing efficient codebase indexing... |
 | **[MCP for Beginners](https://github.com/microsoft/mcp-for-beginners/)**<br/>⭐ <1K | 🔧 | 🚀 | agent development, tool integration, IDE plugins | Beginner-friendly tutorial and examples for Microsoft's Model Context Protocol (MCP), showing how to build tool-using... |
+| **[Agent2Agent (A2A) Protocol](https://github.com/a2aproject/A2A)**<br/>⭐ 19.9K | 🧪 | 🎯 | cross-platform agent communication, secure agent collaboration, enterprise AI integration | Open protocol enabling secure communication and interoperability between AI agents from different frameworks while pr... |
 | **[MCP Chrome Extension](https://github.com/hangwin/mcp-chrome)**<br/>⭐ 8.1K | 🧪 | 🚀 | browser automation, web scraping, content analysis | Chrome extension transforming browsers into AI-controlled automation tools with 20+ tools for browser management, con... |
 | **[ART - Agent Reinforcement Trainer](https://github.com/OpenPipe/ART)**<br/>⭐ 7.4K | 🧪 | 🚀 | agent training, reinforcement learning, AI skill development | Reinforcement learning framework for training multi-step AI agents using GRPO with automatic reward generation and ze... |
 | **[Ableton MCP - AI Music Production](https://github.com/ahujasid/ableton-mcp)**<br/>⭐ 1.9K | 🧪 | 🚀 | AI music creation, creative automation, experimental music | AI-powered integration allowing Claude to directly control Ableton Live for prompt-assisted music production, track c... |
@@ -144,6 +147,17 @@ Here you will find tools and resources organized by engineering domain, each wit
 
 </details>
 <details>
+<summary><strong>Platform Tools</strong> (4 resources)</summary>
+
+| Resource | Maturity | Effort | Use Case | Quick Summary |
+|----------|:--------:|:------:|----------|---------------|
+| **[SurrealDB](https://github.com/surrealdb/surrealdb)**<br/>⭐ 30.1K | 🛡️ | 🎯 | real-time applications, modern web development, complex data relationships | Multi-model database combining document, graph, and relational data models with built-in API layer, real-time subscri... |
+| **[Task](https://github.com/go-task/task)**<br/>⭐ 13.8K | 🛡️ | 🎯 | build automation, task orchestration, workflow management | Simple task runner and build tool written in Go, designed as a modern alternative to GNU Make with YAML-based configu... |
+| **[kubesec](https://github.com/controlplaneio/kubesec)**<br/>⭐ 1.2K | 🛡️ | 🎯 | security scanning, admission control, CI/CD integration | Security risk analysis tool for Kubernetes resources that scans YAML configurations for potential vulnerabilities and... |
+| **[Agent2Agent (A2A) Protocol](https://github.com/a2aproject/A2A)**<br/>⭐ 19.9K | 🧪 | 🎯 | cross-platform agent communication, secure agent collaboration, enterprise AI integration | Open protocol enabling secure communication and interoperability between AI agents from different frameworks while pr... |
+
+</details>
+<details>
 <summary><strong>Container Platforms</strong> (1 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
@@ -167,15 +181,6 @@ Here you will find tools and resources organized by engineering domain, each wit
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[Awesome System Design Resources](https://github.com/ashishps1/awesome-system-design-resources)**<br/>⭐ 26.1K | 🛡️ | 🚀 | interview preparation, system design learning, architecture planning | Comprehensive curated list of free system design learning resources including concepts, patterns, interview problems,... |
-
-</details>
-<details>
-<summary><strong>Platform Tools</strong> (2 resources)</summary>
-
-| Resource | Maturity | Effort | Use Case | Quick Summary |
-|----------|:--------:|:------:|----------|---------------|
-| **[Task](https://github.com/go-task/task)**<br/>⭐ 13.8K | 🛡️ | 🎯 | build automation, task orchestration, workflow management | Simple task runner and build tool written in Go, designed as a modern alternative to GNU Make with YAML-based configu... |
-| **[kubesec](https://github.com/controlplaneio/kubesec)**<br/>⭐ 1.2K | 🛡️ | 🎯 | security scanning, admission control, CI/CD integration | Security risk analysis tool for Kubernetes resources that scans YAML configurations for potential vulnerabilities and... |
 
 </details>
 
@@ -211,6 +216,14 @@ Here you will find tools and resources organized by engineering domain, each wit
 | **[lint-staged](https://github.com/lint-staged/lint-staged)**<br/>⭐ 14.2K | 🛡️ | 🎯 | pre-commit validation, code quality enforcement, automated formatting | Runs linters and formatters only on git staged files before commits, preventing problematic code from entering the re... |
 
 </details>
+<details>
+<summary><strong>Browser & Web Tools</strong> (1 resources)</summary>
+
+| Resource | Maturity | Effort | Use Case | Quick Summary |
+|----------|:--------:|:------:|----------|---------------|
+| **[Browser Use](https://github.com/browser-use/browser-use)**<br/>⭐ 70.5K | 🔧 | 🚀 | automated web tasks, browser automation, AI-driven web interactions | AI-powered browser automation framework enabling agents to control web browsers, automate online tasks, and interact ... |
+
+</details>
 
 ---
 
@@ -227,20 +240,21 @@ Here you will find tools and resources organized by engineering domain, each wit
 
 </details>
 <details>
+<summary><strong>Query & Database Tools</strong> (2 resources)</summary>
+
+| Resource | Maturity | Effort | Use Case | Quick Summary |
+|----------|:--------:|:------:|----------|---------------|
+| **[SurrealDB](https://github.com/surrealdb/surrealdb)**<br/>⭐ 30.1K | 🛡️ | 🎯 | real-time applications, modern web development, complex data relationships | Multi-model database combining document, graph, and relational data models with built-in API layer, real-time subscri... |
+| **[SLM SQL](https://github.com/CycloneBoy/slm_sql)**<br/>⭐ <1K | 🧪 | 🚀 | natural language querying, SQL learning tools, database interfaces | Small Language Model specifically designed for SQL generation and database querying tasks, optimized for natural lang... |
+
+</details>
+<details>
 <summary><strong>Data Infrastructure</strong> (2 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[Evidently](https://github.com/evidentlyai/evidently)**<br/>⭐ 6.6K | 🛡️ | 🎯 | model monitoring, data drift detection, ML evaluation | Open-source Python library for ML and LLM observability with 100+ built-in metrics for evaluating, testing, and monit... |
 | **[Firecrawl](https://github.com/firecrawl/firecrawl)**<br/>⭐ 59.3K | 🔧 | 🎯 | data extraction, AI training data, web scraping automation | Web data API service that crawls entire websites and converts content into LLM-ready markdown or structured data with... |
-
-</details>
-<details>
-<summary><strong>Query & Database Tools</strong> (1 resources)</summary>
-
-| Resource | Maturity | Effort | Use Case | Quick Summary |
-|----------|:--------:|:------:|----------|---------------|
-| **[SLM SQL](https://github.com/CycloneBoy/slm_sql)**<br/>⭐ <1K | 🧪 | 🚀 | natural language querying, SQL learning tools, database interfaces | Small Language Model specifically designed for SQL generation and database querying tasks, optimized for natural lang... |
 
 </details>
 
@@ -284,6 +298,7 @@ Here you will find tools and resources organized by engineering domain, each wit
 | Domain | Use Case | Resource |
 |:------|----------|----------|
 | AI-Engineering | model monitoring, data drift detection | [**Evidently**](https://github.com/evidentlyai/evidently) |
+| Data-Engineering | real-time applications, modern web development | [**SurrealDB**](https://github.com/surrealdb/surrealdb) |
 | Developer-Tools | code formatting, style consistency | [**Prettier**](https://github.com/prettier/prettier) |
 | Platform-Engineering | load testing, performance validation | [**k6**](https://github.com/grafana/k6) |
 | Security | vulnerability scanning, container security | [**Trivy**](https://github.com/aquasecurity/trivy) |
@@ -306,7 +321,7 @@ Found a resource that significantly improved your engineering workflow?
 
 ## Tag Cloud
 
-`architecture` `learning` `agents` `mcp` `patterns` `automation` `graph-rag` `evaluation` `retrieval` `performance` `catalog` `protocol`
+`agents` `architecture` `learning` `automation` `mcp` `patterns` `protocol` `graph-rag` `evaluation` `retrieval` `performance` `catalog`
 
 ---
 
@@ -324,4 +339,4 @@ Content and curation by [@taghikhah](https://github.com/taghikhah). Resource des
 
 ⭐ **Star this repo** if you find it valuable • **[Share feedback](../../discussions)**
 
-<!-- Auto-generated from data/resources.yaml on 2025-09-24 12:04:47 -->
+<!-- Auto-generated from data/resources.yaml on 2025-09-25 13:05:02 -->

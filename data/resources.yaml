@@ -1358,9 +1358,129 @@ resources:
       ]
     related: [promptfoo, copilotkit]
 
+  - id: browser-use
+    title: Browser Use
+    url: https://github.com/browser-use/browser-use
+    domains: [AI-Engineering, Developer-Tools]
+    type: Repo
+    maturity: Emerging
+    tags: [browser-automation, agents, ai-control, automation, python]
+    github_stars: 70500
+    published: '2024-01'
+    last_updated: '2024-09-19'
+    added: '2024-09-25'
+    summary: >
+      AI-powered browser automation framework enabling agents to control web browsers,
+      automate online tasks, and interact with websites through natural language commands.
+    why_useful: >
+      Enables seamless integration between AI agents and web environments, supports complex
+      workflows like form filling and web scraping with built-in safety mechanisms.
+    good_for: [automation, experimentation, POCs]
+    prerequisites: [Python 3.11+, Chromium browser, AI model API keys]
+    use_cases:
+      [
+        automated web tasks,
+        browser automation,
+        AI-driven web interactions,
+        testing workflows,
+        data collection,
+        task automation,
+      ]
+    related: [mcp-chrome-extension, copilotkit]
+
+  - id: surrealdb
+    title: SurrealDB
+    url: https://github.com/surrealdb/surrealdb
+    domains: [Data-Engineering, Platform-Engineering]
+    type: Repo
+    maturity: Battle-tested
+    tags: [database, multi-model, graph, real-time, distributed, api]
+    github_stars: 30100
+    published: '2021-12-09'
+    last_updated: '2024-09'
+    added: '2024-09-25'
+    summary: >
+      Multi-model database combining document, graph, and relational data models with
+      built-in API layer, real-time subscriptions, and granular access controls.
+    why_useful: >
+      Eliminates need for separate backend infrastructure by combining database, API, and
+      permissions layers, supports complex data relationships with flexible schema design.
+    good_for: [production, prototyping, architecture]
+    prerequisites: [database concepts, data modeling knowledge]
+    use_cases:
+      [
+        real-time applications,
+        modern web development,
+        complex data relationships,
+        microservices architecture,
+        serverless applications,
+        collaborative platforms,
+      ]
+    related: [awesome-public-datasets]
+
+  - id: adk-python-google
+    title: Agent Development Kit (ADK)
+    url: https://github.com/google/adk-python
+    domains: [AI-Engineering]
+    type: Repo
+    maturity: Emerging
+    tags: [agents, frameworks, ai-development, python, multi-agent]
+    github_stars: 13200
+    published: '2025-04-01'
+    last_updated: '2024-09'
+    added: '2024-09-25'
+    summary: >
+      Open-source Python toolkit for building, evaluating, and deploying sophisticated
+      AI agents with flexible architecture supporting both single and multi-agent systems.
+    why_useful: >
+      Provides code-first approach to agent development with built-in evaluation tools,
+      deployment flexibility, and rich development UI for testing and debugging workflows.
+    good_for: [production, learning, experimentation]
+    prerequisites: [Python, AI/agent concepts, basic LLM understanding]
+    use_cases:
+      [
+        intelligent assistants,
+        multi-agent workflows,
+        enterprise AI solutions,
+        agent system prototyping,
+        scalable AI applications,
+        research platforms,
+      ]
+    related: [copilotkit, langgraph-multi-agent]
+
+  - id: a2a-protocol
+    title: Agent2Agent (A2A) Protocol
+    url: https://github.com/a2aproject/A2A
+    domains: [AI-Engineering, Platform-Engineering]
+    type: Repo
+    maturity: Experimental
+    tags: [agents, protocol, ai-integration, communication, interoperability]
+    github_stars: 19900
+    published: '2025-03-25'
+    last_updated: '2024-09'
+    added: '2024-09-25'
+    summary: >
+      Open protocol enabling secure communication and interoperability between AI agents
+      from different frameworks while preserving opacity and internal implementation details.
+    why_useful: >
+      Enables cross-platform AI agent collaboration without exposing sensitive internal details,
+      provides standardized communication protocol for complex multi-agent task management.
+    good_for: [research, experimentation, production]
+    prerequisites: [AI agent architectures, JSON-RPC, multi-platform development]
+    use_cases:
+      [
+        cross-platform agent communication,
+        secure agent collaboration,
+        enterprise AI integration,
+        multi-agent task coordination,
+        research experiments,
+        agent interoperability,
+      ]
+    related: [adk-python-google, langgraph-multi-agent]
+
 # Metadata for the collection
 metadata:
-  total_resources: 47
+  total_resources: 51
   domains:
     [
       AI-Engineering,
