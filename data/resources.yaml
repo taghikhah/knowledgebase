@@ -553,7 +553,7 @@ resources:
   - id: mcp-chrome-extension
     title: MCP Chrome Extension
     url: https://github.com/hangwin/mcp-chrome
-    domains: [AI-Engineering]
+    domains: [AI-Engineering, Developer-Tools]
     type: Repo
     maturity: Experimental
     tags: [mcp, browser-automation, chrome-extension, ai-control, automation]
