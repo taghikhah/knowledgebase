@@ -3,6 +3,33 @@
 # Auto-generates README.md tables via GitHub Actions
 
 resources:
+  - id: granite-docling-258m
+    title: Granite Docling 258M
+    url: https://huggingface.co/ibm-granite/granite-docling-258M
+    domains: [AI-Engineering]
+    type: Repo
+    maturity: Emerging
+    tags: [multimodal, llm, document-processing, small-language-models]
+    published: '2024'
+    last_updated: '2024-09'
+    added: '2024-09-26'
+    summary: >
+      Ultra-compact 258M parameter vision-language model specialized for document conversion
+      and understanding, capable of converting documents to HTML/Markdown while preserving
+      layout, tables, equations, and code structures.
+    why_useful: >
+      Provides efficient document processing for RAG applications with better accuracy
+      than traditional OCR, while being compact enough for edge deployment and cost-effective scaling.
+    good_for: [production, integration, prototyping]
+    prerequisites: [Python, Hugging Face transformers, basic ML knowledge]
+    use_cases:
+      [
+        document conversion for RAG,
+        PDF to markdown processing,
+        structured data extraction,
+        multilingual document parsing
+      ]
+
   - id: promptfoo
     title: promptfoo
     url: https://github.com/promptfoo/promptfoo
@@ -181,7 +208,7 @@ resources:
     domains: [Data-Engineering, Developer-Tools]
     type: Repo
     maturity: Experimental
-    tags: [sql, query, database, nl2sql]
+    tags: [sql, query, database, nl2sql, small-language-models]
     github_stars: 124
     published: '2022-01'
     last_updated: '2024-07'
