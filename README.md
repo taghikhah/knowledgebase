@@ -312,12 +312,12 @@ Here you will find tools and resources organized by engineering domain, each wit
 
 | Domain | Use Case | Resource |
 |:------|----------|----------|
-| AI-Engineering | system architecture, pattern implementation | **[LLM Patterns: A Comprehensive Guide <small>&#10548;</small>](https://eugeneyan.com/writing/llm-patterns/)** |
-| Data-Engineering | real-time applications, modern web development | **[SurrealDB <small>&#10548;</small>](https://github.com/surrealdb/surrealdb)** |
-| Developer-Tools | code formatting, style consistency | **[Prettier <small>&#10548;</small>](https://github.com/prettier/prettier)** |
-| Machine-Learning | model monitoring, data drift detection | **[Evidently <small>&#10548;</small>](https://github.com/evidentlyai/evidently)** |
-| Platform-Engineering | load testing, performance validation | **[k6 <small>&#10548;</small>](https://github.com/grafana/k6)** |
-| Security | vulnerability scanning, container security | **[Trivy <small>&#10548;</small>](https://github.com/aquasecurity/trivy)** |
+| 🤖 **AI Engineering** | system architecture, pattern implementation | **[LLM Patterns: A Comprehensive Guide <small>&#10548;</small>](https://eugeneyan.com/writing/llm-patterns/)** |
+| 📊 **Data Engineering** | real-time applications, modern web development | **[SurrealDB <small>&#10548;</small>](https://github.com/surrealdb/surrealdb)** |
+| 🛠️ **Developer Tools** | code formatting, style consistency | **[Prettier <small>&#10548;</small>](https://github.com/prettier/prettier)** |
+| 🧠 **Machine Learning** | model monitoring, data drift detection | **[Evidently <small>&#10548;</small>](https://github.com/evidentlyai/evidently)** |
+| 🏗️ **Platform Engineering** | load testing, performance validation | **[k6 <small>&#10548;</small>](https://github.com/grafana/k6)** |
+| 🔒 **Security & Compliance** | vulnerability scanning, container security | **[Trivy <small>&#10548;</small>](https://github.com/aquasecurity/trivy)** |
 
 
 ## Contributing
@@ -355,4 +355,4 @@ Content and curation by [@taghikhah](https://github.com/taghikhah). Resource des
 
 ⭐ **Star this repo** if you find it valuable • **[Share feedback](../../discussions)**
 
-<!-- Auto-generated from data/resources.yaml on 2025-09-26 10:53:16 -->
+<!-- Auto-generated from data/resources.yaml on 2025-09-26 10:59:48 -->

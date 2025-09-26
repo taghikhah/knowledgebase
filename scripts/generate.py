@@ -24,6 +24,38 @@ EFFORT_EMOJI = {"Low": "🎯", "Medium": "⚙️", "High": "🚀"}
 # New advanced sorting constants
 MATURITY_RANK = {"Battle-tested": 0, "Adopted": 1, "Emerging": 2, "Experimental": 3}
 GOOD_FOR_PRIORITY = ["production", "mlops", "testing", "evaluation", "prototyping"]
+DOMAINS = {
+    "AI-Engineering": (
+        "🤖 **AI Engineering**",
+        "ai-engineering",
+        "Agents, RAG & LLM apps",
+    ),
+    "Machine-Learning": (
+        "🧠 **Machine Learning**",
+        "machine-learning",
+        "Training, MLOps & evaluation",
+    ),
+    "Platform-Engineering": (
+        "🏗️ **Platform Engineering**",
+        "platform-engineering",
+        "Infrastructure & reliability",
+    ),
+    "Data-Engineering": (
+        "📊 **Data Engineering**",
+        "data-engineering",
+        "Data pipelines & processing",
+    ),
+    "Security": (
+        "🔒 **Security & Compliance**",
+        "security",
+        "Security & compliance",
+    ),
+    "Developer-Tools": (
+        "🛠️ **Developer Tools**",
+        "developer-tools",
+        "Development utilities",
+    ),
+}
 
 
 def load_resources() -> Dict[str, Any]:
@@ -309,38 +341,6 @@ def generate_quick_navigation(
     grouped_resources: Dict[str, List[Dict[str, Any]]],
 ) -> str:
     """Generate the quick navigation section with descriptions."""
-    domain_info = {
-        "AI-Engineering": (
-            "🤖 **AI Engineering**",
-            "ai-engineering",
-            "Agents, RAG & LLM apps",
-        ),
-        "Machine-Learning": (
-            "🧠 **Machine Learning**",
-            "machine-learning",
-            "Training, MLOps & evaluation",
-        ),
-        "Platform-Engineering": (
-            "🏗️ **Platform Engineering**",
-            "platform-engineering",
-            "Infrastructure & reliability",
-        ),
-        "Data-Engineering": (
-            "📊 **Data Engineering**",
-            "data-engineering",
-            "Data pipelines & processing",
-        ),
-        "Security": (
-            "🔒 **Security & Compliance**",
-            "security",
-            "Security & compliance",
-        ),
-        "Developer-Tools": (
-            "🛠️ **Developer Tools**",
-            "developer-tools",
-            "Development utilities",
-        ),
-    }
 
     nav_section = '\n### Quick Navigation\n\n<div align="center">\n\n'
 
@@ -351,8 +351,8 @@ def generate_quick_navigation(
     descriptions = []
 
     for domain, resources in grouped_resources.items():
-        if domain in domain_info:
-            emoji_title, anchor, desc = domain_info[domain]
+        if domain in DOMAINS:
+            emoji_title, anchor, desc = DOMAINS[domain]
             headers.append(emoji_title)
             clean_title = (
                 emoji_title.replace("**", "")
@@ -437,8 +437,9 @@ def generate_quick_wins_section(resources: List[Dict[str, Any]]) -> str:
     for domain in sorted(domain_best.keys()):
         resource = domain_best[domain]
         use_case = ", ".join(resource.get("use_cases", [])[:2])
+        emoji_title, _, _ = DOMAINS[domain]
 
-        section += f"| {domain} | {use_case} | **[{resource['title']} <small>&#10548;</small>]({resource['url']})** |\n"
+        section += f"| {emoji_title} | {use_case} | **[{resource['title']} <small>&#10548;</small>]({resource['url']})** |\n"
 
     return section + "\n"
 
