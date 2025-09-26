@@ -50,6 +50,7 @@
             "type": "string",
             "enum": [
               "AI-Engineering",
+              "Machine-Learning",
               "Platform-Engineering",
               "Data-Engineering",
               "Security",

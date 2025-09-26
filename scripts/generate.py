@@ -151,11 +151,12 @@ def group_resources_by_domain(
 def get_domain_description(domain: str) -> str:
     """Get a brief description for each domain section."""
     descriptions = {
-        "AI-Engineering": "Agents/MCP, RAG & knowledge systems, testing & eval, training & frameworks, architecture.",
+        "AI-Engineering": "Agents/MCP, RAG & knowledge systems, LLM applications, AI integration.",
+        "Machine-Learning": "Training frameworks, MLOps, evaluation, monitoring, model management, ML system design.",
         "Platform-Engineering": "Observability & performance, infra & services (IaC), container platforms, build & delivery, docs/runbooks.",
         "Data-Engineering": "Discovery & governance, query & storage, pipelines & orchestration, analytics & BI.",
         "Security": "Supply chain & vuln mgmt, infra/runtime security, secrets/auth/compliance.",
-        "Developer-Tools": "Code quality, browser/web tools, CLI/editors/productivity, creative/specialized.",
+        "Developer-Tools": "Code quality, browser/web tools, CLI/editors/productivity, creative/specialized, SLMs.",
     }
     return descriptions.get(domain, "Various engineering tools and resources.")
 
@@ -164,6 +165,7 @@ def create_domain_section(domain: str, resources: List[Dict[str, Any]]) -> str:
     """Create a markdown section for a domain with description."""
     domain_titles = {
         "AI-Engineering": "🤖 AI Engineering",
+        "Machine-Learning": "🧠 Machine Learning",
         "Platform-Engineering": "🏗️ Platform Engineering",
         "Data-Engineering": "📊 Data Engineering",
         "Security": "🔒 Security",
@@ -206,9 +208,7 @@ def group_by_subcategory(
         tags = [tag.lower() for tag in resource.get("tags", [])]
 
         if domain == "AI-Engineering":
-            if any(tag in tags for tag in ["small-language-models"]):
-                subcategories["Small Language Models & Specialized AI"].append(resource)
-            elif any(
+            if any(
                 tag in tags for tag in ["agents", "mcp", "integration", "protocol"]
             ):
                 subcategories["Agent Systems & Integration"].append(resource)
@@ -219,14 +219,24 @@ def group_by_subcategory(
                 subcategories["RAG & Knowledge Systems"].append(resource)
             elif any(tag in tags for tag in ["evaluation", "testing", "prompts"]):
                 subcategories["Testing & Evaluation"].append(resource)
-            elif any(tag in tags for tag in ["training", "frameworks"]):
-                subcategories["Training & Frameworks"].append(resource)
             elif any(
                 tag in tags for tag in ["architecture", "case-studies", "patterns"]
             ):
                 subcategories["Architecture & Best Practices"].append(resource)
             else:
                 subcategories["Core AI Tools"].append(resource)
+
+        elif domain == "Machine-Learning":
+            if any(tag in tags for tag in ["training", "frameworks"]):
+                subcategories["Training & Frameworks"].append(resource)
+            elif any(tag in tags for tag in ["mlops", "monitoring", "evaluation"]):
+                subcategories["MLOps & Monitoring"].append(resource)
+            elif any(tag in tags for tag in ["case-studies", "architecture", "patterns"]):
+                subcategories["ML System Design"].append(resource)
+            elif any(tag in tags for tag in ["learning", "course"]):
+                subcategories["Learning Resources"].append(resource)
+            else:
+                subcategories["ML Tools & Utilities"].append(resource)
 
         elif domain == "Platform-Engineering":
             if any(
@@ -235,49 +245,52 @@ def group_by_subcategory(
                 subcategories["Performance & Observability"].append(resource)
             elif any(
                 tag in tags
-                for tag in ["infrastructure", "self-hosting", "catalog", "services"]
+                for tag in ["infrastructure", "iac", "services", "self-hosting"]
             ):
-                subcategories["Infrastructure & Services"].append(resource)
-            elif any(tag in tags for tag in ["containers", "docker", "logs"]):
+                subcategories["Infrastructure & Services (IaC)"].append(resource)
+            elif any(tag in tags for tag in ["containers", "docker", "kubernetes"]):
                 subcategories["Container Platforms"].append(resource)
+            elif any(tag in tags for tag in ["ci-cd", "build", "delivery"]):
+                subcategories["Build & Delivery"].append(resource)
             elif any(
-                tag in tags for tag in ["documentation", "diagrams", "architecture"]
+                tag in tags for tag in ["documentation", "architecture"]
             ):
-                subcategories["Documentation & Architecture"].append(resource)
+                subcategories["Docs/Runbooks"].append(resource)
             else:
                 subcategories["Platform Tools"].append(resource)
 
         elif domain == "Data-Engineering":
             if any(
-                tag in tags
-                for tag in ["datasets", "catalog", "discovery", "public-data"]
+                tag in tags for tag in ["discovery", "governance", "catalog"]
             ):
-                subcategories["Data Discovery & Catalogs"].append(resource)
-            elif any(tag in tags for tag in ["sql", "database", "nl2sql"]):
-                subcategories["Query & Database Tools"].append(resource)
-            elif any(tag in tags for tag in ["pipelines", "etl", "processing"]):
-                subcategories["Pipelines & Processing"].append(resource)
+                subcategories["Discovery & Governance"].append(resource)
+            elif any(tag in tags for tag in ["query", "sql", "database"]):
+                subcategories["Query & Storage"].append(resource)
+            elif any(tag in tags for tag in ["pipelines", "orchestration", "etl"]):
+                subcategories["Pipelines & Orchestration"].append(resource)
+            elif any(tag in tags for tag in ["analytics", "bi"]):
+                subcategories["Analytics & BI"].append(resource)
             else:
                 subcategories["Data Infrastructure"].append(resource)
 
         elif domain == "Security":
             if any(
-                tag in tags
-                for tag in ["vulnerability-scanning", "containers", "supply-chain"]
+                tag in tags for tag in ["supply-chain", "vulnerability-scanning"]
             ):
-                subcategories["Vulnerability Management"].append(resource)
+                subcategories["Supply Chain & Vuln Mgmt"].append(resource)
             elif any(
-                tag in tags
-                for tag in ["kubernetes", "admission-controller", "configuration"]
+                tag in tags for tag in ["runtime-security", "infrastructure"]
             ):
-                subcategories["Infrastructure Security"].append(resource)
+                subcategories["Infra/Runtime Security"].append(resource)
             elif any(tag in tags for tag in ["secrets", "auth", "compliance"]):
-                subcategories["Access & Compliance"].append(resource)
+                subcategories["Secrets/Auth/Compliance"].append(resource)
             else:
                 subcategories["Security Tools"].append(resource)
 
         elif domain == "Developer-Tools":
-            if any(
+            if any(tag in tags for tag in ["small-language-models"]):
+                subcategories["Specialized Models (SLMs)"].append(resource)
+            elif any(
                 tag in tags
                 for tag in ["code-formatting", "linting", "git-hooks", "pre-commit"]
             ):
@@ -308,7 +321,12 @@ def generate_quick_navigation(
         "AI-Engineering": (
             "🤖 **AI Engineering**",
             "ai-engineering",
-            "Agents, RAG & ML systems",
+            "Agents, RAG & LLM apps",
+        ),
+        "Machine-Learning": (
+            "🧠 **Machine Learning**",
+            "machine-learning",
+            "Training, MLOps & evaluation",
         ),
         "Platform-Engineering": (
             "🏗️ **Platform Engineering**",
@@ -343,6 +361,7 @@ def generate_quick_navigation(
             clean_title = (
                 emoji_title.replace("**", "")
                 .replace("🤖 ", "")
+                .replace("🧠 ", "")
                 .replace("🏗️ ", "")
                 .replace("📊 ", "")
                 .replace("🔒 ", "")

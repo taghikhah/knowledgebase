@@ -38,6 +38,7 @@ OPTIONAL_FIELDS = [
 
 VALID_DOMAINS = [
     "AI-Engineering",
+    "Machine-Learning",
     "Platform-Engineering",
     "Data-Engineering",
     "Security",
