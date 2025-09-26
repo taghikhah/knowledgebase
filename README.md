@@ -13,11 +13,11 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 <div align="center">
 
-| 🤖 **AI Engineering** | 🏗️ **Platform Engineering** | 🛠️ **Developer Tools** | 📊 **Data Engineering** | 🔒 **Security** |
+| 🤖 **AI Engineering** | 🛠️ **Developer Tools** | 🏗️ **Platform Engineering** | 🔒 **Security** | 📊 **Data Engineering** |
 |:------------:|:------------:|:------------:|:------------:|:------------:|
-| [Jump to AI Engineering](#ai-engineering) | [Jump to Platform Engineering](#platform-engineering) | [Jump to Developer Tools](#developer-tools) | [Jump to Data Engineering](#data-engineering) | [Jump to Security](#security) |
-| **36 resources** | **13 resources** | **14 resources** | **5 resources** | **3 resources** |
-| *Agents, RAG & ML systems* | *Infrastructure & reliability* | *Development utilities* | *Data pipelines & processing* | *Security & compliance* |
+| [Jump to AI Engineering](#ai-engineering) | [Jump to Developer Tools](#developer-tools) | [Jump to Platform Engineering](#platform-engineering) | [Jump to Security](#security) | [Jump to Data Engineering](#data-engineering) |
+| **37 resources** | **15 resources** | **13 resources** | **3 resources** | **4 resources** |
+| *Agents, RAG & ML systems* | *Development utilities* | *Infrastructure & reliability* | *Security & compliance* | *Data pipelines & processing* |
 
 </div>
 
@@ -129,11 +129,55 @@ Here you will find tools and resources organized by engineering domain, each wit
 
 </details>
 <details>
-<summary><strong>Small Language Models & Specialized AI</strong> (1 resources)</summary>
+<summary><strong>Small Language Models & Specialized AI</strong> (2 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[Granite Docling 258M <small>&#10548;</small>](https://huggingface.co/ibm-granite/granite-docling-258M)** | 🔧 | 🎯 | document conversion for RAG, PDF to markdown processing, structured data extraction | Ultra-compact 258M parameter vision-language model specialized for document conversion and understanding, capable of ... |
+| **[SLM SQL <small>&#10548;</small>](https://github.com/CycloneBoy/slm_sql)**<br/>⭐ <1K | 🧪 | 🚀 | natural language querying, SQL learning tools, database interfaces | Small Language Model specifically designed for SQL generation and database querying tasks, optimized for natural lang... |
+
+</details>
+
+---
+
+### 🛠️ Developer Tools
+
+*Code quality, browser/web tools, CLI/editors/productivity, creative/specialized.*
+
+<details>
+<summary><strong>Development Utilities</strong> (10 resources)</summary>
+
+| Resource | Maturity | Effort | Use Case | Quick Summary |
+|----------|:--------:|:------:|----------|---------------|
+| **[Awesome MCP Servers <small>&#10548;</small>](https://github.com/punkpeye/awesome-mcp-servers)**<br/>⭐ 70.9K | 🛡️ | 🚀 | MCP server discovery, ecosystem exploration, integration planning | Comprehensive curated list of 20+ categories of MCP servers covering aerospace, biology, cloud platforms, coding, and... |
+| **[MCP.so - MCP Server Directory <small>&#10548;</small>](https://mcp.so/)** | 🛡️ | 🎯 | MCP server discovery, integration planning, documentation access | Community-driven platform cataloging 16,624+ MCP servers and clients with categorized listings, installation guides, ... |
+| **[Awesome Self-hosted <small>&#10548;</small>](https://github.com/awesome-selfhosted/awesome-selfhosted)**<br/>⭐ 196K | 🛡️ | 🚀 | lab setups, privacy solutions, cost optimization | Comprehensive catalog of self-hostable network services and web applications, covering alternatives to popular SaaS p... |
+| **[Locust <small>&#10548;</small>](https://github.com/locustio/locust)**<br/>⭐ 26.8K | 🛡️ | 🎯 | load testing, performance validation, stress testing | Open-source load testing tool that lets you define test scenarios in plain Python code, supporting distributed testin... |
+| **[LiveKit <small>&#10548;</small>](https://github.com/livekit/livekit)**<br/>⭐ 14.9K | 🛡️ | 🎯 | video conferencing, live streaming, real-time collaboration | Open-source real-time communication platform providing scalable WebRTC infrastructure for building video, audio, and ... |
+| **[Task <small>&#10548;</small>](https://github.com/go-task/task)**<br/>⭐ 13.8K | 🛡️ | 🎯 | build automation, task orchestration, workflow management | Simple task runner and build tool written in Go, designed as a modern alternative to GNU Make with YAML-based configu... |
+| **[Diagrams <small>&#10548;</small>](https://github.com/mingrammer/diagrams)**<br/>⭐ 23K | 🛡️ | 🚀 | architecture documentation, system design, technical presentations | Create cloud system architecture diagrams programmatically using Python code, with support for major cloud providers ... |
+| **[Granite Docling 258M <small>&#10548;</small>](https://huggingface.co/ibm-granite/granite-docling-258M)** | 🔧 | 🎯 | document conversion for RAG, PDF to markdown processing, structured data extraction | Ultra-compact 258M parameter vision-language model specialized for document conversion and understanding, capable of ... |
+| **[MCP for Beginners <small>&#10548;</small>](https://github.com/microsoft/mcp-for-beginners/)**<br/>⭐ <1K | 🔧 | 🚀 | agent development, tool integration, IDE plugins | Beginner-friendly tutorial and examples for Microsoft's Model Context Protocol (MCP), showing how to build tool-using... |
+| **[SLM SQL <small>&#10548;</small>](https://github.com/CycloneBoy/slm_sql)**<br/>⭐ <1K | 🧪 | 🚀 | natural language querying, SQL learning tools, database interfaces | Small Language Model specifically designed for SQL generation and database querying tasks, optimized for natural lang... |
+
+</details>
+<details>
+<summary><strong>Code Quality & Standards</strong> (3 resources)</summary>
+
+| Resource | Maturity | Effort | Use Case | Quick Summary |
+|----------|:--------:|:------:|----------|---------------|
+| **[Prettier <small>&#10548;</small>](https://github.com/prettier/prettier)**<br/>⭐ 51K | 🛡️ | 🎯 | code formatting, style consistency, automated formatting | Opinionated code formatter that automatically reformats code to enforce consistent styling across JavaScript, TypeScr... |
+| **[Husky <small>&#10548;</small>](https://github.com/typicode/husky)**<br/>⭐ 34.2K | 🛡️ | 🎯 | git hook automation, pre-commit checks, workflow enforcement | Lightweight native Git hooks manager that automates workflow enforcement with cross-platform support for all client-s... |
+| **[lint-staged <small>&#10548;</small>](https://github.com/lint-staged/lint-staged)**<br/>⭐ 14.2K | 🛡️ | 🎯 | pre-commit validation, code quality enforcement, automated formatting | Runs linters and formatters only on git staged files before commits, preventing problematic code from entering the re... |
+
+</details>
+<details>
+<summary><strong>Browser & Web Tools</strong> (2 resources)</summary>
+
+| Resource | Maturity | Effort | Use Case | Quick Summary |
+|----------|:--------:|:------:|----------|---------------|
+| **[Browser Use <small>&#10548;</small>](https://github.com/browser-use/browser-use)**<br/>⭐ 70.5K | 🔧 | 🚀 | automated web tasks, browser automation, AI-driven web interactions | AI-powered browser automation framework enabling agents to control web browsers, automate online tasks, and interact ... |
+| **[MCP Chrome Extension <small>&#10548;</small>](https://github.com/hangwin/mcp-chrome)**<br/>⭐ 8.1K | 🧪 | 🚀 | browser automation, web scraping, content analysis | Chrome extension transforming browsers into AI-controlled automation tools with 20+ tools for browser management, con... |
 
 </details>
 
@@ -194,81 +238,6 @@ Here you will find tools and resources organized by engineering domain, each wit
 
 ---
 
-### 🛠️ Developer Tools
-
-*Code quality, browser/web tools, CLI/editors/productivity, creative/specialized.*
-
-<details>
-<summary><strong>Development Utilities</strong> (9 resources)</summary>
-
-| Resource | Maturity | Effort | Use Case | Quick Summary |
-|----------|:--------:|:------:|----------|---------------|
-| **[Awesome MCP Servers <small>&#10548;</small>](https://github.com/punkpeye/awesome-mcp-servers)**<br/>⭐ 70.9K | 🛡️ | 🚀 | MCP server discovery, ecosystem exploration, integration planning | Comprehensive curated list of 20+ categories of MCP servers covering aerospace, biology, cloud platforms, coding, and... |
-| **[MCP.so - MCP Server Directory <small>&#10548;</small>](https://mcp.so/)** | 🛡️ | 🎯 | MCP server discovery, integration planning, documentation access | Community-driven platform cataloging 16,624+ MCP servers and clients with categorized listings, installation guides, ... |
-| **[Awesome Self-hosted <small>&#10548;</small>](https://github.com/awesome-selfhosted/awesome-selfhosted)**<br/>⭐ 196K | 🛡️ | 🚀 | lab setups, privacy solutions, cost optimization | Comprehensive catalog of self-hostable network services and web applications, covering alternatives to popular SaaS p... |
-| **[Locust <small>&#10548;</small>](https://github.com/locustio/locust)**<br/>⭐ 26.8K | 🛡️ | 🎯 | load testing, performance validation, stress testing | Open-source load testing tool that lets you define test scenarios in plain Python code, supporting distributed testin... |
-| **[LiveKit <small>&#10548;</small>](https://github.com/livekit/livekit)**<br/>⭐ 14.9K | 🛡️ | 🎯 | video conferencing, live streaming, real-time collaboration | Open-source real-time communication platform providing scalable WebRTC infrastructure for building video, audio, and ... |
-| **[Task <small>&#10548;</small>](https://github.com/go-task/task)**<br/>⭐ 13.8K | 🛡️ | 🎯 | build automation, task orchestration, workflow management | Simple task runner and build tool written in Go, designed as a modern alternative to GNU Make with YAML-based configu... |
-| **[Diagrams <small>&#10548;</small>](https://github.com/mingrammer/diagrams)**<br/>⭐ 23K | 🛡️ | 🚀 | architecture documentation, system design, technical presentations | Create cloud system architecture diagrams programmatically using Python code, with support for major cloud providers ... |
-| **[MCP for Beginners <small>&#10548;</small>](https://github.com/microsoft/mcp-for-beginners/)**<br/>⭐ <1K | 🔧 | 🚀 | agent development, tool integration, IDE plugins | Beginner-friendly tutorial and examples for Microsoft's Model Context Protocol (MCP), showing how to build tool-using... |
-| **[SLM SQL <small>&#10548;</small>](https://github.com/CycloneBoy/slm_sql)**<br/>⭐ <1K | 🧪 | 🚀 | natural language querying, SQL learning tools, database interfaces | Small Language Model specifically designed for SQL generation and database querying tasks, optimized for natural lang... |
-
-</details>
-<details>
-<summary><strong>Code Quality & Standards</strong> (3 resources)</summary>
-
-| Resource | Maturity | Effort | Use Case | Quick Summary |
-|----------|:--------:|:------:|----------|---------------|
-| **[Prettier <small>&#10548;</small>](https://github.com/prettier/prettier)**<br/>⭐ 51K | 🛡️ | 🎯 | code formatting, style consistency, automated formatting | Opinionated code formatter that automatically reformats code to enforce consistent styling across JavaScript, TypeScr... |
-| **[Husky <small>&#10548;</small>](https://github.com/typicode/husky)**<br/>⭐ 34.2K | 🛡️ | 🎯 | git hook automation, pre-commit checks, workflow enforcement | Lightweight native Git hooks manager that automates workflow enforcement with cross-platform support for all client-s... |
-| **[lint-staged <small>&#10548;</small>](https://github.com/lint-staged/lint-staged)**<br/>⭐ 14.2K | 🛡️ | 🎯 | pre-commit validation, code quality enforcement, automated formatting | Runs linters and formatters only on git staged files before commits, preventing problematic code from entering the re... |
-
-</details>
-<details>
-<summary><strong>Browser & Web Tools</strong> (2 resources)</summary>
-
-| Resource | Maturity | Effort | Use Case | Quick Summary |
-|----------|:--------:|:------:|----------|---------------|
-| **[Browser Use <small>&#10548;</small>](https://github.com/browser-use/browser-use)**<br/>⭐ 70.5K | 🔧 | 🚀 | automated web tasks, browser automation, AI-driven web interactions | AI-powered browser automation framework enabling agents to control web browsers, automate online tasks, and interact ... |
-| **[MCP Chrome Extension <small>&#10548;</small>](https://github.com/hangwin/mcp-chrome)**<br/>⭐ 8.1K | 🧪 | 🚀 | browser automation, web scraping, content analysis | Chrome extension transforming browsers into AI-controlled automation tools with 20+ tools for browser management, con... |
-
-</details>
-
----
-
-### 📊 Data Engineering
-
-*Discovery & governance, query & storage, pipelines & orchestration, analytics & BI.*
-
-<details>
-<summary><strong>Data Discovery & Catalogs</strong> (1 resources)</summary>
-
-| Resource | Maturity | Effort | Use Case | Quick Summary |
-|----------|:--------:|:------:|----------|---------------|
-| **[Awesome Public Datasets <small>&#10548;</small>](https://github.com/awesomedata/awesome-public-datasets)**<br/>⭐ 67.8K | 🛡️ | 🚀 | dataset discovery, research projects, machine learning training | Curated collection of high-quality public datasets across 30+ domains including agriculture, biology, climate, financ... |
-
-</details>
-<details>
-<summary><strong>Query & Database Tools</strong> (2 resources)</summary>
-
-| Resource | Maturity | Effort | Use Case | Quick Summary |
-|----------|:--------:|:------:|----------|---------------|
-| **[SurrealDB <small>&#10548;</small>](https://github.com/surrealdb/surrealdb)**<br/>⭐ 30.1K | 🛡️ | 🎯 | real-time applications, modern web development, complex data relationships | Multi-model database combining document, graph, and relational data models with built-in API layer, real-time subscri... |
-| **[SLM SQL <small>&#10548;</small>](https://github.com/CycloneBoy/slm_sql)**<br/>⭐ <1K | 🧪 | 🚀 | natural language querying, SQL learning tools, database interfaces | Small Language Model specifically designed for SQL generation and database querying tasks, optimized for natural lang... |
-
-</details>
-<details>
-<summary><strong>Data Infrastructure</strong> (2 resources)</summary>
-
-| Resource | Maturity | Effort | Use Case | Quick Summary |
-|----------|:--------:|:------:|----------|---------------|
-| **[Evidently <small>&#10548;</small>](https://github.com/evidentlyai/evidently)**<br/>⭐ 6.6K | 🛡️ | 🎯 | model monitoring, data drift detection, ML evaluation | Open-source Python library for ML and LLM observability with 100+ built-in metrics for evaluating, testing, and monit... |
-| **[Firecrawl <small>&#10548;</small>](https://github.com/firecrawl/firecrawl)**<br/>⭐ 59.3K | 🔧 | 🎯 | data extraction, AI training data, web scraping automation | Web data API service that crawls entire websites and converts content into LLM-ready markdown or structured data with... |
-
-</details>
-
----
-
 ### 🔒 Security
 
 *Supply chain & vuln mgmt, infra/runtime security, secrets/auth/compliance.*
@@ -295,6 +264,38 @@ Here you will find tools and resources organized by engineering domain, each wit
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[Parlant <small>&#10548;</small>](https://github.com/emcie-co/parlant)**<br/>⭐ 12.5K | 🔧 | 🎯 | compliant AI agents, financial services AI, healthcare chatbots | Python framework for building AI agents with guaranteed rule compliance and predictable behavior through dynamic guid... |
+
+</details>
+
+---
+
+### 📊 Data Engineering
+
+*Discovery & governance, query & storage, pipelines & orchestration, analytics & BI.*
+
+<details>
+<summary><strong>Data Discovery & Catalogs</strong> (1 resources)</summary>
+
+| Resource | Maturity | Effort | Use Case | Quick Summary |
+|----------|:--------:|:------:|----------|---------------|
+| **[Awesome Public Datasets <small>&#10548;</small>](https://github.com/awesomedata/awesome-public-datasets)**<br/>⭐ 67.8K | 🛡️ | 🚀 | dataset discovery, research projects, machine learning training | Curated collection of high-quality public datasets across 30+ domains including agriculture, biology, climate, financ... |
+
+</details>
+<details>
+<summary><strong>Query & Database Tools</strong> (1 resources)</summary>
+
+| Resource | Maturity | Effort | Use Case | Quick Summary |
+|----------|:--------:|:------:|----------|---------------|
+| **[SurrealDB <small>&#10548;</small>](https://github.com/surrealdb/surrealdb)**<br/>⭐ 30.1K | 🛡️ | 🎯 | real-time applications, modern web development, complex data relationships | Multi-model database combining document, graph, and relational data models with built-in API layer, real-time subscri... |
+
+</details>
+<details>
+<summary><strong>Data Infrastructure</strong> (2 resources)</summary>
+
+| Resource | Maturity | Effort | Use Case | Quick Summary |
+|----------|:--------:|:------:|----------|---------------|
+| **[Evidently <small>&#10548;</small>](https://github.com/evidentlyai/evidently)**<br/>⭐ 6.6K | 🛡️ | 🎯 | model monitoring, data drift detection, ML evaluation | Open-source Python library for ML and LLM observability with 100+ built-in metrics for evaluating, testing, and monit... |
+| **[Firecrawl <small>&#10548;</small>](https://github.com/firecrawl/firecrawl)**<br/>⭐ 59.3K | 🔧 | 🎯 | data extraction, AI training data, web scraping automation | Web data API service that crawls entire websites and converts content into LLM-ready markdown or structured data with... |
 
 </details>
 
@@ -348,4 +349,4 @@ Content and curation by [@taghikhah](https://github.com/taghikhah). Resource des
 
 ⭐ **Star this repo** if you find it valuable • **[Share feedback](../../discussions)**
 
-<!-- Auto-generated from data/resources.yaml on 2025-09-26 10:10:46 -->
+<!-- Auto-generated from data/resources.yaml on 2025-09-26 10:16:09 -->

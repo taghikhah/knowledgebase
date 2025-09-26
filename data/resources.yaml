@@ -6,7 +6,7 @@ resources:
   - id: granite-docling-258m
     title: Granite Docling 258M
     url: https://huggingface.co/ibm-granite/granite-docling-258M
-    domains: [AI-Engineering]
+    domains: [AI-Engineering, Developer-Tools]
     type: Repo
     maturity: Emerging
     tags: [multimodal, llm, document-processing, small-language-models]
@@ -27,7 +27,7 @@ resources:
         document conversion for RAG,
         PDF to markdown processing,
         structured data extraction,
-        multilingual document parsing
+        multilingual document parsing,
       ]
 
   - id: promptfoo
@@ -205,7 +205,7 @@ resources:
   - id: slm-sql
     title: SLM SQL
     url: https://github.com/CycloneBoy/slm_sql
-    domains: [Data-Engineering, Developer-Tools]
+    domains: [AI-Engineering, Developer-Tools]
     type: Repo
     maturity: Experimental
     tags: [sql, query, database, nl2sql, small-language-models]
@@ -465,7 +465,15 @@ resources:
     domains: [Developer-Tools]
     type: Repo
     maturity: Battle-tested
-    tags: [git-hooks, automation, workflow, pre-commit, developer-experience, nodejs]
+    tags:
+      [
+        git-hooks,
+        automation,
+        workflow,
+        pre-commit,
+        developer-experience,
+        nodejs,
+      ]
     github_stars: 34200
     published: '2014-06-23'
     last_updated: '2024-09'
@@ -1493,7 +1501,8 @@ resources:
       Enables cross-platform AI agent collaboration without exposing sensitive internal details,
       provides standardized communication protocol for complex multi-agent task management.
     good_for: [research, experimentation, production]
-    prerequisites: [AI agent architectures, JSON-RPC, multi-platform development]
+    prerequisites:
+      [AI agent architectures, JSON-RPC, multi-platform development]
     use_cases:
       [
         cross-platform agent communication,
