@@ -56,7 +56,7 @@ def format_resource_row(resource: Dict[str, Any]) -> str:
             formatted_stars = f"<1K"
         github_info = f"<br/>⭐ {formatted_stars}"
 
-    title_cell = f"**<a href=\"{resource['url']}\" target=\"_blank\">{resource['title']} ↗</a>**{github_info}"
+    title_cell = f"**[{resource['title']} <small>&#10548;</small>]({resource['url']})**{github_info}"
 
     # Consistent emoji usage (emoji only, no text)
     maturity_cell = MATURITY_EMOJI.get(resource["maturity"], "❓")
@@ -206,7 +206,11 @@ def group_by_subcategory(
         tags = [tag.lower() for tag in resource.get("tags", [])]
 
         if domain == "AI-Engineering":
-            if any(tag in tags for tag in ["agents", "mcp", "integration", "protocol"]):
+            if any(tag in tags for tag in ["small-language-models"]):
+                subcategories["Small Language Models & Specialized AI"].append(resource)
+            elif any(
+                tag in tags for tag in ["agents", "mcp", "integration", "protocol"]
+            ):
                 subcategories["Agent Systems & Integration"].append(resource)
             elif any(
                 tag in tags
@@ -419,7 +423,7 @@ def generate_quick_wins_section(resources: List[Dict[str, Any]]) -> str:
         resource = domain_best[domain]
         use_case = ", ".join(resource.get("use_cases", [])[:2])
 
-        section += f"| {domain} | {use_case} | **<a href=\"{resource['url']}\" target=\"_blank\">{resource['title']} ↗</a>** |\n"
+        section += f"| {domain} | {use_case} | **[{resource['title']} <small>&#10548;</small>]({resource['url']})** |\n"
 
     return section + "\n"
 
