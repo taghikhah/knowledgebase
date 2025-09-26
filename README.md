@@ -4,7 +4,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 <div align="center">
 
-![Resources](https://img.shields.io/badge/Resources-52-blue) ![Domains](https://img.shields.io/badge/Domains-6-green) ![Contributors](https://img.shields.io/badge/Contributors-1-orange) ![Last Updated](https://img.shields.io/badge/Updated-September%202025-red)
+![Domains](https://img.shields.io/badge/Domains-6-green) ![Resources](https://img.shields.io/badge/Resources-52-blue) ![Last Updated](https://img.shields.io/badge/Updated-September%202025-red)
 
 </div>
 
@@ -355,4 +355,4 @@ Content and curation by [@taghikhah](https://github.com/taghikhah). Resource des
 
 ⭐ **Star this repo** if you find it valuable • **[Share feedback](../../discussions)**
 
-<!-- Auto-generated from data/resources.yaml on 2025-09-26 10:51:12 -->
+<!-- Auto-generated from data/resources.yaml on 2025-09-26 10:53:16 -->

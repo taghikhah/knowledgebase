@@ -208,9 +208,7 @@ def group_by_subcategory(
         tags = [tag.lower() for tag in resource.get("tags", [])]
 
         if domain == "AI-Engineering":
-            if any(
-                tag in tags for tag in ["agents", "mcp", "integration", "protocol"]
-            ):
+            if any(tag in tags for tag in ["agents", "mcp", "integration", "protocol"]):
                 subcategories["Agent Systems & Integration"].append(resource)
             elif any(
                 tag in tags
@@ -231,7 +229,9 @@ def group_by_subcategory(
                 subcategories["Training & Frameworks"].append(resource)
             elif any(tag in tags for tag in ["mlops", "monitoring", "evaluation"]):
                 subcategories["MLOps & Monitoring"].append(resource)
-            elif any(tag in tags for tag in ["case-studies", "architecture", "patterns"]):
+            elif any(
+                tag in tags for tag in ["case-studies", "architecture", "patterns"]
+            ):
                 subcategories["ML System Design"].append(resource)
             elif any(tag in tags for tag in ["learning", "course"]):
                 subcategories["Learning Resources"].append(resource)
@@ -252,17 +252,13 @@ def group_by_subcategory(
                 subcategories["Container Platforms"].append(resource)
             elif any(tag in tags for tag in ["ci-cd", "build", "delivery"]):
                 subcategories["Build & Delivery"].append(resource)
-            elif any(
-                tag in tags for tag in ["documentation", "architecture"]
-            ):
+            elif any(tag in tags for tag in ["documentation", "architecture"]):
                 subcategories["Docs/Runbooks"].append(resource)
             else:
                 subcategories["Platform Tools"].append(resource)
 
         elif domain == "Data-Engineering":
-            if any(
-                tag in tags for tag in ["discovery", "governance", "catalog"]
-            ):
+            if any(tag in tags for tag in ["discovery", "governance", "catalog"]):
                 subcategories["Discovery & Governance"].append(resource)
             elif any(tag in tags for tag in ["query", "sql", "database"]):
                 subcategories["Query & Storage"].append(resource)
@@ -274,13 +270,9 @@ def group_by_subcategory(
                 subcategories["Data Infrastructure"].append(resource)
 
         elif domain == "Security":
-            if any(
-                tag in tags for tag in ["supply-chain", "vulnerability-scanning"]
-            ):
+            if any(tag in tags for tag in ["supply-chain", "vulnerability-scanning"]):
                 subcategories["Supply Chain & Vuln Mgmt"].append(resource)
-            elif any(
-                tag in tags for tag in ["runtime-security", "infrastructure"]
-            ):
+            elif any(tag in tags for tag in ["runtime-security", "infrastructure"]):
                 subcategories["Infra/Runtime Security"].append(resource)
             elif any(tag in tags for tag in ["secrets", "auth", "compliance"]):
                 subcategories["Secrets/Auth/Compliance"].append(resource)
@@ -338,7 +330,11 @@ def generate_quick_navigation(
             "data-engineering",
             "Data pipelines & processing",
         ),
-        "Security": ("🔒 **Security & Compliance**", "security", "Security & compliance"),
+        "Security": (
+            "🔒 **Security & Compliance**",
+            "security",
+            "Security & compliance",
+        ),
         "Developer-Tools": (
             "🛠️ **Developer Tools**",
             "developer-tools",
@@ -497,7 +493,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 <div align="center">
 
-![Resources](https://img.shields.io/badge/Resources-{stats['total_resources']}-blue) ![Domains](https://img.shields.io/badge/Domains-{stats['domains_covered']}-green) ![Contributors](https://img.shields.io/badge/Contributors-1-orange) ![Last Updated](https://img.shields.io/badge/Updated-{stats['last_updated'].replace(' ', '%20')}-red)
+![Domains](https://img.shields.io/badge/Domains-{stats['domains_covered']}-green) ![Resources](https://img.shields.io/badge/Resources-{stats['total_resources']}-blue) ![Last Updated](https://img.shields.io/badge/Updated-{stats['last_updated'].replace(' ', '%20')}-red)
 
 </div>
 
