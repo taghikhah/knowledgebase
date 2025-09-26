@@ -6,7 +6,7 @@ resources:
   - id: granite-docling-258m
     title: Granite Docling 258M
     url: https://huggingface.co/ibm-granite/granite-docling-258M
-    domains: [AI-Engineering, Developer-Tools]
+    domains: [AI-Engineering]
     type: Repo
     maturity: Emerging
     tags: [multimodal, llm, document-processing, small-language-models]
@@ -61,7 +61,7 @@ resources:
   - id: zenml-llmops-cases
     title: 'ZenML: LLMOps in Production - 287+ Case Studies'
     url: https://www.zenml.io/blog/llmops-in-production-287-more-case-studies-of-what-actually-works
-    domains: [AI-Engineering]
+    domains: [Machine-Learning]
     type: Article
     maturity: Battle-tested
     tags: [case-studies, production, mlops, architecture, patterns]
@@ -105,7 +105,7 @@ resources:
   - id: mlx-apple
     title: MLX - Apple Machine Learning Framework
     url: https://github.com/ml-explore/mlx
-    domains: [AI-Engineering]
+    domains: [Machine-Learning]
     type: Repo
     maturity: Emerging
     tags: [training, performance, research, frameworks]
@@ -127,7 +127,7 @@ resources:
   - id: ml-practical-usecases
     title: ML Practical Use Cases
     url: https://github.com/mallahyari/ml-practical-usecases
-    domains: [AI-Engineering]
+    domains: [Machine-Learning]
     type: Repo
     maturity: Battle-tested
     tags: [templates, learning, patterns]
@@ -140,7 +140,7 @@ resources:
       covering common business scenarios and technical patterns.
     why_useful: >
       Provides ready-to-adapt templates for real projects, bridges gap between tutorials
-      and production code, includes best practices and common pitfalls.
+      and production code, includes proven patterns and common pitfalls.
     good_for: [learning, POCs]
     prerequisites: [Python, basic ML knowledge]
     use_cases: [learning, project templates, proof of concepts, team training]
@@ -205,7 +205,7 @@ resources:
   - id: slm-sql
     title: SLM SQL
     url: https://github.com/CycloneBoy/slm_sql
-    domains: [AI-Engineering, Developer-Tools]
+    domains: [AI-Engineering]
     type: Repo
     maturity: Experimental
     tags: [sql, query, database, nl2sql, small-language-models]
@@ -228,12 +228,12 @@ resources:
         database interfaces,
         automation,
       ]
-    related: []
+    related: [granite-docling-258m]
 
   - id: mcp-beginners
     title: MCP for Beginners
     url: https://github.com/microsoft/mcp-for-beginners/
-    domains: [AI-Engineering, Developer-Tools]
+    domains: [AI-Engineering]
     type: Repo
     maturity: Emerging
     tags: [agents, protocol, microsoft, integration, tools]
@@ -500,7 +500,7 @@ resources:
   - id: evidentlyai-ml-system-design
     title: 'ML System Design: 650+ Case Studies Database'
     url: https://www.evidentlyai.com/ml-system-design
-    domains: [AI-Engineering]
+    domains: [Machine-Learning]
     type: Guide
     maturity: Battle-tested
     tags: [case-studies, architecture, production]
@@ -588,7 +588,7 @@ resources:
   - id: mcp-chrome-extension
     title: MCP Chrome Extension
     url: https://github.com/hangwin/mcp-chrome
-    domains: [AI-Engineering, Developer-Tools]
+    domains: [AI-Engineering]
     type: Repo
     maturity: Experimental
     tags: [mcp, browser-automation, chrome-extension, ai-control, automation]
@@ -618,7 +618,7 @@ resources:
   - id: awesome-mcp-servers
     title: Awesome MCP Servers
     url: https://github.com/punkpeye/awesome-mcp-servers
-    domains: [AI-Engineering, Developer-Tools]
+    domains: [AI-Engineering]
     type: Repo
     maturity: Battle-tested
     tags: [mcp, catalog, awesome-list, discovery, community, protocol]
@@ -648,7 +648,7 @@ resources:
   - id: mcp-so-directory
     title: MCP.so - MCP Server Directory
     url: https://mcp.so/
-    domains: [AI-Engineering, Developer-Tools]
+    domains: [AI-Engineering]
     type: Tool
     maturity: Battle-tested
     tags: [mcp, discovery, community, documentation, platform]
@@ -675,7 +675,7 @@ resources:
     related: [awesome-mcp-servers, mcp-beginners]
 
   - id: deeplearning-ai-mcp-course
-    title: 'DeepLearning.AI: Build Rich-Context AI Apps with MCP'
+    title: 'DeepLearning.AI: MCP Course'
     url: https://www.deeplearning.ai/short-courses/mcp-build-rich-context-ai-apps-with-anthropic/
     domains: [AI-Engineering]
     type: Guide
@@ -699,7 +699,7 @@ resources:
         standardization strategy,
         integration patterns,
         skill development,
-        best practices,
+        proven patterns,
       ]
     related: [mcp-beginners, awesome-mcp-servers]
 
@@ -793,7 +793,7 @@ resources:
     related: [nano-graphrag, neo4j-graphrag-guide]
 
   - id: nano-graphrag
-    title: nano-graphrag - Lightweight GraphRAG Implementation
+    title: nano-graphrag
     url: https://github.com/gusye1234/nano-graphrag
     domains: [AI-Engineering]
     type: Repo
@@ -875,7 +875,7 @@ resources:
         implementation planning,
         reference documentation,
         concept understanding,
-        best practices,
+        proven patterns,
         community engagement,
       ]
     related: [neo4j-graphrag-guide, nano-graphrag, graphiti-zep]
@@ -1066,7 +1066,7 @@ resources:
   - id: llm-course-mlabonne
     title: LLM Course
     url: https://github.com/mlabonne/llm-course
-    domains: [AI-Engineering]
+    domains: [Machine-Learning]
     type: Repo
     maturity: Battle-tested
     tags: [course, learning, frameworks, training, fine-tuning, patterns]
@@ -1186,7 +1186,7 @@ resources:
   - id: evidently-ai
     title: Evidently
     url: https://github.com/evidentlyai/evidently
-    domains: [AI-Engineering, Data-Engineering]
+    domains: [Machine-Learning]
     type: Repo
     maturity: Battle-tested
     tags: [monitoring, evaluation, mlops, testing, observability]
@@ -1216,7 +1216,7 @@ resources:
   - id: awesome-mlops
     title: Awesome MLOps
     url: https://github.com/visenger/awesome-mlops
-    domains: [AI-Engineering, Platform-Engineering]
+    domains: [Machine-Learning]
     type: Repo
     maturity: Battle-tested
     tags: [awesome-list, mlops, discovery, catalog, learning]
@@ -1226,7 +1226,7 @@ resources:
     added: '2024-09-23'
     summary: >
       Curated reference list for Machine Learning Operations covering workflow management,
-      feature stores, deployment, monitoring, and infrastructure with industry best practices.
+      feature stores, deployment, monitoring, and infrastructure with proven methodologies.
     why_useful: >
       Comprehensive MLOps resource aggregation from industry experts, provides learning paths
       from beginner to advanced, covers both theoretical concepts and practical implementations.
@@ -1237,7 +1237,7 @@ resources:
         MLOps learning,
         resource discovery,
         technology selection,
-        best practices,
+        proven patterns,
         team education,
         industry benchmarking,
       ]
@@ -1336,7 +1336,7 @@ resources:
   - id: art-openpipe
     title: ART - Agent Reinforcement Trainer
     url: https://github.com/OpenPipe/ART
-    domains: [AI-Engineering]
+    domains: [Machine-Learning]
     type: Repo
     maturity: Experimental
     tags: [agents, training, reinforcement-learning, evaluation]
@@ -1396,7 +1396,7 @@ resources:
   - id: browser-use
     title: Browser Use
     url: https://github.com/browser-use/browser-use
-    domains: [AI-Engineering, Developer-Tools]
+    domains: [AI-Engineering]
     type: Repo
     maturity: Emerging
     tags: [browser-automation, agents, ai-control, automation, python]
