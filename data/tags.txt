@@ -8,6 +8,7 @@ architecture
 case-studies
 code-search
 course
+document-processing
 evaluation
 fine-tuning
 graph-rag
@@ -25,6 +26,7 @@ protocol
 rag
 retrieval
 semantic-search
+small-language-models
 testing
 training
 vector-database
