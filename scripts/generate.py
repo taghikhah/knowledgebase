@@ -168,7 +168,7 @@ def create_domain_section(domain: str, resources: List[Dict[str, Any]]) -> str:
         "Machine-Learning": "🧠 Machine Learning",
         "Platform-Engineering": "🏗️ Platform Engineering",
         "Data-Engineering": "📊 Data Engineering",
-        "Security": "🔒 Security",
+        "Security": "🔒 Security & Compliance",
         "Developer-Tools": "🛠️ Developer Tools",
     }
 
@@ -338,7 +338,7 @@ def generate_quick_navigation(
             "data-engineering",
             "Data pipelines & processing",
         ),
-        "Security": ("🔒 **Security**", "security", "Security & compliance"),
+        "Security": ("🔒 **Security & Compliance**", "security", "Security & compliance"),
         "Developer-Tools": (
             "🛠️ **Developer Tools**",
             "developer-tools",

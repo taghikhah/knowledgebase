@@ -13,9 +13,9 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 <div align="center">
 
-| 🤖 **AI Engineering** | 🧠 **Machine Learning** | 🏗️ **Platform Engineering** | 🛠️ **Developer Tools** | 🔒 **Security** | 📊 **Data Engineering** |
+| 🤖 **AI Engineering** | 🧠 **Machine Learning** | 🏗️ **Platform Engineering** | 🛠️ **Developer Tools** | 🔒 **Security & Compliance** | 📊 **Data Engineering** |
 |:------------:|:------------:|:------------:|:------------:|:------------:|:------------:|
-| [Jump to AI Engineering](#ai-engineering) | [Jump to Machine Learning](#machine-learning) | [Jump to Platform Engineering](#platform-engineering) | [Jump to Developer Tools](#developer-tools) | [Jump to Security](#security) | [Jump to Data Engineering](#data-engineering) |
+| [Jump to AI Engineering](#ai-engineering) | [Jump to Machine Learning](#machine-learning) | [Jump to Platform Engineering](#platform-engineering) | [Jump to Developer Tools](#developer-tools) | [Jump to Security & Compliance](#security) | [Jump to Data Engineering](#data-engineering) |
 | **29 resources** | **8 resources** | **12 resources** | **8 resources** | **3 resources** | **3 resources** |
 | *Agents, RAG & LLM apps* | *Training, MLOps & evaluation* | *Infrastructure & reliability* | *Development utilities* | *Security & compliance* | *Data pipelines & processing* |
 
@@ -244,7 +244,7 @@ Here you will find tools and resources organized by engineering domain, each wit
 
 ---
 
-### 🔒 Security
+### 🔒 Security & Compliance
 
 *Supply chain & vuln mgmt, infra/runtime security, secrets/auth/compliance.*
 
@@ -355,4 +355,4 @@ Content and curation by [@taghikhah](https://github.com/taghikhah). Resource des
 
 ⭐ **Star this repo** if you find it valuable • **[Share feedback](../../discussions)**
 
-<!-- Auto-generated from data/resources.yaml on 2025-09-26 10:46:20 -->
+<!-- Auto-generated from data/resources.yaml on 2025-09-26 10:51:12 -->
