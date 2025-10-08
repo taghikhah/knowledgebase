@@ -1514,9 +1514,359 @@ resources:
       ]
     related: [adk-python-google, langgraph-multi-agent]
 
+  - id: cognee
+    title: Cognee
+    url: https://github.com/topoteretes/cognee
+    domains: [AI-Engineering]
+    type: Repo
+    maturity: Emerging
+    tags: [agents, knowledge-graphs, rag, retrieval, vector-database]
+    github_stars: 7600
+    published: '2024'
+    last_updated: '2024-09'
+    added: '2025-10-08'
+    summary: >
+      Dynamic memory layer for AI agents built on graph and vector-based architecture,
+      providing Pythonic data pipelines for ingesting from 30+ sources with customizable
+      search endpoints and local-first storage.
+    why_useful: >
+      Replaces traditional RAG with richer memory systems that interconnect documents,
+      conversations, and media, enhancing AI agent reasoning capabilities while reducing
+      development effort and costs.
+    good_for: [production, prototyping, integration]
+    prerequisites: [Python 3.10-3.12, LLM API key]
+    use_cases:
+      [
+        AI agent memory,
+        knowledge graph construction,
+        document interconnection,
+        multimodal data integration,
+        enhanced agent reasoning,
+        context management,
+      ]
+    related: [graphiti-zep, nano-graphrag]
+
+  - id: rag-anything
+    title: RAG-Anything
+    url: https://github.com/HKUDS/RAG-Anything
+    domains: [AI-Engineering]
+    type: Repo
+    maturity: Emerging
+    tags: [rag, multimodal, document-processing, knowledge-graphs, retrieval]
+    github_stars: 8100
+    published: '2024'
+    last_updated: '2024-09'
+    added: '2025-10-08'
+    summary: >
+      All-in-one multimodal RAG framework for processing diverse document types including
+      text, images, tables, and equations with specialized content analysis and hybrid
+      intelligent retrieval capabilities.
+    why_useful: >
+      Provides end-to-end pipeline for complex document processing with multimodal knowledge
+      graph generation, eliminating need for multiple specialized tools in enterprise knowledge
+      management systems.
+    good_for: [production, research, POCs]
+    prerequisites: [Python 3.10+, OpenAI models, LibreOffice]
+    use_cases:
+      [
+        academic research processing,
+        technical documentation,
+        financial report analysis,
+        enterprise knowledge management,
+        multimodal document querying,
+        complex content extraction,
+      ]
+    related: [cognee, granite-docling-258m, llamaindex-multimodal]
+
+  - id: deep-research-agent-notebook
+    title: Deep Research Agent Notebook
+    url: https://github.com/swirl-ai/ai-angineers-handbook/blob/main/building_agents_from_scratch/deep_research_agent/notebooks/deep_research_agent.ipynb
+    domains: [AI-Engineering]
+    type: Guide
+    maturity: Emerging
+    tags: [agents, patterns, architecture, learning]
+    github_stars: 0
+    published: '2024'
+    last_updated: '2024-09'
+    added: '2025-10-08'
+    summary: >
+      Jupyter notebook demonstrating autonomous research report generation using multi-agent
+      architecture with specialized roles for structure creation, web search, reflection,
+      and formatting.
+    why_useful: >
+      Provides hands-on implementation of modular multi-agent system design with iterative
+      refinement patterns, showing practical approach to automated research using AI agents
+      with distinct responsibilities.
+    good_for: [learning, experimentation, prototyping]
+    prerequisites: [Python, LLM APIs, understanding of agent architectures]
+    use_cases:
+      [
+        automated research,
+        multi-agent learning,
+        report generation,
+        agent architecture patterns,
+        educational projects,
+        workflow automation,
+      ]
+    related: [langgraph-multi-agent, adk-python-google]
+
+  - id: awesome-llm-apps
+    title: Awesome LLM Apps
+    url: https://github.com/Shubhamsaboo/awesome-llm-apps
+    domains: [AI-Engineering]
+    type: Repo
+    maturity: Battle-tested
+    tags: [awesome-list, agents, rag, learning, templates]
+    github_stars: 71400
+    published: '2024'
+    last_updated: '2024-09'
+    added: '2025-10-08'
+    summary: >
+      Curated collection of practical LLM applications featuring AI agents, multi-agent
+      teams, RAG tutorials, voice agents, and memory-enabled apps across OpenAI, Anthropic,
+      Google, and open-source models.
+    why_useful: >
+      Provides hands-on, well-documented projects demonstrating practical LLM applications
+      across domains, accelerating learning and experimentation with cutting-edge AI technologies
+      and frameworks.
+    good_for: [learning, prototyping, POCs]
+    prerequisites: [Python, basic LLM understanding]
+    use_cases:
+      [
+        agent development learning,
+        RAG implementation,
+        voice agent tutorials,
+        multi-agent exploration,
+        framework comparison,
+        practical AI applications,
+      ]
+    related: [awesome-ai-apps, generative-ai-for-beginners-microsoft]
+
+  - id: semtools
+    title: semtools
+    url: https://github.com/run-llama/semtools
+    domains: [AI-Engineering, Data-Engineering]
+    type: Repo
+    maturity: Emerging
+    tags: [semantic-search, document-processing, cli, indexing]
+    github_stars: 1200
+    published: '2024'
+    last_updated: '2024-09'
+    added: '2025-10-08'
+    summary: >
+      High-performance CLI tool built with Rust for semantic search and document parsing
+      across PDF, DOCX, and PPTX formats with workspace management and concurrent processing
+      capabilities.
+    why_useful: >
+      Delivers fast, local semantic search with multilingual embeddings and Unix-friendly
+      design, enabling efficient document processing without cloud dependencies for large
+      document collections.
+    good_for: [production, automation, integration]
+    prerequisites: [CLI experience, basic semantic search concepts]
+    use_cases:
+      [
+        document parsing to markdown,
+        local semantic search,
+        large-scale document processing,
+        content extraction,
+        workspace knowledge management,
+        batch processing,
+      ]
+    related: [claude-context-zilliz, firecrawl]
+
+  - id: iximiuz-labs-challenges
+    title: iximiuz Labs - DevOps Challenges
+    url: https://labs.iximiuz.com/challenges
+    domains: [Platform-Engineering]
+    type: Tool
+    maturity: Battle-tested
+    tags: [learning, containers, kubernetes, docker, devops]
+    published: '2024'
+    last_updated: '2024-09'
+    added: '2025-10-08'
+    summary: >
+      Interactive learning platform offering hands-on DevOps challenges in containers,
+      Linux, Docker, networking, and Kubernetes with automated solution checks and
+      real-world scenarios.
+    why_useful: >
+      Provides practical, skill-focused learning with immediate feedback and automated
+      validation, helping DevOps professionals hone server-side skills through realistic
+      challenges rather than passive tutorials.
+    good_for: [learning, experimentation]
+    prerequisites: [basic Linux knowledge, container concepts]
+    use_cases:
+      [
+        DevOps skill development,
+        container learning,
+        Kubernetes practice,
+        networking fundamentals,
+        hands-on training,
+        skill assessment,
+      ]
+    related: [awesome-system-design-resources, task-go]
+
+  - id: awesome-ai-apps
+    title: Awesome AI Apps
+    url: https://github.com/Arindam200/awesome-ai-apps
+    domains: [AI-Engineering]
+    type: Repo
+    maturity: Emerging
+    tags: [awesome-list, agents, rag, learning, templates]
+    github_stars: 6600
+    published: '2024'
+    last_updated: '2024-09'
+    added: '2025-10-08'
+    summary: >
+      Comprehensive collection of practical AI agent examples, tutorials, and recipes
+      covering starter agents, memory systems, RAG applications, and advanced workflows
+      across CrewAI, LangChain, and LlamaIndex frameworks.
+    why_useful: >
+      Bridges framework diversity with practical implementations from beginner to advanced
+      levels, providing learning path for AI agent development with concrete examples across
+      multiple popular tools.
+    good_for: [learning, prototyping, POCs]
+    prerequisites: [Python, basic AI concepts]
+    use_cases:
+      [
+        AI agent learning,
+        framework exploration,
+        practical tutorials,
+        multi-agent systems,
+        RAG implementations,
+        workflow automation,
+      ]
+    related: [awesome-llm-apps, copilotkit]
+
+  - id: deeplearning-ai-mcp-box-course
+    title: 'DeepLearning.AI: Build AI Apps with MCP Server - Box Files'
+    url: https://www.deeplearning.ai/short-courses/build-ai-apps-with-mcp-server-working-with-box-files/
+    domains: [AI-Engineering]
+    type: Guide
+    maturity: Battle-tested
+    tags: [mcp, course, learning, agents, ai-development]
+    published: '2024-10'
+    last_updated: '2024-10'
+    added: '2025-10-08'
+    summary: >
+      Hands-on course teaching invoice processing with Box MCP server and multi-agent
+      architecture using Google's Agent Development Kit, covering MCP connections, field
+      extraction, and summary report generation.
+    why_useful: >
+      Provides practical MCP implementation with real document processing use case,
+      demonstrates A2A protocol and multi-agent coordination for AI builders working
+      with enterprise file systems.
+    good_for: [learning, production, integration]
+    prerequisites: [Basic Python, no prior MCP or Box API experience needed]
+    use_cases:
+      [
+        document processing automation,
+        invoice field extraction,
+        MCP protocol learning,
+        multi-agent workflows,
+        Box integration,
+        enterprise file handling,
+      ]
+    related: [deeplearning-ai-mcp-course, mcp-beginners, adk-python-google]
+
+  - id: handy
+    title: Handy
+    url: https://github.com/cjpais/Handy
+    domains: [Developer-Tools, AI-Engineering]
+    type: Repo
+    maturity: Emerging
+    tags: [accessibility, voice, desktop-app, productivity, privacy]
+    github_stars: 2200
+    published: '2024'
+    last_updated: '2024-09'
+    added: '2025-10-08'
+    summary: >
+      Free, open-source, cross-platform desktop application for offline speech-to-text
+      transcription with complete privacy, supporting multiple models and voice activity
+      detection.
+    why_useful: >
+      Provides privacy-focused transcription working completely offline with no cloud
+      transmission, designed to be highly forkable for custom accessibility and transcription
+      workflows.
+    good_for: [prototyping, automation, integration]
+    prerequisites: [Desktop environment, basic configuration]
+    use_cases:
+      [
+        accessibility tools,
+        offline transcription,
+        privacy-focused workflows,
+        quick text input,
+        voice-to-text conversion,
+        custom forks,
+      ]
+    related: [neutts-air]
+
+  - id: neutts-air
+    title: NeuTTS Air
+    url: https://github.com/neuphonic/neutts-air
+    domains: [AI-Engineering, Developer-Tools]
+    type: Repo
+    maturity: Emerging
+    tags: [voice, small-language-models, ai-development, creative-tools]
+    github_stars: 1900
+    published: '2024'
+    last_updated: '2024-09'
+    added: '2025-10-08'
+    summary: >
+      On-device text-to-speech model with instant voice cloning from 3 seconds of audio,
+      built on 0.5B LLM backbone and optimized for mobile and embedded devices with
+      ultra-realistic voice synthesis.
+    why_useful: >
+      Enables high-quality voice synthesis and cloning running locally on mid-range devices,
+      providing compliance-safe voice AI without cloud dependencies for embedded applications
+      and voice agents.
+    good_for: [prototyping, creative-projects, integration]
+    prerequisites: [Python, eSpeak dependency, basic audio concepts]
+    use_cases:
+      [
+        voice cloning,
+        embedded voice agents,
+        assistants,
+        voice-enabled toys,
+        local TTS,
+        accessibility features,
+      ]
+    related: [handy, granite-docling-258m]
+
+  - id: olmocr
+    title: olmOCR
+    url: https://github.com/allenai/olmocr
+    domains: [AI-Engineering, Data-Engineering]
+    type: Repo
+    maturity: Emerging
+    tags: [document-processing, multimodal, llm, ocr, data-extraction]
+    github_stars: 14200
+    published: '2024'
+    last_updated: '2024-09'
+    added: '2025-10-08'
+    summary: >
+      Open-source toolkit using 7B parameter Vision Language Model to convert PDFs
+      and images to clean Markdown, handling complex formatting, equations, tables,
+      and multi-column layouts efficiently.
+    why_useful: >
+      Processes documents at under $200 per million pages with superior accuracy for
+      complex layouts, providing scalable document conversion with parallel processing
+      capabilities for large-scale operations.
+    good_for: [production, research, automation]
+    prerequisites: [NVIDIA GPU with 15+ GB RAM, Python]
+    use_cases:
+      [
+        PDF to Markdown conversion,
+        large-scale document processing,
+        academic paper parsing,
+        complex layout extraction,
+        research document analysis,
+        batch processing,
+      ]
+    related: [granite-docling-258m, rag-anything, semtools]
+
 # Metadata for the collection
 metadata:
-  total_resources: 51
+  total_resources: 62
   domains:
     [
       AI-Engineering,
@@ -1525,6 +1875,6 @@ metadata:
       Security,
       Developer-Tools,
     ]
-  last_updated: '2024-09-23'
-  version: '1.1.0'
+  last_updated: '2025-10-08'
+  version: '1.2.0'
   maintainer: 'Your GitHub Username'

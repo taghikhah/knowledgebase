@@ -7,6 +7,7 @@ anthropic
 architecture
 case-studies
 code-search
+communication
 course
 document-processing
 evaluation
@@ -15,6 +16,7 @@ graph-rag
 guardrails
 indexing
 integration
+interoperability
 knowledge-graphs
 llm
 mcp
@@ -66,6 +68,7 @@ workflow
 analytics
 bi
 clickhouse
+data-extraction
 database
 datasets
 duckdb
@@ -75,6 +78,7 @@ kafka
 lake
 lineage
 nl2sql
+ocr
 orchestration
 pipelines
 postgres
@@ -98,11 +102,13 @@ scanning
 sbom
 
 # Developer-Tools Tags
+accessibility
 browser-automation
 chrome-extension
 cli
 code-formatting
 code-quality
+desktop-app
 developer-experience
 developer-tools
 documentation
@@ -111,9 +117,11 @@ git-hooks
 javascript
 linting
 nodejs
+privacy
 productivity
 terminal
 typescript
+voice
 web-ui
 workflow
 

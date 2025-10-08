@@ -4,7 +4,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 
 <div align="center">
 
-![Domains](https://img.shields.io/badge/Domains-6-green) ![Resources](https://img.shields.io/badge/Resources-52-blue) ![Last Updated](https://img.shields.io/badge/Updated-September%202025-red)
+![Domains](https://img.shields.io/badge/Domains-6-green) ![Resources](https://img.shields.io/badge/Resources-63-blue) ![Last Updated](https://img.shields.io/badge/Updated-October%202025-red)
 
 </div>
 
@@ -16,7 +16,7 @@ A curated, enterprise-grade collection of links, repos, and notes that actually 
 | 🤖 **AI Engineering** | 🧠 **Machine Learning** | 🏗️ **Platform Engineering** | 🛠️ **Developer Tools** | 🔒 **Security & Compliance** | 📊 **Data Engineering** |
 |:------------:|:------------:|:------------:|:------------:|:------------:|:------------:|
 | [Jump to AI Engineering](#ai-engineering) | [Jump to Machine Learning](#machine-learning) | [Jump to Platform Engineering](#platform-engineering) | [Jump to Developer Tools](#developer-tools) | [Jump to Security & Compliance](#security) | [Jump to Data Engineering](#data-engineering) |
-| **29 resources** | **8 resources** | **12 resources** | **8 resources** | **3 resources** | **3 resources** |
+| **39 resources** | **8 resources** | **13 resources** | **10 resources** | **3 resources** | **5 resources** |
 | *Agents, RAG & LLM apps* | *Training, MLOps & evaluation* | *Infrastructure & reliability* | *Development utilities* | *Security & compliance* | *Data pipelines & processing* |
 
 </div>
@@ -52,7 +52,7 @@ Here you will find tools and resources organized by engineering domain, each wit
 *Agents/MCP, RAG & knowledge systems, LLM applications, AI integration.*
 
 <details>
-<summary><strong>Agent Systems & Integration</strong> (16 resources)</summary>
+<summary><strong>Agent Systems & Integration</strong> (21 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -61,13 +61,18 @@ Here you will find tools and resources organized by engineering domain, each wit
 | **[LangGraph Agent Architectures Concepts <small>&#10548;</small>](https://langchain-ai.github.io/langgraph/concepts/agentic_concepts/#agent-architectures)** | 🛡️ | 🎯 | agent system design, workflow automation, intelligent applications | Comprehensive guide to agent architectures where LLMs control application flow, covering routers, tool-calling agents... |
 | **[LangGraph Multi-Agent Systems Documentation <small>&#10548;</small>](https://langchain-ai.github.io/langgraph/concepts/multi_agent/)** | 🛡️ | 🎯 | multi-agent system design, agent coordination, complex AI workflows | Comprehensive documentation on multi-agent architectures including network, supervisor, hierarchical patterns with co... |
 | **[MCP.so - MCP Server Directory <small>&#10548;</small>](https://mcp.so/)** | 🛡️ | 🎯 | MCP server discovery, integration planning, documentation access | Community-driven platform cataloging 16,624+ MCP servers and clients with categorized listings, installation guides, ... |
+| **[DeepLearning.AI: Build AI Apps with MCP Server - Box Files <small>&#10548;</small>](https://www.deeplearning.ai/short-courses/build-ai-apps-with-mcp-server-working-with-box-files/)** | 🛡️ | 🎯 | document processing automation, invoice field extraction, MCP protocol learning | Hands-on course teaching invoice processing with Box MCP server and multi-agent architecture using Google's Agent Dev... |
+| **[Awesome LLM Apps <small>&#10548;</small>](https://github.com/Shubhamsaboo/awesome-llm-apps)**<br/>⭐ 71.4K | 🛡️ | 🚀 | agent development learning, RAG implementation, voice agent tutorials | Curated collection of practical LLM applications featuring AI agents, multi-agent teams, RAG tutorials, voice agents,... |
 | **[Function Calling vs MCP: What You Need to Know <small>&#10548;</small>](https://blog.fotiecodes.com/function-calling-vs-model-context-protocol-mcp-what-you-need-to-know-cm88zfwik000108ji0a1d54fc)** | 🛡️ | 🚀 | AI system architecture, protocol comparison, integration planning | Comprehensive technical comparison of Function Calling and Model Context Protocol (MCP), explaining how function call... |
 | **[Graphiti - Real-Time Knowledge Graphs for AI <small>&#10548;</small>](https://github.com/getzep/graphiti)**<br/>⭐ 18.4K | 🔧 | 🎯 | AI agent memory, knowledge graph RAG, temporal data tracking | Framework for building real-time knowledge graphs that dynamically integrate user interactions, structured/unstructur... |
 | **[Browser Use <small>&#10548;</small>](https://github.com/browser-use/browser-use)**<br/>⭐ 70.5K | 🔧 | 🚀 | automated web tasks, browser automation, AI-driven web interactions | AI-powered browser automation framework enabling agents to control web browsers, automate online tasks, and interact ... |
 | **[CopilotKit <small>&#10548;</small>](https://github.com/CopilotKit/CopilotKit)**<br/>⭐ 23.9K | 🔧 | 🎯 | AI chatbots, in-app assistants, agentic interfaces | React framework for building AI copilots and in-app AI agents with elegant UI components, security features, and rapi... |
 | **[Agent Development Kit (ADK) <small>&#10548;</small>](https://github.com/google/adk-python)**<br/>⭐ 13.2K | 🔧 | 🎯 | intelligent assistants, multi-agent workflows, enterprise AI solutions | Open-source Python toolkit for building, evaluating, and deploying sophisticated AI agents with flexible architecture... |
 | **[Parlant <small>&#10548;</small>](https://github.com/emcie-co/parlant)**<br/>⭐ 12.5K | 🔧 | 🎯 | compliant AI agents, financial services AI, healthcare chatbots | Python framework for building AI agents with guaranteed rule compliance and predictable behavior through dynamic guid... |
+| **[Cognee <small>&#10548;</small>](https://github.com/topoteretes/cognee)**<br/>⭐ 7.6K | 🔧 | 🎯 | AI agent memory, knowledge graph construction, document interconnection | Dynamic memory layer for AI agents built on graph and vector-based architecture, providing Pythonic data pipelines fo... |
+| **[Awesome AI Apps <small>&#10548;</small>](https://github.com/Arindam200/awesome-ai-apps)**<br/>⭐ 6.6K | 🔧 | 🚀 | AI agent learning, framework exploration, practical tutorials | Comprehensive collection of practical AI agent examples, tutorials, and recipes covering starter agents, memory syste... |
 | **[Claude Context - MCP Semantic Code Search <small>&#10548;</small>](https://github.com/zilliztech/claude-context)**<br/>⭐ 3.7K | 🔧 | 🎯 | AI code assistance, semantic code search, context management | MCP plugin enabling semantic code search for AI coding agents like Claude Code, providing efficient codebase indexing... |
+| **[Deep Research Agent Notebook <small>&#10548;</small>](https://github.com/swirl-ai/ai-angineers-handbook/blob/main/building_agents_from_scratch/deep_research_agent/notebooks/deep_research_agent.ipynb)** | 🔧 | 🚀 | automated research, multi-agent learning, report generation | Jupyter notebook demonstrating autonomous research report generation using multi-agent architecture with specialized ... |
 | **[MCP for Beginners <small>&#10548;</small>](https://github.com/microsoft/mcp-for-beginners/)**<br/>⭐ <1K | 🔧 | 🚀 | agent development, tool integration, IDE plugins | Beginner-friendly tutorial and examples for Microsoft's Model Context Protocol (MCP), showing how to build tool-using... |
 | **[Agent2Agent (A2A) Protocol <small>&#10548;</small>](https://github.com/a2aproject/A2A)**<br/>⭐ 19.9K | 🧪 | 🎯 | cross-platform agent communication, secure agent collaboration, enterprise AI integration | Open protocol enabling secure communication and interoperability between AI agents from different frameworks while pr... |
 | **[MCP Chrome Extension <small>&#10548;</small>](https://github.com/hangwin/mcp-chrome)**<br/>⭐ 8.1K | 🧪 | 🚀 | browser automation, web scraping, content analysis | Chrome extension transforming browsers into AI-controlled automation tools with 20+ tools for browser management, con... |
@@ -75,7 +80,7 @@ Here you will find tools and resources organized by engineering domain, each wit
 
 </details>
 <details>
-<summary><strong>RAG & Knowledge Systems</strong> (6 resources)</summary>
+<summary><strong>RAG & Knowledge Systems</strong> (7 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -84,6 +89,7 @@ Here you will find tools and resources organized by engineering domain, each wit
 | **[LLM Patterns: A Comprehensive Guide <small>&#10548;</small>](https://eugeneyan.com/writing/llm-patterns/)** | 🛡️ | 🎯 | system architecture, pattern implementation, production design | Comprehensive exploration of practical patterns for building LLM systems, covering evaluation, RAG, fine-tuning, cach... |
 | **[Neo4j GraphRAG Field Guide: 9 RAG Patterns <small>&#10548;</small>](https://neo4j.com/developer-blog/graphrag-field-guide-rag-patterns/)** | 🛡️ | 🎯 | GraphRAG implementation, pattern selection, system architecture | Structured guide to 9 GraphRAG patterns across basic, intermediate, and advanced levels including vector search, comm... |
 | **[nano-graphrag <small>&#10548;</small>](https://github.com/gusye1234/nano-graphrag)**<br/>⭐ 3.4K | 🔧 | 🚀 | GraphRAG learning, rapid prototyping, custom implementations | Simplified, hackable GraphRAG implementation in ~1,100 lines with flexible components for LLM, embedding, vector stor... |
+| **[RAG-Anything <small>&#10548;</small>](https://github.com/HKUDS/RAG-Anything)**<br/>⭐ 8.1K | 🔧 | 🎯 | academic research processing, technical documentation, financial report analysis | All-in-one multimodal RAG framework for processing diverse document types including text, images, tables, and equatio... |
 | **[Multimodal RAG in LlamaCloud <small>&#10548;</small>](https://www.llamaindex.ai/blog/multimodal-rag-in-llamacloud)** | 🔧 | 🚀 | document processing, visual QA, enterprise search | Comprehensive guide to implementing Retrieval-Augmented Generation systems that work with both text and image modalit... |
 
 </details>
@@ -106,11 +112,15 @@ Here you will find tools and resources organized by engineering domain, each wit
 
 </details>
 <details>
-<summary><strong>Core AI Tools</strong> (3 resources)</summary>
+<summary><strong>Core AI Tools</strong> (7 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[Firecrawl <small>&#10548;</small>](https://github.com/firecrawl/firecrawl)**<br/>⭐ 59.3K | 🔧 | 🎯 | data extraction, AI training data, web scraping automation | Web data API service that crawls entire websites and converts content into LLM-ready markdown or structured data with... |
+| **[olmOCR <small>&#10548;</small>](https://github.com/allenai/olmocr)**<br/>⭐ 14.2K | 🔧 | 🎯 | PDF to Markdown conversion, large-scale document processing, academic paper parsing | Open-source toolkit using 7B parameter Vision Language Model to convert PDFs and images to clean Markdown, handling c... |
+| **[Handy <small>&#10548;</small>](https://github.com/cjpais/Handy)**<br/>⭐ 2.2K | 🔧 | 🚀 | accessibility tools, offline transcription, privacy-focused workflows | Free, open-source, cross-platform desktop application for offline speech-to-text transcription with complete privacy,... |
+| **[NeuTTS Air <small>&#10548;</small>](https://github.com/neuphonic/neutts-air)**<br/>⭐ 1.9K | 🔧 | 🚀 | voice cloning, embedded voice agents, assistants | On-device text-to-speech model with instant voice cloning from 3 seconds of audio, built on 0.5B LLM backbone and opt... |
+| **[semtools <small>&#10548;</small>](https://github.com/run-llama/semtools)**<br/>⭐ 1.2K | 🔧 | 🎯 | document parsing to markdown, local semantic search, large-scale document processing | High-performance CLI tool built with Rust for semantic search and document parsing across PDF, DOCX, and PPTX formats... |
 | **[Granite Docling 258M <small>&#10548;</small>](https://huggingface.co/ibm-granite/granite-docling-258M)** | 🔧 | 🎯 | document conversion for RAG, PDF to markdown processing, structured data extraction | Ultra-compact 258M parameter vision-language model specialized for document conversion and understanding, capable of ... |
 | **[SLM SQL <small>&#10548;</small>](https://github.com/CycloneBoy/slm_sql)**<br/>⭐ <1K | 🧪 | 🚀 | natural language querying, SQL learning tools, database interfaces | Small Language Model specifically designed for SQL generation and database querying tasks, optimized for natural lang... |
 
@@ -178,12 +188,13 @@ Here you will find tools and resources organized by engineering domain, each wit
 
 </details>
 <details>
-<summary><strong>Container Platforms</strong> (2 resources)</summary>
+<summary><strong>Container Platforms</strong> (3 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[Trivy <small>&#10548;</small>](https://github.com/aquasecurity/trivy)**<br/>⭐ 29K | 🛡️ | 🎯 | vulnerability scanning, container security, supply chain security | Comprehensive security scanner for containers, filesystems, Git repositories, and Kubernetes that detects vulnerabili... |
 | **[kubesec <small>&#10548;</small>](https://github.com/controlplaneio/kubesec)**<br/>⭐ 1.2K | 🛡️ | 🎯 | security scanning, admission control, CI/CD integration | Security risk analysis tool for Kubernetes resources that scans YAML configurations for potential vulnerabilities and... |
+| **[iximiuz Labs - DevOps Challenges <small>&#10548;</small>](https://labs.iximiuz.com/challenges)** | 🛡️ | 🚀 | DevOps skill development, container learning, Kubernetes practice | Interactive learning platform offering hands-on DevOps challenges in containers, Linux, Docker, networking, and Kuber... |
 
 </details>
 <details>
@@ -220,7 +231,7 @@ Here you will find tools and resources organized by engineering domain, each wit
 *Code quality, browser/web tools, CLI/editors/productivity, creative/specialized, SLMs.*
 
 <details>
-<summary><strong>Development Utilities</strong> (5 resources)</summary>
+<summary><strong>Development Utilities</strong> (6 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
@@ -229,6 +240,7 @@ Here you will find tools and resources organized by engineering domain, each wit
 | **[LiveKit <small>&#10548;</small>](https://github.com/livekit/livekit)**<br/>⭐ 14.9K | 🛡️ | 🎯 | video conferencing, live streaming, real-time collaboration | Open-source real-time communication platform providing scalable WebRTC infrastructure for building video, audio, and ... |
 | **[Task <small>&#10548;</small>](https://github.com/go-task/task)**<br/>⭐ 13.8K | 🛡️ | 🎯 | build automation, task orchestration, workflow management | Simple task runner and build tool written in Go, designed as a modern alternative to GNU Make with YAML-based configu... |
 | **[Diagrams <small>&#10548;</small>](https://github.com/mingrammer/diagrams)**<br/>⭐ 23K | 🛡️ | 🚀 | architecture documentation, system design, technical presentations | Create cloud system architecture diagrams programmatically using Python code, with support for major cloud providers ... |
+| **[Handy <small>&#10548;</small>](https://github.com/cjpais/Handy)**<br/>⭐ 2.2K | 🔧 | 🚀 | accessibility tools, offline transcription, privacy-focused workflows | Free, open-source, cross-platform desktop application for offline speech-to-text transcription with complete privacy,... |
 
 </details>
 <details>
@@ -239,6 +251,14 @@ Here you will find tools and resources organized by engineering domain, each wit
 | **[Prettier <small>&#10548;</small>](https://github.com/prettier/prettier)**<br/>⭐ 51K | 🛡️ | 🎯 | code formatting, style consistency, automated formatting | Opinionated code formatter that automatically reformats code to enforce consistent styling across JavaScript, TypeScr... |
 | **[Husky <small>&#10548;</small>](https://github.com/typicode/husky)**<br/>⭐ 34.2K | 🛡️ | 🎯 | git hook automation, pre-commit checks, workflow enforcement | Lightweight native Git hooks manager that automates workflow enforcement with cross-platform support for all client-s... |
 | **[lint-staged <small>&#10548;</small>](https://github.com/lint-staged/lint-staged)**<br/>⭐ 14.2K | 🛡️ | 🎯 | pre-commit validation, code quality enforcement, automated formatting | Runs linters and formatters only on git staged files before commits, preventing problematic code from entering the re... |
+
+</details>
+<details>
+<summary><strong>Specialized Models (SLMs)</strong> (1 resources)</summary>
+
+| Resource | Maturity | Effort | Use Case | Quick Summary |
+|----------|:--------:|:------:|----------|---------------|
+| **[NeuTTS Air <small>&#10548;</small>](https://github.com/neuphonic/neutts-air)**<br/>⭐ 1.9K | 🔧 | 🚀 | voice cloning, embedded voice agents, assistants | On-device text-to-speech model with instant voice cloning from 3 seconds of audio, built on 0.5B LLM backbone and opt... |
 
 </details>
 
@@ -296,11 +316,13 @@ Here you will find tools and resources organized by engineering domain, each wit
 
 </details>
 <details>
-<summary><strong>Data Infrastructure</strong> (1 resources)</summary>
+<summary><strong>Data Infrastructure</strong> (3 resources)</summary>
 
 | Resource | Maturity | Effort | Use Case | Quick Summary |
 |----------|:--------:|:------:|----------|---------------|
 | **[Firecrawl <small>&#10548;</small>](https://github.com/firecrawl/firecrawl)**<br/>⭐ 59.3K | 🔧 | 🎯 | data extraction, AI training data, web scraping automation | Web data API service that crawls entire websites and converts content into LLM-ready markdown or structured data with... |
+| **[olmOCR <small>&#10548;</small>](https://github.com/allenai/olmocr)**<br/>⭐ 14.2K | 🔧 | 🎯 | PDF to Markdown conversion, large-scale document processing, academic paper parsing | Open-source toolkit using 7B parameter Vision Language Model to convert PDFs and images to clean Markdown, handling c... |
+| **[semtools <small>&#10548;</small>](https://github.com/run-llama/semtools)**<br/>⭐ 1.2K | 🔧 | 🎯 | document parsing to markdown, local semantic search, large-scale document processing | High-performance CLI tool built with Rust for semantic search and document parsing across PDF, DOCX, and PPTX formats... |
 
 </details>
 
@@ -337,7 +359,7 @@ Found a resource that significantly improved your engineering workflow?
 
 ## Tag Cloud
 
-`agents` `architecture` `learning` `automation` `mcp` `patterns` `protocol` `graph-rag` `evaluation` `retrieval` `performance` `catalog`
+`agents` `learning` `architecture` `mcp` `patterns` `rag` `automation` `retrieval` `awesome-list` `protocol` `ai-development` `graph-rag`
 
 ---
 
@@ -355,4 +377,4 @@ Content and curation by [@taghikhah](https://github.com/taghikhah). Resource des
 
 ⭐ **Star this repo** if you find it valuable • **[Share feedback](../../discussions)**
 
-<!-- Auto-generated from data/resources.yaml on 2025-09-26 10:59:48 -->
+<!-- Auto-generated from data/resources.yaml on 2025-10-08 12:05:12 -->
